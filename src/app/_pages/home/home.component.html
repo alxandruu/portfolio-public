@@ -1,0 +1,27 @@
+<home-admin-panel *ngIf="isLogged"></home-admin-panel>
+
+<div *ngIf="portfolio" id="homepage-me">
+    <div class="image-me d-flex">
+        <ImageProfile [_src]="portfolio.img" _size="l" _alt="Profile Image" id="imageprofile"></ImageProfile>
+    </div>
+    
+    <div class="my-4">
+        <TitleDefault [_value]="portfolio.name" _size="xl"></TitleDefault>
+        <TitleDefault [_value]="portfolio.ocupation" _size="l"></TitleDefault>
+    </div>
+
+    <div class="about-me  my-4">
+        <div class="text-start my-3" *ngFor="let paragraph of portfolio.about_me">
+            {{paragraph}}
+        </div>
+    </div>
+
+    <div class="social-links d-flex align-items-center flex-wrap ">
+        <ButtonDefault class="social-media-button " *ngFor="let sm of portfolio.social_media.sections">
+            <a [href]="sm.url" target="_blank">
+                <i class="{{sm.icon}} me-2"></i>
+                <span>{{sm.text}}</span>
+            </a>
+        </ButtonDefault>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="mx-auto p-2" id="projects-content">
+    <div class="pb-2 header">
+        <TitleDefault [_value]='i18s.getValue("projects.header")' _size="l" [_responsiveStyle]="false"></TitleDefault>
+    </div>
+  
+    <div class="content-section">
+        <div class="content mb-4">
+            <div class="row m-0 p-0">
+                <div class="col-xl-3 pt-4" *ngFor="let p of projects | async">
+                    <a [routerLink]="['/projects', p.id]">
+                        <app-pr [pr]=p></app-pr>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

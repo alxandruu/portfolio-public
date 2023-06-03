@@ -1,0 +1,18 @@
+<a href="{{resource.url}}" target="_blank" rel="noopener noreferrer">
+    <div class="row px-2 rs {{resource.highlighted ? 'highlighted': ''}}">
+        <div class="col-lg-4">
+            <div class="  d-flex align-items-center">
+                <div class="position-relative">
+                    <div class="highlighted-icon" *ngIf="resource.highlighted"><i class="fas fa-star"></i></div>
+                    <img src="{{resource.img}}" class="unselectable me-3" loading="lazy">
+                </div>
+                <div class="name">{{resource.name}}</div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="description ">
+                {{resource.description}}
+            </div>
+        </div>
+    </div>
+</a>

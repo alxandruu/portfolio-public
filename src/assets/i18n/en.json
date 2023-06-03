@@ -1,0 +1,138 @@
+{
+    "en": {
+        "translation": {
+            "admin": {
+                "action-history": {
+                    "title": "Register History",
+                    "viewer": {
+                        "mobile-selector-history": "History",
+                        "user": "User",
+                        "before-references": "Previous References",
+                        "after-references": "Current References",
+                        "no-reference": "There are no references"
+                    }
+                },
+                "resources": {
+                    "add": {
+                        "messages": {
+                            "success": {
+                                "title": "Resource Created",
+                                "body": "A new resource has been created for the language ({{lang}})"
+                            },
+                            "doc-exists": {
+                                "title": "Resource Duplicated",
+                                "body": "A resource with ID: [ {{docId}} ] already exists"
+                            },
+                            "doc-edit": {
+                                "title": "Resource Modified",
+                                "body": "The resource with ID: [ {{docId}} ] has been modified"
+                            }
+                        }
+                    },
+                    "edit": {
+                        "search-resource-placeholder": "Search..."
+                    },
+                    "delete": {
+                        "messages": {
+                            "delete-all": {
+                                "title": "Resources Deleted",
+                                "message": "The resource has been deleted in all the languages"
+                            }
+                        }
+                    }
+                }
+            },
+            "admin-mode": {
+                "login": {
+                    "input-key": "Administrator Password",
+                    "button": "Login"
+                },
+                "logged": {
+                    "asAdmin": "Logged as Administrator mode",
+                    "logout": "Logout"
+                }
+            },
+            "cv": {
+                "birth-date": "Date of Birth",
+                "nationality": "Nationality",
+                "email": "Email",
+                "website": "Website",
+                "direction": "Address",
+                "work-experience": "Work Experience",
+                "education": "Education and Training",
+                "skills": "Skills",
+                "download-as-pdf": "Download as PDF",
+                "current": "Current",
+                "cv-generated-from": "CV generated from"
+            },
+            "projects": {
+                "header": "Projects",
+                "view": {
+                    "website": "Website",
+                    "platform": "Platform",
+                    "stack": "Stack",
+                    "not-deployed": "Not Deployed",
+                    "in-development": "In Development"
+                }
+            },
+            "resources": {
+                "title": "Resources",
+                "resources-found": "resources found",
+                "filter": "Filter",
+                "random-button": "Select random",
+                "add-resource": {
+                    "title": "New Resource",
+                    "resource": {
+                        "id": "Resource ID",
+                        "title": "Title",
+                        "description": "Description",
+                        "category": "Category",
+                        "urlimage": "Image URL",
+                        "urltrailer": "Trailer URL",
+                        "highlighted": "Mark as favorite",
+                        "add": "Add Resource"
+                    },
+                    "error": {
+                        "unknown": "Unknown error",
+                        "required-all": "Resource not created. All fields are required."
+                    }
+                },
+                "edit-resource": {
+                    "title": "Edit Resources",
+                    "delete": {
+                        "title": "Delete Resource",
+                        "success": {
+                            "title": "Resource Deleted",
+                            "message": "Resource has been deleted."
+                        },
+                        "error": {
+                            "title": "Error Unknown",
+                            "message": "There was an error trying to delete the resource."
+                        }
+                    },
+                    "edit": {
+                        "title": "Edit Resource",
+                        "success": {
+                            "title": "Resource Modified",
+                            "message": "Resource [{{title}}] has been modified"
+                        },
+                        "error": {
+                            "title": "Error Unknown",
+                            "message": "There was an error trying to modify the resource."
+                        }
+                    }
+                }
+            },
+            "navbar": {
+                "projects": "Projects",
+                "resources": "Resources"
+            },
+            "others": {
+                "sure": "Sure?",
+                "yes-all-languages": "Yes, all languages",
+                "yes": "Yes",
+                "no": "No"
+            }
+        }
+    }
+}

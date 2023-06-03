@@ -1,0 +1,41 @@
+<div class="mx-auto" id="pr-view-content" *ngIf="project">
+    <div class="breadcumb"><a [routerLink]="['/projects']">{{i18s.getValue("projects.header")}}</a> > {{project.name}}</div>
+    <div class="description">
+        {{project.description}}
+    </div>
+    <div class="details m-3">
+        <div class="mt-2">
+            <span class="title p-1">{{i18s.getValue("projects.view.website")}}</span>
+            <span class="ms-2">
+                <a href="{{project.website}}" class="website-link" *ngIf="project.website!='' else notdeployed "
+                    target="_blank" rel="noopener noreferrer">
+                    <span class="href">{{project.website}}</span>
+                    <i class="fas fa-link mx-2"></i>
+                    <span class="href_name">{{project.name}}</span>
+                </a>
+                <ng-template #notdeployed>
+                    <span class="notdeployed"
+                        *ngIf="project.in_development == false; else DevelopmentBlock ">{{i18s.getValue("projects.view.in-development")}}</span>
+                    <ng-template #DevelopmentBlock>
+                        <span class="notdeployed">{{i18s.getValue("projects.view.not-deployed")}}</span>
+                    </ng-template>
+                </ng-template>
+            </span>
+        </div>
+
+        <div class="mt-2">
+            <span class="title p-1">{{i18s.getValue("projects.view.platform")}}</span>
+            <span class="ms-2 platform-group"><span *ngFor="let pl of project.platform">{{pl}}</span></span>
+        </div>
+        <div class="mt-2">
+            <span class="title p-1">{{i18s.getValue("projects.view.stack")}}</span>
+            <span class="ms-2 stack-group"><span *ngFor="let st of project.stack">{{st}}</span></span>
+        </div>
+    </div>
+
+    <div class="images mt-5">
+        <div class="mt-4" *ngFor="let img of project.imgs">
+            <img src="{{img}}" alt="Attiapp Image #1" class="unselectable">
+        </div>
+    </div>
+</div>

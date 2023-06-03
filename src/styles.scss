@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --error-color: rgb(249, 0, 0);
+    --white: #fff;
+    @media (prefers-color-scheme: dark) {
+        --body-background-color: #1e1c27;
+    }
+
+    @media (prefers-color-scheme: light) {
+        --body-background-color: #f2fbe0;
+    }
+}
+
+[data-theme="light"] {
+    --dark-color: #2a2d34;
+    --dark-color-rgb: 42, 45, 52;
+    --light-color: #f2fbe0;
+    --body-background-color: #f2fbe0;
+    --nav-background-color-rgba: 242, 251, 224, 0.95;
+    --nav-hamb-background-color: #2a2d34;
+    --nav-hamb-color: #f2fbe0;
+    --footer-color: #66676b;
+    --secondary-color: #cc2936;
+    --highlighted-color: #ffa100;
+}
+
+[data-theme="dark"] {
+    --dark-color: #ecdbba;
+    --dark-color-rgb: 236, 219, 186;
+    --light-color: #1e1c23;
+    --body-background-color: #1e1c27;
+    --nav-background-color-rgba: 30, 28, 35, 0.95;
+    --nav-hamb-background-color: #1e1c23;
+    --nav-hamb-color: #ecdbba;
+    --footer-color: #746b67;
+    --secondary-color: #aaf683;
+    --highlighted-color: #FFE545;
+}
+
+::selection {
+    color: var(--light-color);
+    background: var(--dark-color);
+}
+
+/*
+
+// Scrollbar Style
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--light-color);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(var(--dark-color-rgb), 0.6);
+    background-color: var(--light-color);
+}
+
+*/
+
+.submit-button {
+    background: var(--dark-color);
+    color: var(--light-color);
+    width: max-content;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 0.5s ease;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    &:hover {
+        transform: scale(0.9);
+        transition: all 0.5s ease;
+    }
+
+    &:active,
+    &:focus {
+        background-color: var(--secondary-color);
+        transition: all 0.25s ease;
+    }
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+body {
+    background-color: var(--body-background-color) !important;
+    animation: animation 1s ease;
+    transition: all 0.5s ease;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &:has(.modal-container.active) {
+        overflow: hidden;
+    }
+}
+
+* {
+    text-align: justify;
+    &:not(i) {
+        font-family: "Lato", sans-serif;
+    }
+}
+
+admin-edit-resource {
+    .amo {
+        margin-top: 3.5rem;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.border-width-1 {
+    border-width: 4px !important;
+}
+.color-light {
+    color: #f2fbe0 !important;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes animation {
+    from {
+        background-color: var(--body-background-color);
+    }
+    to {
+        background-color: var(--body-background-color);
+    }
+}

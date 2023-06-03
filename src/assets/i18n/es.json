@@ -1,0 +1,152 @@
+{
+    "es": {
+        "translation": {
+            "admin": {
+                "action-history": {
+                    "title": "Registro de acciones",
+                    "viewer": {
+                        "mobile-selector-history": "Historial",
+                        "user": "Usuario",
+                        "before-references": "Referencias Anteriores",
+                        "after-references": "Referencias Actuales",
+                        "no-reference": "No hay referencias"
+                    }
+                },
+                "resources": {
+                    "add": {
+                        "messages": {
+                            "success": {
+                                "title": "Recurso Creado",
+                                "body": "Se ha creado un nuevo recurso para el idioma ({{lang}})"
+                            },
+                            "doc-exists": {
+                                "title": "El recurso ya existe",
+                                "body": "El recurso con ID: [ {{docId}} ] ya existe"
+                            },
+                            "doc-edit": {
+                                "title": "Recurso Modificado",
+                                "body": "Se ha modificar el recurso con ID: [ {{docId}} ]"
+                            }
+                        }
+                    },
+                    "edit": {
+                        "search-resource-placeholder": "Busqueda..."
+                    },
+                    "delete": {
+                        "messages": {
+                            "delete-all": {
+                                "title": "Recursos Eliminados",
+                                "message": "El recurso ha sido eliminado en todos los idiomas"
+                            }
+                        }
+                    }
+                }
+            },
+            "admin-mode": {
+                "login": {
+                    "input-key": "Clave Administrador",
+                    "button": "Acceder"
+                },
+                "logged": {
+                    "asAdmin": "Conectado en modo Administrador",
+                    "logout": "Cerrar Sesión"
+                },
+                "config": {
+                    "user-config": {
+                        "title": "Configuración del Usuario",
+                        "c-password": {
+                            "title": "Cambiar contraseña",
+                            "actual-password": "Contraseña actual",
+                            "new-password": "Contraseña nueva",
+                            "repeat-new-password": "Repite la nueva contraseña",
+                            "submit-password": "Cambiar contraseña"
+                        }
+                    },
+                    "general-config": "Configuración general",
+                    "db-config": "Configuración de la base de datos"
+                }
+            },
+            "cv": {
+                "birth-date": "Fecha de Nacimiento",
+                "nationality": "Nacionalidad",
+                "email": "Email",
+                "website": "Sitio Web",
+                "direction": "Dirección",
+                "work-experience": "Experiencia Laboral",
+                "education": "Educación y Formación",
+                "skills": "Competencias",
+                "download-as-pdf": "Descargar en PDF",
+                "current": "Actual",
+                "cv-generated-from": "CV generado desde"
+            },
+            "projects": {
+                "header": "Proyectos",
+                "view": {
+                    "website": "Sitio Web",
+                    "platform": "Plataforma",
+                    "stack": "Stack",
+                    "not-deployed": "No Desplegado",
+                    "in-development": "En Desarrollo"
+                }
+            },
+            "resources": {
+                "title": "Recursos",
+                "resources-found": "recursos encontrados",
+                "filter": "Filtrar",
+                "random-button": "Seleccionar aleatorio",
+                "add-resource": {
+                    "title": "Nuevo Recurso",
+                    "resource": {
+                        "id": "ID",
+                        "title": "Titulo",
+                        "description": "Descripción",
+                        "category": "Categoría",
+                        "urlimage": "URL Imagen",
+                        "urltrailer": "URL Trailer",
+                        "highlighted": "Marcar como favorito",
+                        "add": "Añadir Recurso"
+                    },
+                    "error": {
+                        "unknown": "Error desconocido",
+                        "required-all": "Recurso no creado. Todos los campos son obligatorios"
+                    }
+                },
+                "edit-resource": {
+                    "title": "Editar Recursos",
+                    "delete": {
+                        "title": "Eliminar Recurso",
+                        "success": {
+                            "title": "Recurso Eliminado",
+                            "message": "El recurso ha sido eliminado"
+                        },
+                        "error": {
+                            "title": "Error Desconocido",
+                            "message": "Hubo un error al intentar eliminar el recurso"
+                        }
+                    },
+                    "edit": {
+                        "title": "Editar Recurso",
+                        "success": {
+                            "title": "Recurso Modificado",
+                            "message": "El recurso [{{title}}] ha sido modificado"
+                        },
+                        "error": {
+                            "title": "Error Desconocido",
+                            "message": "Hubo un error al intentar modificar el recurso"
+                        }
+                    }
+                }
+            },
+            "navbar": {
+                "projects": "Proyectos",
+                "resources": "Recursos"
+            },
+            "others": {
+                "sure": "¿Seguro?",
+                "yes-all-languages": "Sí, todos los idiomas",
+                "yes": "Sí",
+                "no": "No"
+            }
+        }
+    }
+}

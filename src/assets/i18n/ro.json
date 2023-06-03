@@ -1,0 +1,139 @@
+{
+    "ro": {
+        "translation": {
+            "admin": {
+                "action-history": {
+                    "title": "Registrul istoric",
+                    "viewer": {
+                        "mobile-selector-history": "Istoric",
+                        "user": "Utilizator",
+                        "before-references": "Referințe anterioare",
+                        "after-references": "Referințe actuale",
+                        "no-reference": "Nu există referințe"
+                    }
+                },
+                "resources": {
+                    "add": {
+                        "messages": {
+                            "success": {
+                                "title": "Resursă creată",
+                                "body": "O nouă resursă a fost creată pentru limba ({{lang}})"
+                            },
+                            "doc-exists": {
+                                "title": "Resursă duplicată",
+                                "body": "O resursă cu ID-ul: [ {{docId}} ] deja există"
+                            },
+                            "doc-edit": {
+                                "title": "Resursă modificată",
+                                "body": "Resursa cu ID: [ {{docId}} ] a fost modificată"
+                            }
+                        }
+                    },
+                    "edit": {
+                        "search-resource-placeholder": "Căutare..."
+                    },
+                    "delete": {
+                        "messages": {
+                            "delete-all": {
+                                "title": "Resurse șterse",
+                                "message": "Resursa a fost ștearsă în toate limbile"
+                            }
+                        }
+                    }
+                }
+            },
+            "admin-mode": {
+                "login": {
+                    "input-key": "Parolă administrator",
+                    "button": "Login"
+                },
+                "logged": {
+                    "asAdmin": "Conectat în mod Administrator",
+                    "logout": "Logout"
+                }
+            },
+            "cv": {
+                "birth-date": "Data de Naștere",
+                "nationality": "Naționalitatea",
+                "email": "Email",
+                "website": "Website",
+                "direction": "Adresă",
+                "work-experience": "Experiența de Muncă",
+                "education": "Educație și Instruire",
+                "skills": "Competențe",
+                "download-as-pdf": "Descărcare în format PDF",
+                "current": "Actual",
+                "cv-generated-from": "CV generat din"
+            },
+            "projects": {
+                "header": "Proiecte",
+                "view": {
+                    "website": "Website",
+                    "platform": "Platformă",
+                    "stack": "Stack",
+                    "not-deployed": "neimplementat",
+                    "in-development": "În dezvoltare"
+                }
+            },
+            "resources": {
+                "title": "Resurse",
+                "resources-found": "Resurse găsite",
+                "filter": "Filtru",
+                "new-resource": "Resursă nouă",
+                "random-button": "Selectare aleatoare",
+                "add-resource": {
+                    "title": "Noua resursă",
+                    "resource": {
+                        "id": "ID",
+                        "title": "Titlu",
+                        "description": "Descriere",
+                        "category": "Categorie",
+                        "urlimage": "URL Imagine",
+                        "urltrailer": "URL Trailer",
+                        "highlighted": "Marchează ca favorit",
+                        "add": "Adăugați resursă"
+                    },
+                    "error": {
+                        "unknown": "Eroare necunoscută",
+                        "required-all": "Resursă necreată. Toate câmpurile sunt obligatorii."
+                    }
+                },
+                "edit-resource": {
+                    "title": "Editare resurse",
+                    "delete": {
+                        "title": "Ștergerea resurselor",
+                        "success": {
+                            "title": "Resursă eliminată",
+                            "message": "Resursa a fost eliminată."
+                        },
+                        "error": {
+                            "title": "Eroare necunoscută",
+                            "message": "S-a produs o eroare în încercarea de a șterge resursa."
+                        }
+                    },
+                    "edit": {
+                        "title": "Editare resursă",
+                        "success": {
+                            "title": "Resursă modificată",
+                            "message": "Resursa [{{title}}] a fost modificată"
+                        },
+                        "error": {
+                            "title": "Eroare necunoscută",
+                            "message": "S-a produs o eroare în încercarea de a modifica resursa."
+                        }
+                    }
+                }
+            },
+            "navbar": {
+                "projects": "Proiecte",
+                "resources": "Resurse"
+            },
+            "others": {
+                "sure": "Sigur?",
+                "yes-all-languages": "Da, în toate limbile",
+                "yes": "Da",
+                "no": "Nu"
+            }
+        }
+    }
+}

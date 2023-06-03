@@ -1,0 +1,38 @@
+
+<div class="d-flex justify-content-between align-items-center py-3  mx-auto" id="div">
+    <div class="d-flex ">
+        <a id="logo" class="d-flex align-items-center p-0 unselectable" routerLink="">
+            <span class="ms-2"><i class="fas fa-bed me-2"></i> Alexandru Botas</span>
+        </a>
+    </div>
+    <div id="mobile_menu" class="position-relative">
+        <div class=" hambBtn m-0 p-0" (click)="hamburguer()">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <ul class="px-4 py-2" id="hamb_menu">
+            <li><a href="/projects" class="mobile-text">{{i18next.getValue("navbar.projects")}}</a></li>
+            <li><a href="/resources" class="mobile-text">{{i18next.getValue("navbar.resources")}}</a></li>
+            <li><a href="https://github.com/alxandruu" class="mobile-text" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-github me-2"></i><span>Github</span></a>
+            </li>
+            <li class="language-selection unselectable">
+                <span class="lang-selector" (click)="i18next.changeLanguage('es')">ES</span>
+                <span class="lang-selector ms-4" (click)="i18next.changeLanguage('en')">EN</span>
+                <span class="lang-selector ms-4" (click)="i18next.changeLanguage('ro')">RO</span>
+            </li>
+        </ul>
+    </div>
+    <ul class="d-flex align-items-center p-0 m-0" id="menu">
+        <li><a routerLink="/projects" routerLinkActive="active"  class="link">{{i18next.getValue("navbar.projects")}}</a></li>
+        <li><a routerLink="/resources" routerLinkActive="active"   class="link">{{i18next.getValue("navbar.resources")}}</a></li>
+        <li><a href="https://github.com/alxandruu" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-github me-2"></i><span>Github</span></a></li>
+    </ul>
+</div>
+
+<div class="administrator-mode-on position-fixed unselectable" *ngIf="isLogged">
+    <div class="w-100 position-absolute text-start text-lg-center mode-info">{{i18next.getValue("admin-mode.logged.asAdmin")}}</div>
+    <div class="ms-auto logout-btn" (click)="logout()">{{i18next.getValue("admin-mode.logged.logout")}}</div>
+</div>

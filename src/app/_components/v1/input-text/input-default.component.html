@@ -1,0 +1,3 @@
+<label for="input-{{_id}}" *ngIf="_label">{{ _label }}</label>
+<input [type]="_type" [name]="_id" id="input-{{_id}}" [placeholder]='_placeholder' [value]="_value"
+    (input)="changes($event)" class="{{_hasError ? 'has-error' : ''}} {{classInput}}" />
