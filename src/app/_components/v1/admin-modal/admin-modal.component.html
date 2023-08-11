@@ -3,7 +3,8 @@
     <div class="admin-modal">
         <div class="header">
             <TitleDefault class="color-light" [_value]="title" _size="l" [_reactiveStyle]="false"></TitleDefault>
-            <i class="close-button fas fa-times" (click)="toggle()"></i>
+            <div (click)="toggle()"> <i class="close-button fas fa-times"></i></div>
+
         </div>
         <div class="modal-content">
             <ng-content></ng-content>

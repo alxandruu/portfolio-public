@@ -42,13 +42,13 @@
         width: 100%;
         left: 0;
         color: var(--dark-color);
-        i {
+        svg {
             transform: rotate(-90deg);
             transition: transform 0.5s ease;
         }
         &.active {
             border-bottom: 3px solid var(--dark-color);
-            i {
+            svg {
                 transform: rotate(0deg);
                 transition: transform 0.5s ease;
             }

@@ -59,13 +59,14 @@ export class EditResourceComponent {
           }
         }
       );
-      
+
       this.selectedResource = null;
       this.confirmDelete = false;
     }
   }
 
   editResource(form: any) {
+    form.value.highlighted = this.selectedResource?.highlighted;
     this.rm.addResource(form.value, this.i18s.lang, 1).then(value => {
       if (value.message) {
         this.ac.addUxia(value.message.title, value.message.body, value.message.type);
@@ -89,7 +90,7 @@ export class EditResourceComponent {
       })
     )
   }
-  markAsHighlighted(resource: Resource){
+  markAsHighlighted(resource: Resource) {
     this.rm.highlightResource(resource, this.i18s.lang);
   }
 }

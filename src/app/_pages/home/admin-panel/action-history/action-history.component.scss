@@ -30,13 +30,13 @@ $tsuccess: #4bb543;
         width: 100%;
         left: 0;
         color: #2a2d34;
-        i {
+        svg {
             transform: rotate(-90deg);
             transition: transform 0.5s ease;
         }
         &.active {
             border-bottom: 3px solid #2a2d34;
-            i {
+            svg {
                 transform: rotate(0deg);
                 transition: transform 0.5s ease;
             }
@@ -56,17 +56,17 @@ $tsuccess: #4bb543;
             align-items: center;
 
             &.t-success {
-                i {
+                svg {
                     color: $tsuccess;
                 }
             }
             &.t-warning {
-                i {
+                svg {
                     color: $twarning;
                 }
             }
             &.t-danger {
-                i {
+                svg {
                     color: $tdanger;
                 }
             }
@@ -75,7 +75,7 @@ $tsuccess: #4bb543;
                 transition: 0.5s ease;
                 background-color: #2a2d34;
                 color: #f2fbe0;
-                i {
+                svg {
                     color: #f2fbe0;
                     transition-property: color;
                     transition: 0.5s ease;

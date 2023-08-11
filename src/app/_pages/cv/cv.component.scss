@@ -97,14 +97,6 @@
         * {
             text-align: left;
         }
-
-        .important-info {
-            justify-content: space-between;
-            display: flex;
-            @media screen and (max-width: 1024px) {
-                flex-wrap: wrap;
-            }
-        }
         .other-info {
             margin-top: 2rem;
         }

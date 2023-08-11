@@ -46,7 +46,7 @@
 
                 <div class="name my-2">
                     <span class="title">{{i18s.getValue("resources.add-resource.resource.title")}}</span>
-                    <input class="input-field p-2 mt-1" type="text" name="title" id="title"
+                    <input class="input-field p-2 mt-1" type="text" name="name" id="name"
                         value="{{selectedResource.name}}" [(ngModel)]="selectedResource.name">
                 </div>
                 <div class="description my-2">
@@ -65,12 +65,12 @@
                 </div>
                 <div class="img my-2">
                     <span class="title">{{i18s.getValue("resources.add-resource.resource.urlimage")}}</span>
-                    <input class="input-field p-2 mt-1" type="text" name="imageurl" id="imageurl"
+                    <input class="input-field p-2 mt-1" type="text" name="img" id="img"
                         value="{{selectedResource.img}}" [(ngModel)]="selectedResource.img">
                 </div>
                 <div class="target my-2">
                     <span class="title">{{i18s.getValue("resources.add-resource.resource.urltrailer")}}</span>
-                    <input class="input-field p-2 mt-1" type="text" name="trailerurl" id="ttrailerurl"
+                    <input class="input-field p-2 mt-1" type="text" name="url" id="url"
                         value="{{selectedResource.url}}" [(ngModel)]="selectedResource.url">
                 </div>
                 <div class="buttons-actions ">
