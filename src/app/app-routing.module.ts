@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './_pages/home/home.component';
-import { PrViewComponent } from './_pages/projects/pr-view/pr-view.component';
-import { ProjectsComponent } from './_pages/projects/projects.component';
-import { ResourcesComponent } from './_pages/resources/resources.component';
-import { CVComponent } from './_pages/cv/cv.component';
-import { LoginComponent } from './_pages/login/login.component';
-import { LoginActivate } from './_services/authguard/login-activate/login-activate.guard';
-import { AuthGuard } from './_services/authguard/auth.guard';
+import { HomeComponent } from './pages/public/home/home.component';
+import { ProjectViewComponent } from './pages/public/projects/project_view/project-view.component';
+import { ProjectsComponent } from './pages/public/projects/projects.component';
+import { ResourcesComponent } from './pages/public/resources/resources.component';
+import { CVComponent } from './pages/public/cv/cv.component';
+import { LoginComponent } from './pages/public/login/login.component';
+import { LoginActivate } from './services/authguard/login-activate/login-activate.guard';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'projects/:id', component: PrViewComponent },
+  { path: 'projects/:id', component: ProjectViewComponent },
   { path: 'login', component: LoginComponent, canActivate: [LoginActivate] },
 
   {

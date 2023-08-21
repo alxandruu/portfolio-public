@@ -10,7 +10,9 @@
 // Navigation Menu
 #nav {
     background-color: rgba(var(--nav-background-color-rgba)) !important;
-    box-shadow: rgba(var(--dark-color-rgb), 0.05) 0px 6px 24px 0px, rgba(var(--dark-color-rgb), 0.08) 0px 0px 0px 1px;
+    box-shadow:
+        rgba(var(--dark-color-rgb), 0.05) 0px 6px 24px 0px,
+        rgba(var(--dark-color-rgb), 0.08) 0px 0px 0px 1px;
     z-index: 1;
     .theme-switcher {
         @media screen and (max-width: 767.5px) {
@@ -137,8 +139,13 @@
     z-index: 1;
     padding: 0.5rem 0.75rem;
     box-shadow: rgba(var(--dark-color-rgb), 0.2) 0px 7px 29px 0px;
-    display: none;
-
+    visibility: hidden;
+    opacity: 0;
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .5s ease;
+    }
     &:hover {
         cursor: pointer;
     }

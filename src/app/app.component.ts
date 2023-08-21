@@ -1,10 +1,9 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { UxiaComponent } from './global/uxia/uxia.component';
-import { AuthenticationService } from './_services/firebase-manager/authentication/authentication.service';
-import { I18nService } from './_services/i18n/i18n.service';
-import { WebsiteThemeService } from './_services/theme/website-theme.service';
+import { NotificationCardComponent } from './components/application/notification_card/notification-card.component';
+import { AuthenticationService } from './services/firebase-manager/authentication/authentication.service';
+import { I18nService } from './services/i18n/i18n.service';
+import { WebsiteThemeService } from './services/theme/website-theme.service';
 
-declare let $: any; //jQuery
 
 @Component({
   selector: 'app-root',
@@ -26,7 +25,7 @@ export class AppComponent {
   }
 
   public addUxia(title: string, message: string, type?: string) {
-    let component = this.uxiaContainer.createComponent(UxiaComponent);
+    let component = this.uxiaContainer.createComponent(NotificationCardComponent);
     component.setInput('title', title);
     component.setInput('message', message);
     if (type) {
@@ -60,11 +59,12 @@ export class AppComponent {
 
 }
 
-$(window).scroll(function () {
-  if ($(window).scrollTop() < 250 || $(window).scrollTop() >= $(document).height()) {
-    $('.scrollTopButton').hide(250);
+window.addEventListener('scroll', () => {
+  if (window.scrollY < 250 || window.scrollY >= document.documentElement.scrollHeight) {
+    document.querySelector('.scrollTopButton')?.classList.remove("active");
   }
   else {
-    $('.scrollTopButton').show(250);
+    document.querySelector('.scrollTopButton')?.classList.add("active");
   }
-});
+})
+

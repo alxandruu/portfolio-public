@@ -1,0 +1,66 @@
+<admin-selector [text]='i18s.getValue("resources.add-resource.title")'
+    (toggleModal)="modal_status = $event"></admin-selector>
+
+<admin-modal [title]='i18s.getValue("resources.add-resource.title")' [opened]="modal_status"
+    (toggleModal)="modal_status = $event">
+    <div class="languages-available">
+        <div class="lang-selector unselectable {{(l.id == lang)?'active':''}}" *ngFor="let l of i18s.languagesAvailable"
+            (click)="changeLang(l.id)">
+            {{l.id}}
+        </div>
+    </div>
+    <form #resourceForm="ngForm" class="form-container mt-2 {{(l.id == lang)?'active':''}}" id="{{l.id}}"
+        *ngFor="let l of i18s.languagesAvailable">
+        <div class="create-resource">
+            <div class="row">
+                <div class="form col-md-6">
+                    <div class="input-row type-text">
+                        <label for="name-{{l.id}}">{{i18s.getValue("resources.add-resource.resource.title")}}
+                            *</label>
+                        <input type="text" name="name" id="name-{{l.id}}" ngModel>
+                    </div>
+                    <div class="input-row type-text">
+                        <label
+                            for="description-{{l.id}}">{{i18s.getValue("resources.add-resource.resource.description")}}
+                            *</label>
+                        <input type="text" name="description" id="description-{{l.id}}" ngModel>
+                    </div>
+                    <div class="input-row type-text">
+                        <label for="category-{{l.id}}">{{i18s.getValue("resources.add-resource.resource.category")}}
+                            *</label>
+                        <select name="category" id="category-{{l.id}}" ngModel>
+                            <option value="{{c.id}}" *ngFor="let c of categories | slice:1:categories.length ">
+                                {{c.name}}</option>
+                        </select>
+                    </div>
+                    <div class="input-row type-text">
+                        <label for="img-{{l.id}}">{{i18s.getValue("resources.add-resource.resource.urlimage")}}
+                            *</label>
+                        <input type="url" name="img" id="img-{{l.id}}" ngModel>
+                    </div>
+                    <div class="input-row type-text">
+                        <label for="url-{{l.id}}">{{i18s.getValue("resources.add-resource.resource.urltrailer")}}
+                            *</label>
+                        <input type="url" name="url" id="url-{{l.id}}" ngModel>
+                    </div>
+                    <div class="input-row type-check">
+                        <label
+                            for="highlighted-{{l.id}}">{{i18s.getValue("resources.add-resource.resource.highlighted")}}
+                        </label>
+                        <input type="checkbox" name="highlighted" id="highlighted-{{l.id}}" class="ms-2" ngModel>
+                    </div>
+                </div>
+                <div class="live-view col-md-6">
+                    <div class="title">Live View - {{l.id.toUpperCase()}}</div>
+                  
+                    <resource-card [resource]="resourceForm.value"></resource-card>
+                </div>
+            </div>
+            <div class="bottom-header  mt-4 pb-3">
+                <div class="error-add-resource">{{addError}}</div>
+                <div class="button-add-resource unselectable" (click)="addResource(resourceForm, $event)">
+                    {{i18s.getValue("resources.add-resource.resource.add")}}</div>
+            </div>
+        </div>
+    </form>
+</admin-modal>

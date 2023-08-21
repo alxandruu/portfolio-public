@@ -4,27 +4,22 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore, } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-import { UxiaComponent } from './global/uxia/uxia.component';
-import { PortfolioComponentsModule } from './_components/v1/portfolio-components.module';
-import { PortfolioPagesModule } from './_pages/portfolio-pages.module';
-
+import { PagesModule } from './pages/pages.module';
+import { ApplicationComponentsModule } from './components/application/application-components.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    UxiaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PortfolioComponentsModule,
-    PortfolioPagesModule,
+    PagesModule,
+    ApplicationComponentsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => {
@@ -34,6 +29,5 @@ import { PortfolioPagesModule } from './_pages/portfolio-pages.module';
   ],
   providers: [Title],
   bootstrap: [AppComponent],
-  entryComponents: [UxiaComponent],
 })
 export class AppModule { }

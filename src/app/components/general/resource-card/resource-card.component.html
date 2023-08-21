@@ -1,0 +1,17 @@
+<div class="rs {{resource.highlighted ? 'highlighted': ''}}">
+    <a href="{{resource.url}}" target="_blank" rel="noopener noreferrer">
+        <div class="position-relative">
+            <div class="highlighted-icon" *ngIf="resource.highlighted"><i class="fas fa-star"></i></div>
+            <img src="{{resource.img}}" class="unselectable" loading="lazy">
+        </div>
+
+        <div class=" mt-2 mx-1">
+            <div class="name">
+                {{resource.name}}
+            </div>
+            <div class="description">
+                {{resource.description}}
+            </div>
+        </div>
+    </a>
+</div>

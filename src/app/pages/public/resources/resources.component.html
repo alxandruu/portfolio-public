@@ -1,0 +1,67 @@
+<ap-resources *ngIf="isLogged" [categories]=categories></ap-resources>
+
+<div class="mx-auto p-2" id="resources-content">
+    <div class="header">
+        <div class="title">{{i18s.getValue("resources.title")}}</div>
+        <div class="t-resources">{{(resources | resourceFilter:categoryActive.id)?.length}}
+            {{i18s.getValue("resources.resources-found")}}</div>
+        <div class="category-filter-mobile py-1 px-2" (click)="showResources()">
+            <span>{{i18s.getValue("resources.filter")}}</span>
+            <i class="fas fa-angle-down ms-2"></i>
+        </div>
+    </div>
+
+    <div class="mt-2 mx-1 filter-row ">
+        <div class="category-filter-active">{{categoryActive.name}}</div>
+        <div class="category-filter">
+            <div class="d-flex align-items-center" id="category-container">
+                <div class="category py-1 px-2 m-1" *ngFor="let c of categoriesFilter" (click)="filterByCategory(c.id)">
+                    {{c.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="tools-row d-flex align-items-center justify-content-between">
+        <div class=" align-items-center d-flex dice-icon" (click)="randomResource()">
+            <i class="fas fa-dice"></i>
+            <span class="ms-2">{{i18s.getValue("resources.random-button")}}</span>
+        </div>
+        <div id="viewer-selector">
+            <div class="viewer-icon ms-3 " (click)="changeViewer('list')">
+                <i class="fas fa-list"></i>
+            </div>
+            <div class="ms-3 viewer-icon" (click)="changeViewer('card')">
+                <i class="fas fa-square"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="mb-1 d-flex align-items-center justify-content-between">
+            <div class="category-filter-active mobile-version mx-2 text-start">{{categoryActive.name}}</div>
+            <div class="t-resources mobile-version text-end">{{(resources | resourceFilter:categoryActive.id)?.length}}
+                {{i18s.getValue("resources.resources-found")}}</div>
+        </div>
+
+        <div class="list-viewer pt-4" *ngIf="viewerSelected == 'list'; else cardBlock">
+            <ng-container *ngFor="let r of resources | resourceFilter:categoryActive.id ; ">
+                <resource-list [resource]=r></resource-list>
+            </ng-container>
+        </div>
+
+        <ng-template #cardBlock>
+            <div class="card-viewer">
+                <div class="row m-0 p-0 ">
+                    <ng-container *ngFor="let r of resources | resourceFilter:categoryActive.id ; ">
+                        <div class="col-xl-4 pt-4 pb-3">
+                            <resource-card [resource]="r"></resource-card>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

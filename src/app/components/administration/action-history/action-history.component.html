@@ -1,0 +1,68 @@
+<admin-selector [text]='i18s.getValue("admin.action-history.title")'
+    (toggleModal)="modal_status = $event"></admin-selector>
+
+<admin-modal [title]='i18s.getValue("admin.action-history.title")' [opened]="modal_status"
+    (toggleModal)="modal_status = $event">
+    <div class="row h-100 ">
+        <div class="col-md-4 selector-column h-100 ">
+            <div class="selector-container-toggle " (click)="selector = !selector"
+                [ngClass]="selector ? 'active': ''">
+                <span>{{i18s.getValue("admin.action-history.viewer.mobile-selector-history")}}</span>
+                <i class="fas fa-angle-down ms-2"></i>
+            </div>
+            <div class="selector-container" [ngClass]="selector ? 'active': ''">
+                <div class="r-row t-{{h.type}}" *ngFor="let h of actionHistory | async" (click)="selected = h">
+                    <i class="fas fa-exclamation-triangle "></i>
+                    <div class="ms-2 text-capitalize">{{h.action}} </div>
+                    <div class="ms-auto"> {{h.timestamp.toDate().toLocaleString()}}</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-8  viewer-column h-100">
+            <div *ngIf="selected">
+                <div class="headline px-2 py-1">
+                    <div class="type-{{selected.type}}">
+                        <i class="fas fa-exclamation-triangle "></i>
+                        <span class="text-capitalize ms-2">{{selected.action}}</span>
+                    </div>
+                    <div class="timestamp">
+                        {{selected.timestamp.toDate().toLocaleString()}}
+                    </div>
+                </div>
+                <div class="info-row mt-2">
+                    <div class="title">{{i18s.getValue("admin.action-history.viewer.user")}}:</div>
+                    <div class="info py-1 px-2  mt-1">
+                        {{selected.user}}
+                    </div>
+                </div>
+                <div class="info-row mt-2">
+                    <div class="title">{{i18s.getValue("admin.action-history.viewer.before-references")}}:</div>
+                    <div class="info py-1 px-2  mt-1">
+                        <div *ngIf="selected.referenceBefore; else empty">
+                            <div *ngFor="let item of selected.referenceBefore | keyvalue" class="py-2 obj-row">
+                                <span class="text-capitalize key"> {{item.key}}</span> : <span>{{item.value}}</span>
+                            </div>
+                        </div>
+                        <ng-template #empty>
+                            {{i18s.getValue("admin.action-history.viewer.no-reference")}}
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="info-row mt-2">
+                    <div class="title">{{i18s.getValue("admin.action-history.viewer.after-references")}}:</div>
+                    <div class="info py-1 px-2  mt-1">
+                        <div *ngIf="selected.referenceAfter; else empty">
+                            <div *ngFor="let item of selected.referenceAfter | keyvalue" class="py-2 obj-row">
+                                <span class="text-capitalize key"> {{item.key}}</span> : <span>{{item.value}}</span>
+                            </div>
+                        </div>
+                        <ng-template #empty>
+                            {{i18s.getValue("admin.action-history.viewer.no-reference")}}
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</admin-modal>
