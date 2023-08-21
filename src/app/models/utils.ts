@@ -1,3 +1,4 @@
+import { Timestamp } from "firebase/firestore";
 import moment from "moment";
 
 export function propertyDefault(availables: Array<Object>, input: Object, df: Object): Object {
@@ -30,7 +31,10 @@ export function hideLoading(): void {
 export function currentDate(format: string): string {
     return moment().format(format)
 }
-
+export function timestampToString(stamp: Timestamp): string {
+    const date = moment(stamp.toDate())
+    return date.format("DD/MM/YYYY h:mm:ss")
+}
 export function textColor(): string {
     return getComputedStyle(document.documentElement).getPropertyValue('--dark-color')
 }

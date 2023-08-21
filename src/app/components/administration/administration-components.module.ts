@@ -7,6 +7,7 @@ import { AdminSelectorComponent } from './admin-selector/admin-selector.componen
 import { ActionEditResourceComponent } from './action-edit-resource/action-edit-resource.component';
 import { FormsModule } from '@angular/forms';
 import { ActionNewResourceComponent } from './action-new-resource/action-new-resource.component';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 
@@ -21,7 +22,8 @@ import { ActionNewResourceComponent } from './action-new-resource/action-new-res
   imports: [
     CommonModule,
     GeneralComponentsModule,
-    FormsModule
+    FormsModule,
+    PipesModule
   ],
   exports: [
     ActionHistoryComponent,

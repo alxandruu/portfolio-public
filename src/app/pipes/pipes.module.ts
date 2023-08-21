@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ResourceFilterPipe } from './resource-filter.pipe';
-
+import { TimestampDefaultStringPipe } from './default-functions.pipe';
 
 
 @NgModule({
   declarations: [
-    ResourceFilterPipe
+    ResourceFilterPipe,
+    TimestampDefaultStringPipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ResourceFilterPipe
+    ResourceFilterPipe,
+    TimestampDefaultStringPipe
   ]
 })
 export class PipesModule { }

@@ -14,7 +14,7 @@
                 <div class="r-row t-{{h.type}}" *ngFor="let h of actionHistory | async" (click)="selected = h">
                     <i class="fas fa-exclamation-triangle "></i>
                     <div class="ms-2 text-capitalize">{{h.action}} </div>
-                    <div class="ms-auto"> {{h.timestamp.toDate().toLocaleString()}}</div>
+                    <div class="ms-auto"> {{h.timestamp | timestampDefaultString}}</div>
                 </div>
 
             </div>
