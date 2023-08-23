@@ -136,39 +136,34 @@
         }
     }
 }
-.cv-original {
+@media screen and (max-width: 1024px) {
     .cv-data {
         .cv-header {
-            @media screen and (max-width: 1024px) {
-                .img-cv-profile {
-                    display: none;
-                }
-                .person-information {
-                    padding-left: 0;
-                    width: 100%;
-                    .plus-info {
-                        .area {
-                            margin-left: 0 !important;
-                            div {
-                                margin: 0.25rem;
-                            }
+            .img-cv-profile {
+                display: none;
+            }
+            .person-information {
+                padding-left: 0;
+                width: 100%;
+                .plus-info {
+                    .area {
+                        margin-left: 0 !important;
+                        div {
+                            margin: 0.25rem;
                         }
                     }
                 }
             }
         }
     }
+}
+@media screen and (max-width: 1024px) {
     .cv-information {
         .work-history {
             .description {
-                @media screen and (max-width: 1024px) {
-                    padding-left: 0;
-                    padding-top: 1rem;
-                }
+                padding-left: 0;
+                padding-top: 1rem;
             }
         }
     }
-}
-#pdf-cv-data {
-    display: none;
 }
