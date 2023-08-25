@@ -14,7 +14,6 @@ import { GeneralComponentsModule } from '../components/general/general-component
 import { PipesModule } from '../pipes/pipes.module';
 
 
-
 @NgModule({
   declarations: [
     LoginComponent,
@@ -23,7 +22,6 @@ import { PipesModule } from '../pipes/pipes.module';
     CVComponent,
     ResourcesComponent,
     ProjectViewComponent,
-    //Refactor ->
   ],
   imports: [
     CommonModule,
@@ -32,7 +30,8 @@ import { PipesModule } from '../pipes/pipes.module';
     AdministrationComponentsModule,
     AdminPanelComponentsModule,
     GeneralComponentsModule,
-    PipesModule
+    PipesModule,
+
   ],
   exports: [
     LoginComponent,

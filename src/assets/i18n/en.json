@@ -63,7 +63,8 @@
                 "skills": "Skills",
                 "download-as-pdf": "Download as PDF",
                 "current": "Current",
-                "cv-generated-from": "CV generated from"
+                "cv-generated-from": "CV generated from",
+                "languages": "Languages"
             },
             "projects": {
                 "header": "Projects",

@@ -52,6 +52,7 @@ export interface CV {
     work_experience: Array<WorkRow>;
     education_training: Array<EducationRow>;
     skills: Array<string>;
+    languages: Array<string>;
 }
 
 export interface WorkRow {

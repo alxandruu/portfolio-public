@@ -77,7 +77,8 @@
                 "skills": "Competencias",
                 "download-as-pdf": "Descargar en PDF",
                 "current": "Actual",
-                "cv-generated-from": "CV generado desde"
+                "cv-generated-from": "CV generado desde",
+                "languages": "Idiomas"
             },
             "projects": {
                 "header": "Proyectos",

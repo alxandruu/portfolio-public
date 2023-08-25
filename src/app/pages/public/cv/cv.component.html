@@ -1,6 +1,5 @@
-
-<div *ngIf='cv' class="cv-original">
-    <div class="cv-data ">
+<ng-container *ngIf='cv' >
+    <div class="cv-data " >
         <div class="cv-header">
             <div class="img-cv-profile">
                 <img src="/assets/images/cv_profile.jpg" alt="" class="mx-auto rounded-circle unselectable">
@@ -20,6 +19,7 @@
                     </div>
                     <div class="area ms-3">
                         <div class="direction"><span>{{i18s.getValue("cv.direction")}}</span> - {{cv.address}}</div>
+                        <div class="languages"><span>{{i18s.getValue("cv.languages")}}</span> - <ng-container *ngFor="let lgs of cv.languages">{{lgs}}, </ng-container></div>
                     </div>
                 </div>
             </div>
@@ -73,4 +73,4 @@
             </div>
         </div>
     </div>
-</div>
+</ng-container>
