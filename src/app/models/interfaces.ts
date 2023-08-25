@@ -120,6 +120,7 @@ export interface SocialMediaSection {
     icon: string;
     text: string;
     url: string;
+    target: string;
 }
 
 export interface ProjectGroup {

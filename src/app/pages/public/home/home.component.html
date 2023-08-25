@@ -18,10 +18,18 @@
 
     <div class="social-links d-flex align-items-center flex-wrap ">
         <ButtonDefault class="social-media-button " *ngFor="let sm of portfolio.social_media.sections">
-            <a [href]="sm.url" target="_blank">
-                <i class="{{sm.icon}} me-2"></i>
-                <span>{{sm.text}}</span>
-            </a>
+            <ng-container *ngIf="sm.target; else pageLink ">
+                <a [href]="sm.url" [target]="sm.target">
+                    <i class="{{sm.icon}} me-2"></i>
+                    <span>{{sm.text}}</span>
+                </a>
+            </ng-container>
+           <ng-template #pageLink>
+                <a [routerLink]="sm.url" >
+                    <i class="{{sm.icon}} me-2"></i>
+                    <span>{{sm.text}}</span>
+                </a>
+           </ng-template>
         </ButtonDefault>
     </div>
 </div>
