@@ -1,4 +1,10 @@
 <ng-container *ngIf='cv' >
+    <div class="download-button" (click)="downloadCV()">
+        <span>{{i18s.getValue("cv.download-as-pdf")}}</span>
+        <div class="d-inline">
+            <i class="fas fa-download ms-2"></i>
+        </div>
+    </div>
     <div class="cv-data " >
         <div class="cv-header">
             <div class="img-cv-profile">

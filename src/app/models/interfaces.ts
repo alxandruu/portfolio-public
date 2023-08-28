@@ -69,6 +69,7 @@ export interface EducationRow {
     degree: string;
     college: string;
     location: string;
+    certify_link: string;
 }
 
 
@@ -155,4 +156,18 @@ export interface Resource {
     url: string;
     category: string;
     highlighted: boolean;
+}
+
+
+export interface CvConfiguration {
+    properties: PdfConfiguration;
+    vars: Array<PdfVariableConfiguration>;
+}
+export interface PdfConfiguration {
+    format: string;
+    margin: string;
+}
+export interface PdfVariableConfiguration {
+    key: string;
+    value: Array<object> | string | object;
 }

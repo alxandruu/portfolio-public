@@ -12,7 +12,7 @@ import { AdministrationComponentsModule } from '../components/administration/adm
 import { AdminPanelComponentsModule } from '../components/admin-panel/admin-panel.module';
 import { GeneralComponentsModule } from '../components/general/general-components.module';
 import { PipesModule } from '../pipes/pipes.module';
-
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -31,7 +31,6 @@ import { PipesModule } from '../pipes/pipes.module';
     AdminPanelComponentsModule,
     GeneralComponentsModule,
     PipesModule,
-
   ],
   exports: [
     LoginComponent,

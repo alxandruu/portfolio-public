@@ -10,5 +10,7 @@ export const environment = {
     measurementId: 'measurementId',
   },
   production: true,
-  loginEmail: "loginEmail"
+  loginEmail: "loginEmail",
+  phoneNumber: "",
+  apiPdfGenerator: ""
 };
