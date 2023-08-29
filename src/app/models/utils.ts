@@ -46,7 +46,7 @@ export function backgroundColor(): string {
 
 export function generateCvConfiguration(cv: CV, staticKeys: object): CvConfiguration {
     return {
-        properties: { format: "a3", margin: "20px" },
+        properties: { format: "a4", margin: "10px" },
         vars: [
             {
                 key: "person",
