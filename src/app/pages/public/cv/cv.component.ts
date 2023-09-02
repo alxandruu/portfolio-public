@@ -5,6 +5,8 @@ import { CvManagerService } from 'src/app/services/firebase-manager/cv/cv-manage
 import { StorageManagerService } from 'src/app/services/firebase-manager/storage/storage-manager.service';
 import { currentDate, generateCvConfiguration, hideLoading, showLoading } from 'src/app/models/utils';
 import { HttpPdfService } from 'src/app/services/http/http-pdf.service';
+import { environment } from 'src/environments/environment';
+import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
 
 @Component({
     templateUrl: './cv.component.html',
@@ -12,9 +14,9 @@ import { HttpPdfService } from 'src/app/services/http/http-pdf.service';
 })
 export class CVComponent implements OnInit {
     protected cv: CV | null = null;
-
+    protected showGenerator: boolean = this.isLogged;
     constructor(private cvm: CvManagerService,
-        protected i18s: I18nService, private storage: StorageManagerService, private httpPdf: HttpPdfService) {
+        protected i18s: I18nService, private storage: StorageManagerService, private httpPdf: HttpPdfService, private authf: AuthenticationService) {
         this.cvm.getCVData().then(result => {
             this.cv = result
         });
@@ -44,5 +46,10 @@ export class CVComponent implements OnInit {
                     hideLoading();
                 })
         }
+    }
+
+    //Getter & Setters
+    protected get isLogged(): boolean {
+        return this.authf.isLogged;
     }
 }

@@ -1,5 +1,5 @@
 <ng-container *ngIf='cv' >
-    <div class="download-button" (click)="downloadCV()">
+    <div class="download-button" (click)="downloadCV()" *ngIf="isLogged">
         <span>{{i18s.getValue("cv.download-as-pdf")}}</span>
         <div class="d-inline">
             <i class="fas fa-download ms-2"></i>
