@@ -68,7 +68,6 @@ export class ActionEditResourceComponent {
 
   editResource(form: any) {
     form.value.highlighted = this.selectedResource?.highlighted ?? null;
-    console.log(form.value);
     this.rm.addResource(form.value, this.i18s.lang, 1).then(value => {
       if (value.message) {
         this.ac.addUxia(value.message.title, value.message.body, value.message.type);
