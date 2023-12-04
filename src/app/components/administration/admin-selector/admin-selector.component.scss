@@ -3,15 +3,13 @@
     color: var(--light-color);
     font-size: 1rem;
     padding: 0.5rem 0;
-    position: fixed;
-    left: 0;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     transform: translateX(-85%);
     transition: transform 1s ease;
     letter-spacing: 1px;
     z-index: 9;
-    width: 185px;
+    min-width: 185px;
     div {
         white-space: nowrap;
         overflow: hidden;

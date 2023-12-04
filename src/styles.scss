@@ -59,11 +59,27 @@
     color: var(--light-color);
     background: var(--dark-color);
 }
+ap-resources, ap-home {
+    display: block;
+    position: fixed;
+    left:0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    * + * .amo{
+         margin-top: 25px;
+    }
+}
 
+/*
 // Scrollbar Style
 ::-webkit-scrollbar {
     width: 12px;
-
     background-color: var(--light-color);
 }
 
@@ -73,6 +89,7 @@
     -webkit-box-shadow: inset 0 0 6px rgba(var(--dark-color-rgb), 0.6);
     background-color: var(--light-color);
 }
+*/
 
 .submit-button {
     background: var(--dark-color);
