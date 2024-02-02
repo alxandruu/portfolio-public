@@ -1,12 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import i18next from 'i18next';
 import ldSpanish from 'src/assets/i18n/es.json';
 import ldEnglish from 'src/assets/i18n/en.json';
 import ldRomanian from 'src/assets/i18n/ro.json';
 import { CookiesService } from '../cookies/cookies.service';
 import { Language } from 'src/app/models/interfaces';
-
-
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +22,10 @@ export class I18nService {
     id: 'ro',
     ref: ldRomanian
   }];
+  private doc: Document = inject(DOCUMENT);
 
   constructor(private cookies: CookiesService) {
+
     this.webpageLanguage();
     let language = this.languagesAvailable.find(lang => lang.id == this._lang);
     i18next.init({
@@ -55,8 +56,7 @@ export class I18nService {
 
       this.cookies.setCookie(this.cookies.languageCookie, val, 365);
     }
-
-
+    this.doc.documentElement.setAttribute("lang", val)
     this._lang = val;
   }
 
@@ -70,7 +70,7 @@ export class I18nService {
     });
     window.location.reload();
   }
-  
+
   public get languagesAvailable(): Array<Language> {
     return this._languagesAvailable;
   }

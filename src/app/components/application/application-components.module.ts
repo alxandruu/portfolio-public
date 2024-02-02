@@ -7,7 +7,7 @@ import { NotificationCardComponent } from "./notification_card/notification-card
 @NgModule({
     declarations: [
         NavigationBarComponent,
-        NotificationCardComponent
+        NotificationCardComponent,
     ],
     imports: [
         CommonModule,

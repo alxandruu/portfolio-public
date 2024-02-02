@@ -1,35 +1,35 @@
 <ap-home *ngIf="isLogged"></ap-home>
 
-<div *ngIf="portfolio" id="homepage-me">
+<div *ngIf="portfolio" id="portfolio-home-page">
     <div class="image-me d-flex">
-        <ImageProfile [_src]="portfolio.img" _size="l" _alt="Profile Image" id="imageprofile"></ImageProfile>
+        <img [src]="portfolio.img" alt="" class="size-l" loading="lazy">
     </div>
-    
+
     <div class="my-4">
-        <TitleDefault [_value]="portfolio.name" _size="xl"></TitleDefault>
-        <TitleDefault [_value]="portfolio.ocupation" _size="l"></TitleDefault>
+        <h1 class="title size-xl reactive">{{portfolio.name}}</h1>
+        <h2 class="title size-l reactive">{{portfolio.ocupation}}</h2>
     </div>
 
     <div class="about-me  my-4">
-        <div class="text-start my-3" *ngFor="let paragraph of portfolio.about_me">
+        <p class="text-start my-3" *ngFor="let paragraph of portfolio.about_me">
             {{paragraph}}
-        </div>
+        </p>
     </div>
 
     <div class="social-links d-flex align-items-center flex-wrap ">
-        <ButtonDefault class="social-media-button " *ngFor="let sm of portfolio.social_media.sections">
+        <ng-container *ngFor="let sm of portfolio.social_media.sections">
             <ng-container *ngIf="sm.target; else pageLink ">
-                <a [href]="sm.url" [target]="sm.target">
+                <a class="social-media-button" [href]="sm.url" [target]="sm.target">
                     <i class="{{sm.icon}} me-2"></i>
                     <span>{{sm.text}}</span>
                 </a>
             </ng-container>
-           <ng-template #pageLink>
-                <a [routerLink]="sm.url" >
+            <ng-template #pageLink>
+                <a class="social-media-button" [routerLink]="sm.url">
                     <i class="{{sm.icon}} me-2"></i>
                     <span>{{sm.text}}</span>
                 </a>
-           </ng-template>
-        </ButtonDefault>
+            </ng-template>
+        </ng-container>
     </div>
 </div>
