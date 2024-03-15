@@ -2,7 +2,7 @@
 
 <div class="mx-auto p-2" id="resources-content">
     <div class="header">
-        <div class="title">{{i18s.getValue("resources.title")}}</div>
+        <h1 class="title size-xl reactive">{{i18s.getValue("resources.title")}}</h1>
         <div class="t-resources">{{(resources | resourceFilter:categoryActive.id)?.length}}
             {{i18s.getValue("resources.resources-found")}}</div>
         <div class="category-filter-mobile py-1 px-2" (click)="showResources()">

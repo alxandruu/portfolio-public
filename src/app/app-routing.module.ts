@@ -12,9 +12,8 @@ import { LoginActivate } from './services/authguard/login-activate/login-activat
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'projects/:id', component: ProjectViewComponent },
+  { path: ':page/:id', component: ProjectViewComponent },
   { path: 'login', component: LoginComponent, canActivate: [LoginActivate] },
-
   {
     path: 'resources', component: ResourcesComponent
   }, {

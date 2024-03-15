@@ -1,6 +1,5 @@
 /* Images */
 img {
-    border: 2px solid #fff;
     box-shadow:
         rgba(var(--dark-color-rgb), 0.07) 0px 1px 1px,
         rgba(var(--dark-color-rgb), 0.07) 0px 2px 2px,
@@ -12,6 +11,9 @@ img {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
+    &.border-solid-white {
+        border: 2px solid #fff;
+    }
     &.size-s {
         width: 125px;
         height: 125px;
@@ -56,9 +58,12 @@ img {
         height: 100%;
         border-width: 10px;
     }
+
     @media screen and (max-width: 465px) {
-        border-radius: 80% 20% 79% 21% / 31% 60% 40% 69% !important;
-        border: none;
+        &.apply-mobile-style {
+            border-radius: 80% 20% 79% 21% / 31% 60% 40% 69% !important;
+            border: none;
+        }
     }
 }
 /* Buttons */

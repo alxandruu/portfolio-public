@@ -5,7 +5,7 @@
     </div>
     <div class="details m-3">
         <div class="mt-2">
-            <span class="title p-1">{{i18s.getValue("projects.view.website")}}</span>
+            <span class="highlighted p-1">{{i18s.getValue("projects.view.website")}}</span>
             <span class="ms-2">
                 <a href="{{project.website}}" class="website-link" *ngIf="project.website!='' else notdeployed "
                     target="_blank" rel="noopener noreferrer">
@@ -24,11 +24,11 @@
         </div>
 
         <div class="mt-2">
-            <span class="title p-1">{{i18s.getValue("projects.view.platform")}}</span>
+            <span class="highlighted p-1">{{i18s.getValue("projects.view.platform")}}</span>
             <span class="ms-2 platform-group"><span *ngFor="let pl of project.platform">{{pl}}</span></span>
         </div>
         <div class="mt-2">
-            <span class="title p-1">{{i18s.getValue("projects.view.stack")}}</span>
+            <span class="highlighted p-1">{{i18s.getValue("projects.view.stack")}}</span>
             <span class="ms-2 stack-group"><span *ngFor="let st of project.stack">{{st}}</span></span>
         </div>
     </div>
