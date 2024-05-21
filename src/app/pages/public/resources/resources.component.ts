@@ -20,12 +20,19 @@ export class ResourcesComponent implements OnInit {
   protected viewerSelected: string;
   private randomizedResource!: Resource;
 
-  constructor(private authf: AuthenticationService, private rm: ResourcesManagerService, protected i18s: I18nService) {
-    this.rm.getResources().subscribe(data => {
-      this.resources = data;
+  constructor(private authf: AuthenticationService, private rms: ResourcesManagerService, protected i18s: I18nService) {
+    this.rms.getResources().subscribe(data => {
+      this.resources = data.sort((val1, val2) => {
+        if (val1.highlighted && !val2.highlighted)
+          return -1;
+        else if (!val1.highlighted && val2.highlighted)
+          return 1;
+        else
+          return 0;
+      });
     });
 
-    this.rm.getResourcesCategories().subscribe(data => {
+    this.rms.getResourcesCategories().subscribe(data => {
       let dFiltered = data.filter((c) => {
         if (c.id != ApplicationConstants.resourcesConstants.default_category.id) {
           let rFiltered = this.resources.filter((r) => {
@@ -47,7 +54,7 @@ export class ResourcesComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   protected changeViewer(type: string): void {
     localStorage.setItem(ApplicationConstants.resourcesConstants.viewerCookie, type);

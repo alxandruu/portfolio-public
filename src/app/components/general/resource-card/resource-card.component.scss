@@ -15,19 +15,7 @@ a {
         object-fit: cover;
         object-position: center;
     }
-    .highlighted-icon {
-        color: var(--highlighted-color);
-        font-size: 1.5rem;
-        position: absolute;
-        left: -12px;
-        top: -20px;
-    }
-    &.highlighted {
-        img {
-            box-shadow: none;
-            border: 3px solid var(--highlighted-color);
-        }
-    }
+    
     .subject {
         color: var(--secondary-color);
         letter-spacing: 1px;
