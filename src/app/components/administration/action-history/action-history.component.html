@@ -31,13 +31,13 @@
                     </div>
                 </div>
                 <div class="info-row mt-2">
-                    <div class="title">{{i18s.getValue("admin.action-history.viewer.user")}}:</div>
+                    <div class="title size-m reactive">{{i18s.getValue("admin.action-history.viewer.user")}}:</div>
                     <div class="info py-1 px-2  mt-1">
                         {{selected.user}}
                     </div>
                 </div>
                 <div class="info-row mt-2">
-                    <div class="title">{{i18s.getValue("admin.action-history.viewer.before-references")}}:</div>
+                    <div class="title size-m reactive">{{i18s.getValue("admin.action-history.viewer.before-references")}}:</div>
                     <div class="info py-1 px-2  mt-1">
                         <div *ngIf="selected.referenceBefore; else empty">
                             <div *ngFor="let item of selected.referenceBefore | keyvalue" class="py-2 obj-row">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="info-row mt-2">
-                    <div class="title">{{i18s.getValue("admin.action-history.viewer.after-references")}}:</div>
+                    <div class="title size-m reactive">{{i18s.getValue("admin.action-history.viewer.after-references")}}:</div>
                     <div class="info py-1 px-2  mt-1">
                         <div *ngIf="selected.referenceAfter; else empty">
                             <div *ngFor="let item of selected.referenceAfter | keyvalue" class="py-2 obj-row">

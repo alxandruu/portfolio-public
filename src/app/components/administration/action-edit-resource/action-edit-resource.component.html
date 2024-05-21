@@ -46,18 +46,18 @@
                 <input type="hidden" value="{{selectedResource.id}}" name="id" [(ngModel)]="selectedResource.id">
 
                 <div class="name my-2">
-                    <span class="title">{{i18s.getValue("resources.add-resource.resource.title")}}</span>
+                    <span class="title size-m reactive-light">{{i18s.getValue("resources.add-resource.resource.title")}}</span>
                     <input class="input-field p-2 mt-1" type="text" name="name" id="name"
                         value="{{selectedResource.name}}" [(ngModel)]="selectedResource.name">
                 </div>
                 <div class="description my-2">
-                    <span class="title">{{i18s.getValue("resources.add-resource.resource.description")}}</span>
+                    <span class="title size-m reactive-light">{{i18s.getValue("resources.add-resource.resource.description")}}</span>
                     <textarea class="input-field p-2 mt-1" name="description" id="description" rows="6"
                         [(ngModel)]="selectedResource.description">{{selectedResource.description}}</textarea>
 
                 </div>
                 <div class="category my-2">
-                    <span class="title">{{i18s.getValue("resources.add-resource.resource.category")}}</span>
+                    <span class="title size-m reactive-light">{{i18s.getValue("resources.add-resource.resource.category")}}</span>
                     <select class="input-field select p-2 mt-1" name="category" id="category"
                         [(ngModel)]="selectedResource.category">
                         <option value="{{c.id}}" *ngFor="let c of categories | slice:1:categories.length ">
@@ -65,12 +65,12 @@
                     </select>
                 </div>
                 <div class="img my-2">
-                    <span class="title">{{i18s.getValue("resources.add-resource.resource.urlimage")}}</span>
+                    <span class="title size-m reactive-light">{{i18s.getValue("resources.add-resource.resource.urlimage")}}</span>
                     <input class="input-field p-2 mt-1" type="text" name="img" id="img" value="{{selectedResource.img}}"
                         [(ngModel)]="selectedResource.img">
                 </div>
                 <div class="target my-2">
-                    <span class="title">{{i18s.getValue("resources.add-resource.resource.urltrailer")}}</span>
+                    <span class="title size-m reactive-light">{{i18s.getValue("resources.add-resource.resource.urltrailer")}}</span>
                     <input class="input-field p-2 mt-1" type="text" name="url" id="url" value="{{selectedResource.url}}"
                         [(ngModel)]="selectedResource.url">
                 </div>
