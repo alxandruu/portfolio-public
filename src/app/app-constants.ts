@@ -1,8 +1,7 @@
-import { RegisterConstants, ResourcesConstants } from "./models/interfaces"
 
 export const portfolioImageURL: string = "portfolio.jpg"
 
-export const registerConstants: RegisterConstants = {
+export const registerConstants: any = {
     types: {
         success: "success",
         warning: "warning",
@@ -17,7 +16,7 @@ export const registerConstants: RegisterConstants = {
     }
 }
 
-export const resourcesConstants: ResourcesConstants = {
+export const resourcesConstants: any = {
     viewerCookie: "resources-viewer",
     default_category: {
         id: 'c0',

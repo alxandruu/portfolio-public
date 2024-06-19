@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from 'src/app/models/interfaces';
 import { Observable } from 'rxjs';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { ProjectsManagerService } from 'src/app/services/firebase-manager/projects/projects-manager.service';
+import { Project } from 'src/app/models/interfaces/project';
 
 @Component({
   templateUrl: './projects.component.html',

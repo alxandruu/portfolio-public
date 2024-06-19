@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { CV, CvConfiguration } from 'src/app/models/interfaces';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { CvManagerService } from 'src/app/services/firebase-manager/cv/cv-manager.service';
 import { StorageManagerService } from 'src/app/services/firebase-manager/storage/storage-manager.service';
 import { currentDate, generateCvConfiguration, hideLoading, showLoading } from 'src/app/models/utils';
-import { HttpPdfService } from 'src/app/services/http/http-pdf.service';
-import { environment } from 'src/environments/environment';
 import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
+import { CurriculumVitae } from 'src/app/models/interfaces/curriculum-vitae';
+import { HttpService } from 'src/app/services/http/http.service';
+import { CVConfiguration } from 'src/app/models/interfaces/cv-configuration';
 
 @Component({
     templateUrl: './cv.component.html',
     styleUrls: ['./cv.component.scss']
 })
 export class CVComponent implements OnInit {
-    protected cv: CV | null = null;
+    protected cv: CurriculumVitae | null = null;
     protected showGenerator: boolean = this.isLogged;
     constructor(private cvm: CvManagerService,
-        protected i18s: I18nService, private storage: StorageManagerService, private httpPdf: HttpPdfService, private authf: AuthenticationService) {
+        protected i18s: I18nService, private storage: StorageManagerService, private httpService: HttpService, private authf: AuthenticationService) {
         this.cvm.getCVData().then(result => {
             this.cv = result
         });
@@ -32,10 +32,10 @@ export class CVComponent implements OnInit {
                 experience: this.i18s.getValue("cv.work-experience"),
                 studies: this.i18s.getValue("cv.education")
             }
-            const configuration: CvConfiguration = generateCvConfiguration(this.cv, multilanguageKeys);
+            const configuration: CVConfiguration = generateCvConfiguration(this.cv, multilanguageKeys);
             showLoading();
             this.storage.getFileAsBlob("curriculumvitae_template.html")
-                .then(file => this.httpPdf.generateCv(file, configuration))
+                .then(file => this.httpService.generateCv(file, configuration))
                 .then(result => {
                     var downloadURL = window.URL.createObjectURL(result);
                     var link = document.createElement('a');

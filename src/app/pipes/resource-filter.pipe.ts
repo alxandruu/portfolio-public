@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Resource } from 'src/app/models/interfaces';
+import { Resource } from '../models/interfaces/resource';
 
 @Pipe({
     name: 'resourceFilter'

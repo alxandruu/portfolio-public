@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Category } from 'src/app/models/interfaces';
+import { Category } from 'src/app/models/interfaces/category';
 
 @Component({
   selector: 'ap-resources',

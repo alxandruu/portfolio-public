@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { onAuthStateChanged, signInWithEmailAndPassword, User } from 'firebase/auth';
 import { Auth } from '@angular/fire/auth';
 import { firstValueFrom, Observable } from 'rxjs';
-import { RegisterRow } from 'src/app/models/interfaces';
 import { OthersManagerService } from '../others/others-manager.service';
 import { Timestamp } from 'firebase/firestore';
 import * as ApplicationConstants from 'src/app/app-constants';
+import { RegisterRow } from 'src/app/models/interfaces/register';
 
 @Injectable({
   providedIn: 'root'

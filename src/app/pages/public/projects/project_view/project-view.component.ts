@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Project } from 'src/app/models/interfaces';
+import { Project } from 'src/app/models/interfaces/project';
 import { ProjectsManagerService } from 'src/app/services/firebase-manager/projects/projects-manager.service';
 import { StorageManagerService } from 'src/app/services/firebase-manager/storage/storage-manager.service';
 import { I18nService } from 'src/app/services/i18n/i18n.service';

@@ -1,7 +1,8 @@
 import { Timestamp } from "firebase/firestore";
 import moment from "moment";
-import { CV, CvConfiguration } from './interfaces';
 import { environment } from "src/environments/environment";
+import { CurriculumVitae } from "./interfaces/curriculum-vitae";
+import { CVConfiguration } from "./interfaces/cv-configuration";
 
 export function propertyDefault(availables: Array<Object>, input: Object, df: Object): Object {
     return availables.find(el => el === input) ? input : df;
@@ -44,7 +45,7 @@ export function backgroundColor(): string {
     return getComputedStyle(document.documentElement).getPropertyValue('--light-color')
 }
 
-export function generateCvConfiguration(cv: CV, staticKeys: object): CvConfiguration {
+export function generateCvConfiguration(cv: CurriculumVitae, staticKeys: object): CVConfiguration {
     return {
         properties: { format: "a4", margin: "10px" },
         vars: [

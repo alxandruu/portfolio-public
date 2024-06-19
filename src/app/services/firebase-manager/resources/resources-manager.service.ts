@@ -3,10 +3,13 @@ import { collectionData, doc, Firestore } from '@angular/fire/firestore';
 import { collection, deleteDoc, getDoc, runTransaction, setDoc, Timestamp, updateDoc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import * as ApplicationConstants from 'src/app/app-constants';
-import { Resource, RegisterRow, Category, ActionStatus } from 'src/app/models/interfaces';
 import { I18nService } from '../../i18n/i18n.service';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { OthersManagerService } from '../others/others-manager.service';
+import { ActionStatus } from 'src/app/models/interfaces/action-status';
+import { Resource } from 'src/app/models/interfaces/resource';
+import { Category } from 'src/app/models/interfaces/category';
+import { RegisterRow } from 'src/app/models/interfaces/register';
 
 @Injectable({
   providedIn: 'root'

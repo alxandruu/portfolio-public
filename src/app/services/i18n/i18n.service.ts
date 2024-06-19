@@ -4,8 +4,9 @@ import ldSpanish from 'src/assets/i18n/es.json';
 import ldEnglish from 'src/assets/i18n/en.json';
 import ldRomanian from 'src/assets/i18n/ro.json';
 import { CookiesService } from '../cookies/cookies.service';
-import { Language } from 'src/app/models/interfaces';
+
 import { DOCUMENT } from '@angular/common';
+import { Language } from 'src/app/models/interfaces/language';
 
 @Injectable({
   providedIn: 'root'

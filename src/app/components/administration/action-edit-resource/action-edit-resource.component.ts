@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { map, Observable, } from 'rxjs';
 import { AppComponent } from 'src/app/app.component';
-import { Resource, Category } from 'src/app/models/interfaces';
+import { Category } from 'src/app/models/interfaces/category';
+import { Resource } from 'src/app/models/interfaces/resource';
 import { ResourcesManagerService } from 'src/app/services/firebase-manager/resources/resources-manager.service';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 

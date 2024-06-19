@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { addDoc, collectionData, doc, Firestore, getDoc, orderBy, query } from '@angular/fire/firestore';
 import { collection } from 'firebase/firestore';
 import { Observable } from 'rxjs';
-import { Profile, History, RegisterRow } from 'src/app/models/interfaces';
 import { environment } from 'src/environments/environment';
 import { I18nService } from '../../i18n/i18n.service';
+import { Profile } from 'src/app/models/interfaces/profile';
+import { RegisterRow } from 'src/app/models/interfaces/register';
+import { History } from 'src/app/models/interfaces/history';
 
 @Injectable({
   providedIn: 'root'

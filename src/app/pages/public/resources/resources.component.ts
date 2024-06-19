@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import * as ApplicationConstants from 'src/app/app-constants';
-import { Resource, Category } from 'src/app/models/interfaces';
 import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
 import { ResourcesManagerService } from 'src/app/services/firebase-manager/resources/resources-manager.service';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { ResourceFilterPipe } from 'src/app/pipes/resource-filter.pipe';
+import { Resource } from 'src/app/models/interfaces/resource';
+import { Category } from 'src/app/models/interfaces/category';
 declare let $: any; //jQuery
 
 @Component({

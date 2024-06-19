@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Resource } from 'src/app/models/interfaces';
+import { Resource } from 'src/app/models/interfaces/resource';
 
 @Component({
   selector: 'resource-list[resource]',

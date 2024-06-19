@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {  firstValueFrom } from 'rxjs';
-import { CvConfiguration } from 'src/app/models/interfaces';
+import { CVConfiguration } from 'src/app/models/interfaces/cv-configuration';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpPdfService {
+export class HttpService {
   private api: string = environment.apiPdfGenerator;
 
   constructor(private http: HttpClient) { }
 
-  async generateCv(template: Blob, configuration: CvConfiguration): Promise<Blob> {
+  async generateCv(template: Blob, configuration: CVConfiguration): Promise<Blob> {
     const fd = new FormData();
     fd.append('template', template)
     fd.append('configuration', JSON.stringify(configuration))

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Project } from 'src/app/models/interfaces';
+import { Project } from 'src/app/models/interfaces/project';
 import { StorageManagerService } from 'src/app/services/firebase-manager/storage/storage-manager.service';
 
 @Component({
