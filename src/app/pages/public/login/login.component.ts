@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import * as ApplicationConstants from 'src/app/app-constants';
+import { PORTFOLIO_IMAGE_URL } from 'src/app/models/Constants';
 import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
 import { StorageManagerService } from 'src/app/services/firebase-manager/storage/storage-manager.service';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
@@ -11,12 +11,14 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  
+
   protected imagePath: string = "";
   protected hasError: boolean = false;
   protected password: string = "";
 
   constructor(private router: Router, private authf: AuthenticationService, private sm: StorageManagerService, protected i18s: I18nService) {
-    this.sm.retrieveURLImageFromStorage(ApplicationConstants.portfolioImageURL).then((data) => {
+    this.sm.retrieveURLImageFromStorage(PORTFOLIO_IMAGE_URL).then((data) => {
       this.imagePath = data;
     })
 

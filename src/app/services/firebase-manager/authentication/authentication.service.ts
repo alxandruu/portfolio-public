@@ -4,8 +4,8 @@ import { Auth } from '@angular/fire/auth';
 import { firstValueFrom, Observable } from 'rxjs';
 import { OthersManagerService } from '../others/others-manager.service';
 import { Timestamp } from 'firebase/firestore';
-import * as ApplicationConstants from 'src/app/app-constants';
 import { RegisterRow } from 'src/app/models/interfaces/register';
+import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/models/Constants';
 
 @Injectable({
   providedIn: 'root'
@@ -39,8 +39,8 @@ export class AuthenticationService {
       let register: RegisterRow = {
         timestamp: Timestamp.now(),
         user: this.userEmail,
-        type: ApplicationConstants.registerConstants.types.success,
-        action: ApplicationConstants.registerConstants.actions.login,
+        type: REGISTER_TYPES.success,
+        action: REGISTER_ACTIONS.login,
         referenceAfter: null,
         referenceBefore: null
       }

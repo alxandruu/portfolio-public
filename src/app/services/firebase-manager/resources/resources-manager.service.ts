@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { collectionData, doc, Firestore } from '@angular/fire/firestore';
 import { collection, deleteDoc, getDoc, runTransaction, setDoc, Timestamp, updateDoc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
-import * as ApplicationConstants from 'src/app/app-constants';
 import { I18nService } from '../../i18n/i18n.service';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { OthersManagerService } from '../others/others-manager.service';
@@ -10,6 +9,7 @@ import { ActionStatus } from 'src/app/models/interfaces/action-status';
 import { Resource } from 'src/app/models/interfaces/resource';
 import { Category } from 'src/app/models/interfaces/category';
 import { RegisterRow } from 'src/app/models/interfaces/register';
+import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/models/Constants';
 
 @Injectable({
   providedIn: 'root'
@@ -48,8 +48,8 @@ export class ResourcesManagerService {
       let register: RegisterRow = {
         timestamp: Timestamp.now(),
         user: this.authf.userEmail,
-        type: ApplicationConstants.registerConstants.types.warning,
-        action: (data.id) ? ApplicationConstants.registerConstants.actions.modify : ApplicationConstants.registerConstants.actions.create,
+        type: REGISTER_TYPES.warning,
+        action: (data.id) ? REGISTER_ACTIONS.modify : REGISTER_ACTIONS.create,
         referenceBefore: (docSnap.data()) ? docSnap.data() as Object : null,
         referenceAfter: data,
       }
@@ -95,8 +95,8 @@ export class ResourcesManagerService {
         let register: RegisterRow = {
           timestamp: Timestamp.now(),
           user: this.authf.userEmail,
-          type: ApplicationConstants.registerConstants.types.danger,
-          action: ApplicationConstants.registerConstants.actions.delete,
+          type: REGISTER_TYPES.danger,
+          action: REGISTER_ACTIONS.delete,
           referenceBefore: value,
           referenceAfter: null
         }
@@ -126,8 +126,8 @@ export class ResourcesManagerService {
         let register: RegisterRow = {
           timestamp: Timestamp.now(),
           user: this.authf.userEmail,
-          type: ApplicationConstants.registerConstants.types.danger,
-          action: ApplicationConstants.registerConstants.actions.delete,
+          type: REGISTER_TYPES.danger,
+          action: REGISTER_ACTIONS.delete,
           referenceBefore: value,
           referenceAfter: null
         }

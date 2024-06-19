@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import * as ApplicationConstants from 'src/app/app-constants';
 import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
 import { ResourcesManagerService } from 'src/app/services/firebase-manager/resources/resources-manager.service';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { ResourceFilterPipe } from 'src/app/pipes/resource-filter.pipe';
 import { Resource } from 'src/app/models/interfaces/resource';
 import { Category } from 'src/app/models/interfaces/category';
+import { RESOURCES_VIEWER_COOKIE, RESOURCES_DEFAULT_CATEGORY } from 'src/app/models/Constants';
 declare let $: any; //jQuery
 
 @Component({
@@ -17,7 +17,7 @@ export class ResourcesComponent implements OnInit {
   protected resources: Resource[] = [];
   protected categories: Category[] = [];
   protected categoriesFilter: Category[] = [];
-  protected categoryActive: Category = ApplicationConstants.resourcesConstants.default_category
+  protected categoryActive: Category = RESOURCES_DEFAULT_CATEGORY
   protected viewerSelected: string;
   private randomizedResource!: Resource;
 
@@ -35,7 +35,7 @@ export class ResourcesComponent implements OnInit {
 
     this.rms.getResourcesCategories().subscribe(data => {
       let dFiltered = data.filter((c) => {
-        if (c.id != ApplicationConstants.resourcesConstants.default_category.id) {
+        if (c.id != RESOURCES_DEFAULT_CATEGORY.id) {
           let rFiltered = this.resources.filter((r) => {
             return (r.category == c.id) ? true : false;
           });
@@ -58,7 +58,7 @@ export class ResourcesComponent implements OnInit {
   ngOnInit(): void { }
 
   protected changeViewer(type: string): void {
-    localStorage.setItem(ApplicationConstants.resourcesConstants.viewerCookie, type);
+    localStorage.setItem(RESOURCES_VIEWER_COOKIE, type);
     this.viewerSelected = type;
   }
 
@@ -89,9 +89,9 @@ export class ResourcesComponent implements OnInit {
 
   // INIT METHODS
   private initViewer(): string {
-    let viewerSelectedLocalStorage = localStorage.getItem(ApplicationConstants.resourcesConstants.viewerCookie);
+    let viewerSelectedLocalStorage = localStorage.getItem(RESOURCES_VIEWER_COOKIE);
     if (viewerSelectedLocalStorage == null) {
-      localStorage.setItem(ApplicationConstants.resourcesConstants.viewerCookie, "card");
+      localStorage.setItem(RESOURCES_VIEWER_COOKIE, "card");
       return "card";
     } else {
       return viewerSelectedLocalStorage as string;
