@@ -9,7 +9,7 @@ import { ActionStatus } from 'src/app/models/interfaces/action-status';
 import { Resource } from 'src/app/models/interfaces/resource';
 import { Category } from 'src/app/models/interfaces/category';
 import { RegisterRow } from 'src/app/models/interfaces/register';
-import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/models/constants';
+import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/models/Constants';
 
 @Injectable({
   providedIn: 'root'

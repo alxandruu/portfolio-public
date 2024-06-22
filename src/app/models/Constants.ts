@@ -1,9 +1,7 @@
-import { CurriculumVitae } from "./interfaces/curriculum-vitae"
-import { CVConfiguration } from "./interfaces/cv-configuration"
-
 export const PORTFOLIO_IMAGE_URL: string = "portfolio.jpg"
 
 export const REGISTER_ACTIONS = {
+
     create: "create",
     modify: "modify",
     delete: "delete",
@@ -21,5 +19,4 @@ export const RESOURCES_DEFAULT_CATEGORY = {
     id: 'c0',
     name: 'All Categories'
 }
-
 
