@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { propertyDefault } from 'src/app/models/utils';
+import { propertyDefault } from 'src/app/models/utils-constants';
 
 @Component({
   selector: 'TitleDefault[_value]',

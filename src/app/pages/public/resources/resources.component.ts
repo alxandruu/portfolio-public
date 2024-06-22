@@ -5,7 +5,7 @@ import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { ResourceFilterPipe } from 'src/app/pipes/resource-filter.pipe';
 import { Resource } from 'src/app/models/interfaces/resource';
 import { Category } from 'src/app/models/interfaces/category';
-import { RESOURCES_VIEWER_COOKIE, RESOURCES_DEFAULT_CATEGORY } from 'src/app/models/Constants';
+import { RESOURCES_VIEWER_COOKIE, RESOURCES_DEFAULT_CATEGORY } from 'src/app/models/constants';
 declare let $: any; //jQuery
 
 @Component({
