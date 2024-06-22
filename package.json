@@ -11,15 +11,15 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~14.1.1",
-    "@angular/common": "~14.1.1",
-    "@angular/compiler": "~14.1.1",
-    "@angular/core": "~14.1.1",
+    "@angular/animations": "~17.3.11",
+    "@angular/common": "~17.3.11",
+    "@angular/compiler": "~17.3.11",
+    "@angular/core": "~17.3.11",
     "@angular/fire": "^7.6.1",
-    "@angular/forms": "~14.1.1",
-    "@angular/platform-browser": "~14.1.1",
-    "@angular/platform-browser-dynamic": "~14.1.1",
-    "@angular/router": "~14.1.1",
+    "@angular/forms": "~17.3.11",
+    "@angular/platform-browser": "~17.3.11",
+    "@angular/platform-browser-dynamic": "~17.3.11",
+    "@angular/router": "~17.3.11",
     "bootstrap": "^5.3.1",
     "firebase": "^9.23.0",
     "fontawesome-free": "^1.0.4",
@@ -30,12 +30,12 @@
     "moment": "^2.29.4",
     "rxjs": "~7.5.6",
     "tslib": "^2.6.1",
-    "zone.js": "^0.11.8"
+    "zone.js": "^0.14.7"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.2.12",
-    "@angular/cli": "^15.2.9",
-    "@angular/compiler-cli": "~14.1.1",
+    "@angular-devkit/build-angular": "^17.3.8",
+    "@angular/cli": "^17.3.8",
+    "@angular/compiler-cli": "~17.3.11",
     "@types/jasmine": "~4.0.3",
     "@types/jquery": "^3.5.16",
     "@types/node": "^18.17.1",
@@ -45,6 +45,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
-    "typescript": "~4.7.4"
+    "typescript": "~5.4.5"
   }
 }
