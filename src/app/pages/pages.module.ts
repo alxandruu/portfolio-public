@@ -9,9 +9,9 @@ import { ProjectViewComponent } from './public/projects/project_view/project-vie
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { AdministrationComponentsModule } from '../components/administration/administration-components.module';
-import { AdminPanelComponentsModule } from '../components/admin-panel/admin-panel.module';
 import { GeneralComponentsModule } from '../components/general/general-components.module';
 import { PipesModule } from '../pipes/pipes.module';
+import { CardComponent } from '../components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +26,8 @@ import { PipesModule } from '../pipes/pipes.module';
     CommonModule,
     FormsModule,
     AppRoutingModule,
+    CardComponent,
     AdministrationComponentsModule,
-    AdminPanelComponentsModule,
     GeneralComponentsModule,
     PipesModule,
   ],

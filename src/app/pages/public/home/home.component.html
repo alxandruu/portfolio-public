@@ -1,4 +1,6 @@
-<ap-home *ngIf="isLogged"></ap-home>
+<ng-container  *ngIf="isLogged">
+    <admin-action-history></admin-action-history>
+</ng-container>
 
 <div *ngIf="portfolio" id="portfolio-home-page">
     <div class="image-me d-flex">

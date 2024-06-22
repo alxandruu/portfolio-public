@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 
 @Component({
-  selector: 'application-navigation-bar',
-  templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.scss']
+  selector: 'component-navigation-menu',
+  standalone: true,
+  imports: [AppRoutingModule, CommonModule],
+  templateUrl: './navigation-menu.component.html',
+  styleUrls: ['./navigation-menu.component.scss']
 })
-export class NavigationBarComponent implements OnInit {
+export class NavigationMenuComponent {
   constructor(private authf: AuthenticationService, protected i18next: I18nService) { }
 
-  ngOnInit(): void {
-
-  }
 
   public hamburguer(): void {
     document.querySelector("#hamb_menu")?.classList.toggle("show");

@@ -1,4 +1,7 @@
-<ap-resources *ngIf="isLogged" [categories]=categories></ap-resources>
+<ng-container *ngIf="isLogged">
+    <admin-action-new-resource [categories]=categories></admin-action-new-resource>
+    <admin-action-edit-resource [categories]=categories></admin-action-edit-resource>
+</ng-container>
 
 <div class="mx-auto p-2" id="resources-content">
     <div class="header">

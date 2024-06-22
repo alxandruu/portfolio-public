@@ -1,6 +1,3 @@
-import { CurriculumVitae } from "./interfaces/curriculum-vitae"
-import { CVConfiguration } from "./interfaces/cv-configuration"
-
 export const PORTFOLIO_IMAGE_URL: string = "portfolio.jpg"
 
 export const REGISTER_ACTIONS = {

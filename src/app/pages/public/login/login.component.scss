@@ -1,13 +1,26 @@
-#login-page {
-    opacity: 0;
-    animation: slide-in .45s  0.35s ease-in forwards;
-    min-height: 100%;
+form {
+    height: 80vh;
+    & > div {
+        @media screen and (min-width: 768px) {
+            width: 522px;
+        }
+    }
 }
 
-.admin-login {
-    width: 325px;
-    @media screen and (max-width: 465px) {
-        width: 70vw;
+.btn-login-icon {
+    color: var(--light-color);
+    background: var(--dark-color);
+    cursor: pointer;
+    transition: transform 0.05s ease;
+    transform: scale(1);
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    &:active,
+    &:focus {
+        transform: scale(0.95);
     }
 }
 
@@ -22,7 +35,8 @@
     width: max-content;
     font-size: 1.5rem;
     letter-spacing: 2px;
-    &:hover {
+    &:active,
+    &:focus {
         color: var(--secondary-color);
     }
 }
