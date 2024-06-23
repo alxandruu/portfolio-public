@@ -51,7 +51,8 @@
 
         <div class="list-viewer pt-4" *ngIf="viewerSelected == 'list'; else cardBlock">
             <ng-container *ngFor="let r of resources | resourceFilter:categoryActive.id ; ">
-                <resource-list [resource]=r></resource-list>
+                <component-list-card [description]="r.description" [heading]="r.name" [image]="r.img"
+                    [link]="{href: r.url,rel: 'noopener noreferrer',target:'_blank' }"></component-list-card>
             </ng-container>
         </div>
 

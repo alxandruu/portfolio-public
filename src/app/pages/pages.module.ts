@@ -11,7 +11,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { AdministrationComponentsModule } from '../components/administration/administration-components.module';
 import { PipesModule } from '../pipes/pipes.module';
 import { CardComponent } from '../components/card/card.component';
-import { ResourceListComponent } from '../components/resource-list/resource-list.component';
+import { ListCardComponent } from '../components/list-card/list-card.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { ResourceListComponent } from '../components/resource-list/resource-list
     AppRoutingModule,
     CardComponent,
     AdministrationComponentsModule,
-    ResourceListComponent,
     CardComponent,
+    ListCardComponent,
     PipesModule,
   ],
   exports: [

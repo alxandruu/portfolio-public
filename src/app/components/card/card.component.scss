@@ -19,7 +19,7 @@
         font-weight: bold;
         color: var(--dark-color);
     }
-    * > p {
+    p.description {
         font-size: 0.9rem;
         color: var(--dark-color);
         @media screen and (min-width: 1200px) {
