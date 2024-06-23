@@ -5,6 +5,8 @@ export {
     sortByDate,
     showLoading,
     hideLoading,
+    setCookie,
+    getCookie
 }
 
 /**
@@ -29,7 +31,7 @@ function propertyDefault(values: Array<Object>, value: Object, defaultValue: Obj
  */
 function sortByDate<T>(arr: Array<T>, prop: keyof T, date_format: string = 'dd.MM.YYYY'): Array<T> {
     arr.sort((a, b) => {
-        const amoment = moment(a[prop] as any , date_format).valueOf()
+        const amoment = moment(a[prop] as any, date_format).valueOf()
         const bmoment = moment(b[prop] as any, date_format).valueOf()
         return (amoment < bmoment) ? 1 : -1
     });
@@ -54,4 +56,40 @@ function hideLoading(): void {
     //TODO improve the managing of the loading icon, by removing dom managing and implementing angular
     document.querySelector('.loading-icon')?.classList.remove('active')
     document.body.style.overflow = "inherit"
+}
+
+/**
+ * Creates a cookie in the portal
+ * 
+ * @param ckname  Cookie name
+ * @param ckvalue  Cookie value
+ * @param exdays  Expiration days
+ */
+function setCookie(ckname: string, ckvalue: string, exdays: number): void {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = ckname + "=" + ckvalue + ";" + expires + ";path=/";
+}
+
+/**
+ * Retrieves the value of the cookie, if the cookie doesn't exists it returns null
+ * 
+ * @param ckname Name
+ * @returns Cookie value or null, if the cookie doesn't exists
+ */
+function getCookie(ckname: string): string | null {
+    let name = ckname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return null;
 }

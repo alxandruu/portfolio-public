@@ -3,10 +3,11 @@ import i18next from 'i18next';
 import ldSpanish from 'src/assets/i18n/es.json';
 import ldEnglish from 'src/assets/i18n/en.json';
 import ldRomanian from 'src/assets/i18n/ro.json';
-import { CookiesService } from '../cookies/cookies.service';
 
 import { DOCUMENT } from '@angular/common';
 import { Language } from 'src/app/models/interfaces/language';
+import { getCookie, setCookie } from 'src/app/models/utils';
+import { LANGUAGE_COOKIE } from 'src/app/models/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,7 @@ export class I18nService {
   }];
   private doc: Document = inject(DOCUMENT);
 
-  constructor(private cookies: CookiesService) {
-
+  constructor() {
     this.webpageLanguage();
     let language = this.languagesAvailable.find(lang => lang.id == this._lang);
     i18next.init({
@@ -43,7 +43,7 @@ export class I18nService {
   public webpageLanguage(): void {
     const language = navigator.language;
     const languages_available = this._languagesAvailable;
-    const storage_language = this.cookies.getCookie(this.cookies.languageCookie);
+    const storage_language = getCookie(LANGUAGE_COOKIE);
     let val = (storage_language) ? storage_language : "en";
     let xlang = this.languagesAvailable.find((el) => { return el.id == storage_language });
 
@@ -55,14 +55,14 @@ export class I18nService {
         val = languages_available[1].id;
       }
 
-      this.cookies.setCookie(this.cookies.languageCookie, val, 365);
+      setCookie(LANGUAGE_COOKIE, val, 365);
     }
     this.doc.documentElement.setAttribute("lang", val)
     this._lang = val;
   }
 
   changeLanguage(key: string): void {
-    this.cookies.setCookie(this.cookies.languageCookie, key, 365);
+    setCookie(LANGUAGE_COOKIE, key, 365);
     this._lang = key;
     let language = this.languagesAvailable.find(lang => lang.id == key);
     i18next.init({

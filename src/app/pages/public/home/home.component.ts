@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Profile } from 'src/app/models/interfaces/profile';
-import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
-import { OthersManagerService } from 'src/app/services/firebase-manager/others/others-manager.service';
-import { StorageManagerService } from 'src/app/services/firebase-manager/storage/storage-manager.service';
+import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
+import { OthersManagerService } from 'src/app/core/services/firebase-manager/others/others-manager.service';
+import { StorageManagerService } from 'src/app/core/services/firebase-manager/storage/storage-manager.service';
 @Component({
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']

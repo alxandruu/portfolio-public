@@ -3,7 +3,7 @@ import { Firestore } from '@angular/fire/firestore';
 import { doc, getDoc } from 'firebase/firestore';
 import { I18nService } from '../../i18n/i18n.service';
 import { CurriculumVitae } from 'src/app/models/interfaces/curriculum-vitae';
-import { sortByDate } from 'src/app/models/utils-constants';
+import { sortByDate } from 'src/app/models/utils';
 
 @Injectable({
   providedIn: 'root'

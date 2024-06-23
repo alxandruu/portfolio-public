@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { I18nService } from 'src/app/services/i18n/i18n.service';
-import { ProjectsManagerService } from 'src/app/services/firebase-manager/projects/projects-manager.service';
+import { I18nService } from 'src/app/core/services/i18n/i18n.service';
+import { ProjectsManagerService } from 'src/app/core/services/firebase-manager/projects/projects-manager.service';
 import { Project } from 'src/app/models/interfaces/project';
-import { StorageManagerService } from 'src/app/services/firebase-manager/storage/storage-manager.service';
+import { StorageManagerService } from 'src/app/core/services/firebase-manager/storage/storage-manager.service';
 
 @Component({
   templateUrl: './projects.component.html',

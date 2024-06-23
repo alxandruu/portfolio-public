@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PORTFOLIO_IMAGE_URL } from 'src/app/models/constants';
-import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
-import { StorageManagerService } from 'src/app/services/firebase-manager/storage/storage-manager.service';
-import { I18nService } from 'src/app/services/i18n/i18n.service';
+import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
+import { StorageManagerService } from 'src/app/core/services/firebase-manager/storage/storage-manager.service';
+import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { environment } from 'src/environments/environment';
 
 @Component({

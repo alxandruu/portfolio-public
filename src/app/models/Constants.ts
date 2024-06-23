@@ -1,5 +1,5 @@
 export const PORTFOLIO_IMAGE_URL: string = "portfolio.jpg"
-
+export const LANGUAGE_COOKIE: string = "language"
 export const REGISTER_ACTIONS = {
     create: "create",
     modify: "modify",

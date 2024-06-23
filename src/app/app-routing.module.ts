@@ -6,7 +6,7 @@ import { ProjectsComponent } from './pages/public/projects/projects.component';
 import { ResourcesComponent } from './pages/public/resources/resources.component';
 import { CVComponent } from './pages/public/cv/cv.component';
 import { LoginComponent } from './pages/public/login/login.component';
-import { LoginActivate } from './services/authguard/login-activate/login-activate.guard';
+import { LoginActivate } from './core/services/authguard/login-activate/login-activate.guard';
 
 
 const routes: Routes = [

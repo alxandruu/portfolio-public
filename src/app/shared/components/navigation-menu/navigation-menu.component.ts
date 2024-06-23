@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
-import { I18nService } from 'src/app/services/i18n/i18n.service';
+import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
+import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 
 @Component({
   selector: 'component-navigation-menu',

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { I18nService } from 'src/app/services/i18n/i18n.service';
-import { CvManagerService } from 'src/app/services/firebase-manager/cv/cv-manager.service';
-import { StorageManagerService } from 'src/app/services/firebase-manager/storage/storage-manager.service';
-import {  hideLoading, showLoading } from 'src/app/models/utils-constants';
-import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
+import { I18nService } from 'src/app/core/services/i18n/i18n.service';
+import { CvManagerService } from 'src/app/core/services/firebase-manager/cv/cv-manager.service';
+import { StorageManagerService } from 'src/app/core/services/firebase-manager/storage/storage-manager.service';
+import {  hideLoading, showLoading } from 'src/app/models/utils';
+import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
 import { CurriculumVitae } from 'src/app/models/interfaces/curriculum-vitae';
-import { HttpService } from 'src/app/services/http/http.service';
+import { HttpService } from 'src/app/core/services/http/http.service';
 import { CVConfiguration } from 'src/app/models/interfaces/cv-configuration';
 import moment from 'moment';
 import { environment } from 'src/environments/environment';

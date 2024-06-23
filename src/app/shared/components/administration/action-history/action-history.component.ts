@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { History } from 'src/app/models/interfaces/history';
-import { OthersManagerService } from 'src/app/services/firebase-manager/others/others-manager.service';
-import { I18nService } from 'src/app/services/i18n/i18n.service';
+import { OthersManagerService } from 'src/app/core/services/firebase-manager/others/others-manager.service';
+import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 
 @Component({
   selector: 'admin-action-history',
