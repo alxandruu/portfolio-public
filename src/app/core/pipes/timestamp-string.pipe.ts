@@ -3,9 +3,9 @@ import { Timestamp } from "firebase/firestore";
 import moment from "moment";
 
 @Pipe({
-    name: 'timestampDefaultString'
+    name: 'timestampStringPipe'
 })
-export class TimestampDefaultStringPipe implements PipeTransform {
+export class TimestampStringPipe implements PipeTransform {
     transform(stamp: Timestamp): string {
         const date = moment(stamp.toDate())
         return date.format("DD/MM/YYYY hh:mm:ss")

@@ -10,7 +10,8 @@ import { provideFirestore, getFirestore, } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
+import { CoreModule } from './core/core.module';
+import { NavigationMenuComponent } from './shared/components/navigation-menu/navigation-menu.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
     BrowserModule,
     AppRoutingModule,
     PagesModule,
+    CoreModule,
     HttpClientModule,
     NavigationMenuComponent,
     provideFirebaseApp(() => initializeApp(environment.firebase)),

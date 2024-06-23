@@ -6,7 +6,7 @@
 <div class="mx-auto p-2" id="resources-content">
     <div class="header">
         <h1 class="title size-xl reactive">{{i18s.getValue("resources.title")}}</h1>
-        <div class="t-resources">{{(resources | resourceFilter:categoryActive.id)?.length}}
+        <div class="t-resources">{{(resources | categoryPipe:categoryActive.id)?.length}}
             {{i18s.getValue("resources.resources-found")}}</div>
         <div class="category-filter-mobile py-1 px-2" (click)="showResources()">
             <span>{{i18s.getValue("resources.filter")}}</span>
@@ -45,12 +45,12 @@
     <div class="content">
         <div class="mb-1 d-flex align-items-center justify-content-between">
             <div class="category-filter-active mobile-version mx-2 text-start">{{categoryActive.name}}</div>
-            <div class="t-resources mobile-version text-end">{{(resources | resourceFilter:categoryActive.id)?.length}}
+            <div class="t-resources mobile-version text-end">{{(resources | categoryPipe: categoryActive.id)?.length}}
                 {{i18s.getValue("resources.resources-found")}}</div>
         </div>
 
         <div class="list-viewer pt-4" *ngIf="viewerSelected == 'list'; else cardBlock">
-            <ng-container *ngFor="let r of resources | resourceFilter:categoryActive.id ; ">
+            <ng-container *ngFor="let r of resources | categoryPipe:categoryActive.id ; ">
                 <component-list-card [description]="r.description" [heading]="r.name" [image]="r.img"
                     [link]="{href: r.url,rel: 'noopener noreferrer',target:'_blank' }"></component-list-card>
             </ng-container>
@@ -59,7 +59,7 @@
         <ng-template #cardBlock>
             <div class="card-viewer">
                 <div class="row m-0 p-0 ">
-                    <ng-container *ngFor="let r of resources | resourceFilter:categoryActive.id ; ">
+                    <ng-container *ngFor="let r of resources | categoryPipe:categoryActive.id ; ">
                         <div class="col-xl-4 pt-4 pb-3 {{r.highlighted?'highlighted':''}}">
                             <component-card [image]="r.img" [heading]="r.name" [description]="r.description"
                                 [link]='{href: r.url,rel: "noopener noreferrer",target:"_blank" }'></component-card>

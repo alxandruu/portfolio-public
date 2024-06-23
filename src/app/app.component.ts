@@ -1,8 +1,8 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { NotificationCardComponent } from './components/notification-card/notification-card.component';
 import { AuthenticationService } from './services/firebase-manager/authentication/authentication.service';
 import { I18nService } from './services/i18n/i18n.service';
 import { WebsiteThemeService } from './services/theme/website-theme.service';
+import { NotificationCardComponent } from './shared/components/notification-card/notification-card.component';
 
 
 @Component({

@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/firebase-manager/authentication/authentication.service';
 import { ResourcesManagerService } from 'src/app/services/firebase-manager/resources/resources-manager.service';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
-import { ResourceFilterPipe } from 'src/app/pipes/resource-filter.pipe';
 import { Resource } from 'src/app/models/interfaces/resource';
 import { Category } from 'src/app/models/interfaces/category';
 import { RESOURCES_VIEWER_COOKIE, RESOURCES_DEFAULT_CATEGORY } from 'src/app/models/constants';
-import { Link } from 'src/app/models/interfaces/link';
+import { CategoryPipe } from 'src/app/core/pipes/category.pipe';
 declare let $: any; //jQuery
 
 @Component({
@@ -70,7 +69,7 @@ export class ResourcesComponent {
   }
 
   protected randomResource() {
-    const filteredResources = new ResourceFilterPipe().transform(this.resources, this.categoryActive.id);
+    const filteredResources = new CategoryPipe().transform(this.resources, this.categoryActive.id);
     let random: Resource;
     do {
       random = filteredResources[Math.floor(Math.random() * filteredResources.length)];

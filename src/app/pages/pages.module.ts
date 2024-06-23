@@ -8,10 +8,10 @@ import { ResourcesComponent } from './public/resources/resources.component';
 import { ProjectViewComponent } from './public/projects/project_view/project-view.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
-import { AdministrationComponentsModule } from '../components/administration/administration-components.module';
-import { PipesModule } from '../pipes/pipes.module';
-import { CardComponent } from '../components/card/card.component';
-import { ListCardComponent } from '../components/list-card/list-card.component';
+import { CoreModule } from '../core/core.module';
+import { CardComponent } from '../shared/components/card/card.component';
+import { AdministrationComponentsModule } from '../shared/components/administration/administration-components.module';
+import { ListCardComponent } from '../shared/components/list-card/list-card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { ListCardComponent } from '../components/list-card/list-card.component';
     AdministrationComponentsModule,
     CardComponent,
     ListCardComponent,
-    PipesModule,
+    CoreModule
   ],
   exports: [
     LoginComponent,
