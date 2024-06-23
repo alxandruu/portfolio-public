@@ -9,9 +9,9 @@ import { ProjectViewComponent } from './public/projects/project_view/project-vie
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { AdministrationComponentsModule } from '../components/administration/administration-components.module';
-import { GeneralComponentsModule } from '../components/general/general-components.module';
 import { PipesModule } from '../pipes/pipes.module';
 import { CardComponent } from '../components/card/card.component';
+import { ResourceListComponent } from '../components/resource-list/resource-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { CardComponent } from '../components/card/card.component';
     AppRoutingModule,
     CardComponent,
     AdministrationComponentsModule,
-    GeneralComponentsModule,
+    ResourceListComponent,
+    CardComponent,
     PipesModule,
   ],
   exports: [

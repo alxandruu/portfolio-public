@@ -2,6 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Link } from 'src/app/models/interfaces/link';
 
+/**
+ * Component used to show information in the portal in a card format. 
+ * With an image, title, and description. It also accepts links
+ * 
+ */
 @Component({
   selector: 'component-card',
   standalone: true,
@@ -11,8 +16,28 @@ import { Link } from 'src/app/models/interfaces/link';
 })
 export class CardComponent {
 
+  /**
+   * An object containing link properties to implement. By default it doesn't have any link
+   * It has to adhere to Link interface
+   * @type {Link} 
+   */
   @Input() link!: Link;
+
+  /**
+   * Image URL to be displayed in the card
+   * @type {string} 
+   */
   @Input() image: string = "";
+
+  /**
+   * Heading to be displayed in the card
+   * @type {string} 
+   */
   @Input() heading: string = "Heading";
+
+  /**
+   * Description to be displayed in the card, it shows only a maximum of 4 lines
+   * @type {string} 
+   */
   @Input() description: string = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam modi necessitatibus repellendus? Consequuntur itaque, deserunt amet illum quasi inventore assumenda, sint nihil provident sequi voluptatibus. Error harum provident laudantium nostrum!";
 }

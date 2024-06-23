@@ -6,6 +6,7 @@ import { ResourceFilterPipe } from 'src/app/pipes/resource-filter.pipe';
 import { Resource } from 'src/app/models/interfaces/resource';
 import { Category } from 'src/app/models/interfaces/category';
 import { RESOURCES_VIEWER_COOKIE, RESOURCES_DEFAULT_CATEGORY } from 'src/app/models/constants';
+import { Link } from 'src/app/models/interfaces/link';
 declare let $: any; //jQuery
 
 @Component({
@@ -13,7 +14,7 @@ declare let $: any; //jQuery
   styleUrls: ['./resources.component.scss'],
 })
 
-export class ResourcesComponent implements OnInit {
+export class ResourcesComponent {
   protected resources: Resource[] = [];
   protected categories: Category[] = [];
   protected categoriesFilter: Category[] = [];
@@ -54,8 +55,6 @@ export class ResourcesComponent implements OnInit {
     this.viewerSelected = this.initViewer();
 
   }
-
-  ngOnInit(): void { }
 
   protected changeViewer(type: string): void {
     localStorage.setItem(RESOURCES_VIEWER_COOKIE, type);
@@ -102,4 +101,5 @@ export class ResourcesComponent implements OnInit {
   protected get isLogged(): boolean {
     return this.authf.isLogged;
   }
+
 }

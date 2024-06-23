@@ -59,8 +59,9 @@
             <div class="card-viewer">
                 <div class="row m-0 p-0 ">
                     <ng-container *ngFor="let r of resources | resourceFilter:categoryActive.id ; ">
-                        <div class="col-xl-4 pt-4 pb-3">
-                            <resource-card [resource]="r"></resource-card>
+                        <div class="col-xl-4 pt-4 pb-3 {{r.highlighted?'highlighted':''}}">
+                            <component-card [image]="r.img" [heading]="r.name" [description]="r.description"
+                                [link]='{href: r.url,rel: "noopener noreferrer",target:"_blank" }'></component-card>
                         </div>
                     </ng-container>
                 </div>
