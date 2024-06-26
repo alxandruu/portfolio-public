@@ -7,11 +7,13 @@ import { ResourcesComponent } from './pages/public/resources/resources.component
 import { CVComponent } from './pages/public/cv/cv.component';
 import { LoginComponent } from './pages/public/login/login.component';
 import { LoginActivate } from './core/services/authguard/login-activate/login-activate.guard';
+import { CanvasComponent } from './canvas/canvas.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'canvas', component: CanvasComponent },
   { path: ':page/:id', component: ProjectViewComponent },
   { path: 'login', component: LoginComponent, canActivate: [LoginActivate] },
   {

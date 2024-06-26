@@ -4,19 +4,7 @@
 </div>
 
 <!-- Navigation Menu -->
-<div class="position-fixed start-0 top-0 w-100 d-flex align-items-center" id="nav">
-  <div class="container">
-<component-navigation-menu></component-navigation-menu>
-  </div>
-  <div class="theme-switcher unselectable pe-4">
-    <div class="switcher light text-center" (click)="switchTheme('dark')">
-      <span class="text">Light</span> <i class="fas fa-sun ms-2"></i>
-    </div>
-    <div class="switcher dark text-center" (click)="switchTheme('light')">
-      <span class="text">Dark</span> <i class="fas fa-moon ms-2"></i>
-    </div>
-  </div>
-</div>
+  <component-navigation-menu ></component-navigation-menu>
 
 <!-- Information Container -->
 <div class="pt-5 mt-5 d-flex" id="router-container">
@@ -31,14 +19,6 @@
     <span class="lang-selector" (click)="i18s.changeLanguage('es')">Español</span>
     <span class="lang-selector" (click)="i18s.changeLanguage('en')">English</span>
     <span class="lang-selector" (click)="i18s.changeLanguage('ro')">Română</span>
-  </div>
-  <div class="theme-switcher unselectable ">
-    <div class="switcher mobile light text-center " (click)="switchTheme('dark')">
-      <span class="text">Light</span> <i class="fas fa-sun ms-2"></i>
-    </div>
-    <div class="switcher mobile dark text-center" (click)="switchTheme('light')">
-      <span class="text">Dark</span> <i class="fas fa-moon ms-2"></i>
-    </div>
   </div>
   <div>© <span>Alexandru Botas - {{year}}</span></div>
 </div>

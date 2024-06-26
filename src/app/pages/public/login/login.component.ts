@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PORTFOLIO_IMAGE_URL } from 'src/app/core/models/utils/constants';
 import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
@@ -15,7 +16,6 @@ export class LoginComponent {
 
   protected imagePath: string = "";
   protected hasError: boolean = false;
-  protected password: string = "";
 
   constructor(private router: Router, private authf: AuthenticationService, private sm: StorageManagerService, protected i18s: I18nService) {
     this.sm.retrieveURLImageFromStorage(PORTFOLIO_IMAGE_URL).then((data) => {
@@ -24,8 +24,8 @@ export class LoginComponent {
 
   }
 
-  login() {
-    this.authf.loginAdmin(environment.loginEmail, this.password).then(() => {
+  login(form: NgForm) {
+    this.authf.loginAdmin(environment.loginEmail, form.value.password).then(() => {
       this.router.navigate(['/'])
     }).catch(() => {
       this.hasError = true;

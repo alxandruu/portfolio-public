@@ -20,8 +20,6 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    document.querySelector('.switcher.' + (this.webTheme.theme == "dark" ? "light" : "dark"))?.classList.add("active");
-    document.querySelector('.switcher.mobile.' + (this.webTheme.theme == "dark" ? "light" : "dark"))?.classList.add("active");
   }
 
   public addUxia(title: string, message: string, type?: string) {
@@ -31,18 +29,6 @@ export class AppComponent {
     if (type) {
       component.setInput('type', type);
     }
-  }
-
-
-  switchTheme(key: string) {
-    document.querySelector('.switcher.active')?.classList.toggle('active');
-    document.querySelector(".switcher." + key)?.classList.toggle("active");
-    document.querySelector('.switcher.mobile.active')?.classList.toggle('active');
-    document.querySelector(".switcher.mobile." + key)?.classList.toggle("active");
-    let keyTheme = (key == "light") ? "dark" : "light";
-    document.documentElement.setAttribute('data-theme', keyTheme);
-    this.webTheme.theme = keyTheme;
-    localStorage.setItem('theme', keyTheme);
   }
 
   scrollTop() {
@@ -59,6 +45,7 @@ export class AppComponent {
 
 }
 
+
 window.addEventListener('scroll', () => {
   if (window.scrollY < 250 || window.scrollY >= document.documentElement.scrollHeight) {
     document.querySelector('.scrollTopButton')?.classList.remove("active");
@@ -67,4 +54,3 @@ window.addEventListener('scroll', () => {
     document.querySelector('.scrollTopButton')?.classList.add("active");
   }
 })
-

@@ -21,6 +21,7 @@
 :root {
     --error-color: rgb(249, 0, 0);
     --white: #fff;
+
     @media (prefers-color-scheme: dark) {
         --body-background-color: #1e1c27;
     }
@@ -41,11 +42,13 @@
     --footer-color: #66676b;
     --secondary-color: #cc2936;
     --highlighted-color: #ffa100;
+
 }
 
 [data-theme="dark"] {
     --dark-color: #ecdbba;
     --dark-color-rgb: 236, 219, 186;
+    --middle-light-dark-color: ;
     --light-color: #1e1c23;
     --body-background-color: #1e1c27;
     --nav-background-color-rgba: 30, 28, 35, 0.95;
@@ -54,16 +57,19 @@
     --footer-color: #746b67;
     --secondary-color: #aaf683;
     --highlighted-color: #ffe545;
+
 }
 
 ::selection {
     color: var(--light-color);
     background: var(--dark-color);
 }
-ap-resources, ap-home {
+
+ap-resources,
+ap-home {
     display: block;
     position: fixed;
-    left:0;
+    left: 0;
     height: 100vh;
     overflow-y: auto;
     z-index: 9;
@@ -72,8 +78,8 @@ ap-resources, ap-home {
     }
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    * + * .amo{
-         margin-top: 25px;
+    * + * .amo {
+        margin-top: 25px;
     }
 }
 
@@ -133,6 +139,9 @@ body {
     padding: 0;
     box-sizing: border-box;
 
+    &:has(.hamburguer-menu.active) {
+        overflow: hidden;
+    }
     &:has(.modal-container.active) {
         overflow: hidden;
     }

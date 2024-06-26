@@ -12,10 +12,12 @@ import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { NavigationMenuComponent } from './shared/components/navigation-menu/navigation-menu.component';
+import { CanvasComponent } from './canvas/canvas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CanvasComponent,
   ],
   imports: [
     BrowserModule,
