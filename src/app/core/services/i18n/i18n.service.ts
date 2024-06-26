@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import i18next from 'i18next';
-import ldSpanish from 'src/assets/i18n/es.json';
-import ldEnglish from 'src/assets/i18n/en.json';
-import ldRomanian from 'src/assets/i18n/ro.json';
+import lngSpanish from 'src/assets/i18n/es.json';
+import lngEnglish from 'src/assets/i18n/en.json';
+import lngRomanian from 'src/assets/i18n/ro.json';
 
 import { DOCUMENT } from '@angular/common';
 import { Language } from '../../models/interfaces/language';
@@ -14,24 +14,28 @@ import { getCookie, setCookie } from '../../models/utils/utilities';
 })
 export class I18nService {
   private _lang: string = "en";
-  private _languagesAvailable: Array<Language> = [{
+  public languages: Array<Language> = [{
     id: 'es',
-    ref: ldSpanish
+    description: 'Español',
+    ref: lngSpanish
   }, {
     id: 'en',
-    ref: ldEnglish,
+    description: 'English',
+    ref: lngEnglish,
   }, {
     id: 'ro',
-    ref: ldRomanian
+    description: 'Română',
+    ref: lngRomanian
   }];
+  
   private doc: Document = inject(DOCUMENT);
 
   constructor() {
     this.webpageLanguage();
-    let language = this.languagesAvailable.find(lang => lang.id == this._lang);
+    let language = this.languages.find(lang => lang.id == this._lang);
     i18next.init({
       lng: this._lang,
-      resources: (language) ? language.ref : this.languagesAvailable[1].ref
+      resources: (language) ? language.ref : this.languages[1].ref
     });
   }
 
@@ -42,13 +46,13 @@ export class I18nService {
 
   public webpageLanguage(): void {
     const language = navigator.language;
-    const languages_available = this._languagesAvailable;
+    const languages_available = this.languages;
     const storage_language = getCookie(LANGUAGE_COOKIE);
     let val = (storage_language) ? storage_language : "en";
-    let xlang = this.languagesAvailable.find((el) => { return el.id == storage_language });
+    let xlang = this.languages.find((el) => { return el.id == storage_language });
 
     if (!storage_language || !xlang) {
-      let ylang = this.languagesAvailable.find((el) => { return el.id == language });
+      let ylang = this.languages.find((el) => { return el.id == language });
       if (ylang) {
         val = ylang.id;
       } else {
@@ -64,16 +68,12 @@ export class I18nService {
   changeLanguage(key: string): void {
     setCookie(LANGUAGE_COOKIE, key, 365);
     this._lang = key;
-    let language = this.languagesAvailable.find(lang => lang.id == key);
+    let language = this.languages.find(lang => lang.id == key);
     i18next.init({
       lng: key,
-      resources: (language) ? language.ref : this.languagesAvailable[1].ref
+      resources: (language) ? language.ref : this.languages[1].ref
     });
     window.location.reload();
-  }
-
-  public get languagesAvailable(): Array<Language> {
-    return this._languagesAvailable;
   }
 
   public get lang(): string {

@@ -116,7 +116,7 @@ export class ResourcesManagerService {
 
   public async deleteAllLanguagesResources(value: any): Promise<ActionStatus> {
     if (this.isLogged) {
-      const languagesAvailable = this.i18s.languagesAvailable;
+      const languagesAvailable = this.i18s.languages;
       return await runTransaction(this.firestore, async (transaction) => {
         for (let i = 0; i < languagesAvailable.length; i++) {
           const docRef = doc(this.firestore, `resources/${languagesAvailable[i].id}/data`, value.id);

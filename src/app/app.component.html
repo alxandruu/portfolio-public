@@ -3,29 +3,18 @@
   </ng-template>
 </div>
 
-<!-- Navigation Menu -->
-  <component-navigation-menu ></component-navigation-menu>
+<component-navigation-menu></component-navigation-menu>
 
-<!-- Information Container -->
-<div class="pt-5 mt-5 d-flex" id="router-container">
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
+<div class="py-4 container-fluid container-lg" style="min-height: 70dvh;">
+  <router-outlet></router-outlet>
 </div>
 
-<!-- Footer -->
-<div id="footer" class="mt-5 mb-4 px-4 d-flex align-items-center flex-column">
-  <div class="text-center" id="lang-selection">
-    <span class="lang-selector" (click)="i18s.changeLanguage('es')">Español</span>
-    <span class="lang-selector" (click)="i18s.changeLanguage('en')">English</span>
-    <span class="lang-selector" (click)="i18s.changeLanguage('ro')">Română</span>
+<div class="footer my-5 container-fluid container-lg">
+  <div class="text-center language-selection d-none d-lg-flex align-items-center justify-content-center ">
+    <div *ngFor="let lng of i18s.languages" class="lang-selector px-3" (click)="i18s.changeLanguage(lng.id)">
+      {{lng.description}}</div>
   </div>
-  <div>© <span>Alexandru Botas - {{year}}</span></div>
-</div>
-<!-- <cookie-banner></cookie-banner> -->
-<!-- Scroll Top Button -->
-<div class="scrollTopButton position-fixed bottom-0 end-0 me-3 mb-4" (click)="scrollTop()">
-  <i class="fas fa-chevron-up"></i>
+  <div class="text-lg-center mt-3">© <span>Alexandru Botas - {{year}}</span></div>
 </div>
 
 <!-- Loading Icon -->

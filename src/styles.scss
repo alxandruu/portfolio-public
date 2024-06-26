@@ -39,7 +39,7 @@
     --nav-background-color-rgba: 242, 251, 224, 0.95;
     --nav-hamb-background-color: #2a2d34;
     --nav-hamb-color: #f2fbe0;
-    --footer-color: #66676b;
+    --grey-color: #66676b;
     --secondary-color: #cc2936;
     --highlighted-color: #ffa100;
 
@@ -54,7 +54,7 @@
     --nav-background-color-rgba: 30, 28, 35, 0.95;
     --nav-hamb-background-color: #1e1c23;
     --nav-hamb-color: #ecdbba;
-    --footer-color: #746b67;
+    --grey-color: #746b67;
     --secondary-color: #aaf683;
     --highlighted-color: #ffe545;
 
@@ -64,7 +64,6 @@
     color: var(--light-color);
     background: var(--dark-color);
 }
-
 ap-resources,
 ap-home {
     display: block;

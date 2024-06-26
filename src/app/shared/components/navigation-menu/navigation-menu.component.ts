@@ -1,10 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
-import { PortalService } from 'src/app/core/services/portal.service';
-import { WebsiteThemeService } from 'src/app/core/services/theme/website-theme.service';
+import { PortalService } from 'src/app/core/services/portal/portal.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { animate, style, transition, trigger } from '@angular/animations';
 
@@ -41,28 +39,44 @@ import { animate, style, transition, trigger } from '@angular/animations';
 export class NavigationMenuComponent implements OnInit {
   showHamburguerMenu: boolean = false;
   themeScheme: string = '';
+  scrollY: number = 0;
 
-  constructor(private authf: AuthenticationService, protected i18next: I18nService, private webTheme: WebsiteThemeService, private portalSrv: PortalService) {
+  constructor(protected i18next: I18nService, protected portalSrv: PortalService) {
 
   }
   ngOnInit(): void {
     this.portalSrv.getThemeScheme().subscribe(scheme => {
       this.themeScheme = scheme;
     })
-  }
-
-
-  protected logout(): void {
-
-    this.authf.logout();
+    
+    this.portalSrv.getScrollY().subscribe(s => {
+      this.scrollY = s;
+    })
   }
 
   changeThemeScheme(scheme: string) {
     this.portalSrv.modifyThemeScheme(scheme);
   }
 
-  //Getter & Setters
-  protected get isLogged(): boolean {
-    return this.authf.isLogged;
+  scrollTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   }
+
 }
+
+
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY < 250 || window.scrollY >= document.documentElement.scrollHeight) {
+    document.querySelector('.scrollTopButton')?.classList.remove("active");
+  }
+  else {
+    document.querySelector('.scrollTopButton')?.classList.add("active");
+  }
+})
+
+

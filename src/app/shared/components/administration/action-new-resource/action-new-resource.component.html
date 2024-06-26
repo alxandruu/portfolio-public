@@ -4,13 +4,13 @@
 <admin-modal [title]='i18s.getValue("resources.add-resource.title")' [opened]="modal_status"
     (toggleModal)="modal_status = $event">
     <div class="languages-available">
-        <div class="lang-selector unselectable {{(l.id == lang)?'active':''}}" *ngFor="let l of i18s.languagesAvailable"
+        <div class="lang-selector unselectable {{(l.id == lang)?'active':''}}" *ngFor="let l of i18s.languages"
             (click)="changeLang(l.id)">
             {{l.id}}
         </div>
     </div>
     <form #resourceForm="ngForm" class="form-container mt-2 {{(l.id == lang)?'active':''}}" id="{{l.id}}"
-        *ngFor="let l of i18s.languagesAvailable">
+        *ngFor="let l of i18s.languages">
         <div class="create-resource">
             <div class="row">
                 <div class="form col-md-6">

@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+function getWindow(): Window {
+  return window;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +13,7 @@ export class PortalService {
   public static LIGHT_THEME_SCHEME = 'light'
 
   private themeScheme: BehaviorSubject<string>;
+  private scrollY: BehaviorSubject<number> = new BehaviorSubject<number>(window.scrollY);
 
   constructor() {
     let lstheme = localStorage.getItem("theme");
@@ -24,8 +29,12 @@ export class PortalService {
 
     this.themeScheme = new BehaviorSubject<string>(lstheme);
     this.setThemePreferences(lstheme)
-  }
 
+    getWindow().addEventListener('scroll', () => {
+      this.scrollY.next(getWindow().scrollY)
+    })
+
+  }
 
 
   private setThemePreferences(themeScheme: string): void {
@@ -38,8 +47,16 @@ export class PortalService {
     this.setThemePreferences(scheme);
   }
 
+
+
   public getThemeScheme(): Observable<string> {
     return this.themeScheme.asObservable();
   }
+
+  public getScrollY(): Observable<number> {
+    return this.scrollY.asObservable();
+  }
+
+
 }
 

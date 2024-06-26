@@ -31,12 +31,7 @@ export class AppComponent {
     }
   }
 
-  scrollTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }
+
 
   //Getter & Setters
   protected get isLogged(): boolean {
@@ -44,13 +39,3 @@ export class AppComponent {
   }
 
 }
-
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY < 250 || window.scrollY >= document.documentElement.scrollHeight) {
-    document.querySelector('.scrollTopButton')?.classList.remove("active");
-  }
-  else {
-    document.querySelector('.scrollTopButton')?.classList.add("active");
-  }
-})

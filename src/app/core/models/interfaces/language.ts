@@ -1,5 +1,6 @@
 export interface Language {
     id: string;
+    description: string;
     ref: any;
 }
 
