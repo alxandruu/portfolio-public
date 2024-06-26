@@ -5,9 +5,9 @@ import ldEnglish from 'src/assets/i18n/en.json';
 import ldRomanian from 'src/assets/i18n/ro.json';
 
 import { DOCUMENT } from '@angular/common';
-import { Language } from 'src/app/models/interfaces/language';
-import { getCookie, setCookie } from 'src/app/models/utils';
-import { LANGUAGE_COOKIE } from 'src/app/models/constants';
+import { Language } from '../../models/interfaces/language';
+import { LANGUAGE_COOKIE } from '../../models/utils/constants';
+import { getCookie, setCookie } from '../../models/utils/utilities';
 
 @Injectable({
   providedIn: 'root'

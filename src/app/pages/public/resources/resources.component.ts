@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
 import { ResourcesManagerService } from 'src/app/core/services/firebase-manager/resources/resources-manager.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
-import { Resource } from 'src/app/models/interfaces/resource';
-import { Category } from 'src/app/models/interfaces/category';
-import { RESOURCES_VIEWER_COOKIE, RESOURCES_DEFAULT_CATEGORY } from 'src/app/models/constants';
 import { CategoryPipe } from 'src/app/core/pipes/category.pipe';
+import { Resource } from 'src/app/core/models/interfaces/resource';
+import { Category } from 'src/app/core/models/interfaces/category';
+import { RESOURCES_DEFAULT_CATEGORY, RESOURCES_VIEWER_COOKIE } from 'src/app/core/models/utils/constants';
 declare let $: any; //jQuery
 
 @Component({

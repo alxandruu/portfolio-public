@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 import { I18nService } from '../../i18n/i18n.service';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { OthersManagerService } from '../others/others-manager.service';
-import { ActionStatus } from 'src/app/models/interfaces/action-status';
-import { Resource } from 'src/app/models/interfaces/resource';
-import { Category } from 'src/app/models/interfaces/category';
-import { RegisterRow } from 'src/app/models/interfaces/register';
-import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/models/constants';
+import { ActionStatus } from 'src/app/core/models/interfaces/action-status';
+import { Category } from 'src/app/core/models/interfaces/category';
+import { RegisterRow } from 'src/app/core/models/interfaces/register';
+import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/core/models/utils/constants';
+import { Resource } from 'src/app/core/models/interfaces/resource';
 
 @Injectable({
   providedIn: 'root'

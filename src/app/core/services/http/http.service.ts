@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { CVConfiguration } from 'src/app/models/interfaces/cv-configuration';
 import { environment } from 'src/environments/environment';
+import { CVConfiguration } from '../../models/interfaces/cv-configuration';
 
 @Injectable({
   providedIn: 'root'

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { CvManagerService } from 'src/app/core/services/firebase-manager/cv/cv-manager.service';
 import { StorageManagerService } from 'src/app/core/services/firebase-manager/storage/storage-manager.service';
-import {  hideLoading, showLoading } from 'src/app/models/utils';
 import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
-import { CurriculumVitae } from 'src/app/models/interfaces/curriculum-vitae';
 import { HttpService } from 'src/app/core/services/http/http.service';
-import { CVConfiguration } from 'src/app/models/interfaces/cv-configuration';
 import moment from 'moment';
 import { environment } from 'src/environments/environment';
+import { CVConfiguration } from 'src/app/core/models/interfaces/cv-configuration';
+import { hideLoading, showLoading } from 'src/app/core/models/utils/utilities';
+import { CurriculumVitae } from 'src/app/core/models/interfaces/curriculum-vitae';
 
 @Component({
     templateUrl: './cv.component.html',
@@ -37,7 +37,7 @@ export class CVComponent implements OnInit {
             const configuration: CVConfiguration = this.generateCvConfiguration(this.cv, multilanguageKeys);
             showLoading();
             this.storage.getFileAsBlob("curriculumvitae_template.html")
-                .then(file => this.httpService.generateCv(file, configuration))
+                .then(file => this.httpService.generateCurriculumVitaePDF(file, configuration))
                 .then(result => {
                     var downloadURL = window.URL.createObjectURL(result);
                     var link = document.createElement('a');

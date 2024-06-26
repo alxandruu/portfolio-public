@@ -4,8 +4,8 @@ import { Auth } from '@angular/fire/auth';
 import { firstValueFrom, Observable } from 'rxjs';
 import { OthersManagerService } from '../others/others-manager.service';
 import { Timestamp } from 'firebase/firestore';
-import { RegisterRow } from 'src/app/models/interfaces/register';
-import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/models/constants';
+import { RegisterRow } from 'src/app/core/models/interfaces/register';
+import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/core/models/utils/constants';
 
 @Injectable({
   providedIn: 'root'

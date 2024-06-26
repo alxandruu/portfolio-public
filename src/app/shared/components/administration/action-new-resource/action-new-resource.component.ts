@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
-import { Category } from 'src/app/models/interfaces/category';
+import { Category } from 'src/app/core/models/interfaces/category';
 import { ResourcesManagerService } from 'src/app/core/services/firebase-manager/resources/resources-manager.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 
