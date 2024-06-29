@@ -1,0 +1,1 @@
+- Only use md breakpoints from boostrap, in case using @media search  the breakpoint md of boostrap. 

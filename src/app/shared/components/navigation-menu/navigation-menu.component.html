@@ -1,12 +1,12 @@
 <div class="position-sticky start-0 top-0  py-3" id="navigation-menu">
-    <div class="container-fluid d-flex align-items-center container-lg">
+    <div class="container-fluid d-flex align-items-center container-md">
         <a class="website-logo unselectable d-flex align-items-center " routerLink="">
             <i class="fas fa-bed me-3"></i>
             <span>Gabriel Alexandru Botas</span>
         </a>
         <div class="ms-auto"></div>
 
-        <div class="hamburguer-menu  {{showHamburguerMenu ? 'active': ''}}">
+        <div class="hamburguer-menu   {{showHamburguerMenu ? 'active': ''}} d-md-none">
             <button class="hamburguer border-0 position-relative" (click)="showHamburguerMenu = !showHamburguerMenu">
                 <span class="line"></span>
                 <span class="line"></span>
@@ -14,15 +14,15 @@
             </button>
             <div class="position-absolute top-0 end-0 p-5 pb-0 hamburguer-links d-flex flex-column justify-content-between"
                 *ngIf="showHamburguerMenu" @fadeInOutAnimation>
-                <ul class="overflow-y-auto p-0 mb-3">
+                <ul class="overflow-y-auto p-0 mb-3 menu-links">
                     <li class="my-5">
-                        <a href="/projects">{{i18next.getValue("navbar.projects")}}</a>
+                        <a href="/projects" class="link">{{i18next.getValue("navbar.projects")}}</a>
                     </li>
                     <li class="my-5">
-                        <a href="/resources">{{i18next.getValue("navbar.resources")}}</a>
+                        <a href="/resources" class="link">{{i18next.getValue("navbar.resources")}}</a>
                     </li>
                     <li class="my-5">
-                        <a href="https://github.com/alxandruu" target="_blank" rel="noopener noreferrer"><i
+                        <a href="https://github.com/alxandruu" target="_blank" rel="noopener noreferrer" class="link"><i
                                 class="fab fa-github me-3"></i><span>Github</span></a>
                     </li>
 
@@ -32,36 +32,21 @@
                         <div *ngFor="let lng of i18next.languages" class="lang-selector me-4  pb-5"
                             (click)="i18next.changeLanguage(lng.id)">{{lng.description}}</div>
                     </div>
-                    <div class="theme-switcher unselectable pb-5">
-                        <div class="switcher light text-center" (click)="changeThemeScheme('light')"
-                            *ngIf="themeScheme == 'dark'">
-                            <span class="text">Light</span> <i class="fas fa-sun ms-2"></i>
-                        </div>
-                        <div class="switcher dark text-center" (click)="changeThemeScheme('dark')"
-                            *ngIf="themeScheme == 'light'">
-                            <span class="text">Dark</span> <i class="fas fa-moon ms-2"></i>
-                        </div>
-                    </div>
+                    <component-theme-switcher></component-theme-switcher>
                 </div>
             </div>
 
         </div>
 
-
-
-
-
-        <!-- <ul class="d-flex align-items-center p-0 m-0">
-            <li><a routerLink="/projects" routerLinkActive="active"
+        <ul class="d-md-flex align-items-center p-0 m-0  menu-links d-none">
+            <li class="me-4"><a routerLink="/projects" routerLinkActive="active"
                     class="link">{{i18next.getValue("navbar.projects")}}</a></li>
-            <li><a routerLink="/resources" routerLinkActive="active"
+            <li class="me-4"><a routerLink="/resources" routerLinkActive="active"
                     class="link">{{i18next.getValue("navbar.resources")}}</a></li>
-            <li><a href="https://github.com/alxandruu" target="_blank" rel="noopener noreferrer"><i
+            <li class="me-4"><a href="https://github.com/alxandruu" target="_blank" rel="noopener noreferrer"><i
                         class="fab fa-github me-2"></i><span>Github</span></a></li>
+            <component-theme-switcher></component-theme-switcher>
         </ul>
-         -->
-
-
     </div>
 </div>
 <!-- Scroll Top Button -->

@@ -5,11 +5,12 @@ import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { PortalService } from 'src/app/core/services/portal/portal.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.component';
 
 @Component({
   selector: 'component-navigation-menu',
   standalone: true,
-  imports: [AppRoutingModule, CommonModule, BrowserAnimationsModule],
+  imports: [AppRoutingModule, CommonModule, BrowserAnimationsModule, ThemeSwitcherComponent],
   templateUrl: './navigation-menu.component.html',
   styleUrls: ['./navigation-menu.component.scss'],
   animations: [
@@ -38,25 +39,18 @@ import { animate, style, transition, trigger } from '@angular/animations';
 })
 export class NavigationMenuComponent implements OnInit {
   showHamburguerMenu: boolean = false;
-  themeScheme: string = '';
+
   scrollY: number = 0;
 
   constructor(protected i18next: I18nService, protected portalSrv: PortalService) {
 
   }
   ngOnInit(): void {
-    this.portalSrv.getThemeScheme().subscribe(scheme => {
-      this.themeScheme = scheme;
-    })
-    
     this.portalSrv.getScrollY().subscribe(s => {
       this.scrollY = s;
     })
   }
 
-  changeThemeScheme(scheme: string) {
-    this.portalSrv.modifyThemeScheme(scheme);
-  }
 
   scrollTop() {
     window.scrollTo({
