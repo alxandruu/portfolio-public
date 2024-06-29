@@ -14,6 +14,7 @@ export class PortalService {
 
   private themeScheme: BehaviorSubject<string>;
   private scrollY: BehaviorSubject<number> = new BehaviorSubject<number>(window.scrollY);
+  private showLoadingIcon: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor() {
     let lstheme = localStorage.getItem("theme");
@@ -47,7 +48,9 @@ export class PortalService {
     this.setThemePreferences(scheme);
   }
 
-
+  public toogShowLoadingIcon() {
+    this.showLoadingIcon.next(!this.showLoadingIcon.getValue());
+  }
 
   public getThemeScheme(): Observable<string> {
     return this.themeScheme.asObservable();
@@ -57,6 +60,9 @@ export class PortalService {
     return this.scrollY.asObservable();
   }
 
+  public observeShowLoadingIcon(): Observable<boolean> {
+    return this.showLoadingIcon.asObservable();
+  }
 
 }
 

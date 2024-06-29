@@ -13,11 +13,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { NavigationMenuComponent } from './shared/components/navigation-menu/navigation-menu.component';
 import { CanvasComponent } from './canvas/canvas.component';
+import { PortalGeneralComponents } from './shared/components/portal-general.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CanvasComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,7 @@ import { CanvasComponent } from './canvas/canvas.component';
     CoreModule,
     HttpClientModule,
     NavigationMenuComponent,
+    PortalGeneralComponents,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => {

@@ -13,7 +13,6 @@ import { NotificationCardComponent } from './shared/components/notification-card
 
 export class AppComponent {
   @ViewChild('uxiaContainer', { read: ViewContainerRef }) uxiaContainer!: ViewContainerRef;
-  public year = new Date().getFullYear();
 
   constructor(private authf: AuthenticationService, private webTheme: WebsiteThemeService, protected i18s: I18nService) {
     this.webTheme.webpageTheme();

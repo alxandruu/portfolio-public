@@ -1,0 +1,14 @@
+.footer {
+    color: var(--grey-color);
+    .lang-selector {
+        color: var(--dark-color);
+        cursor: pointer;
+        &:hover {
+            color: var(--grey-color);
+            transition: color 0.25s;
+            text-decoration: underline;
+        }
+    }
+}
+
+

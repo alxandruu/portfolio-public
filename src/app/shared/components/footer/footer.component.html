@@ -1,0 +1,8 @@
+<div class="footer my-5 container-fluid container-lg">
+    <div class="text-center language-selection d-none d-lg-flex align-items-center justify-content-center ">
+      <div *ngFor="let lng of i18s.languages" class="lang-selector px-3" (click)="i18s.changeLanguage(lng.id)">
+        {{lng.description}}</div>
+    </div>
+    <div class="text-lg-center mt-3">© <span>Alexandru Botas - {{actualYear()}}</span></div>
+  </div>
+  
