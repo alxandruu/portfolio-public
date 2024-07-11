@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './public/login/login.component';
-import { HomeComponent } from './public/home/home.component';
+import { HomeComponent } from '../views/public/home/home.component';
 import { ProjectsComponent } from './public/projects/projects.component';
 import { CVComponent } from './public/cv/cv.component';
 import { ResourcesComponent } from './public/resources/resources.component';
@@ -16,7 +16,6 @@ import { ListCardComponent } from '../shared/components/list-card/list-card.comp
 @NgModule({
   declarations: [
     LoginComponent,
-    HomeComponent,
     ProjectsComponent,
     CVComponent,
     ResourcesComponent,
@@ -34,7 +33,6 @@ import { ListCardComponent } from '../shared/components/list-card/list-card.comp
   ],
   exports: [
     LoginComponent,
-    HomeComponent,
     ProjectsComponent,
     CVComponent,
     ResourcesComponent

@@ -100,13 +100,6 @@ img {
 .title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #2a2d34;
-    &.title-dark {
-        color: #2a2d34;
-    }
-    &.title-light {
-        color: #f2fbe0;
-    }
 
     &.size-s {
         font-size: 1.25rem;
@@ -131,13 +124,5 @@ img {
         @media screen and (max-width: 465px) {
             font-size: 8vw;
         }
-    }
-
-    &.reactive-light {
-        color: var(--light-color);
-    }
-
-    &.reactive {
-        color: var(--dark-color);
     }
 }

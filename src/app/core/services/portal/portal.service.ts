@@ -17,7 +17,7 @@ export class PortalService {
   private showLoadingIcon: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor() {
-    let lstheme = localStorage.getItem("theme");
+    let lstheme = localStorage.getItem("themeScheme");
     if (!lstheme) {
       const wantsDark = window.matchMedia("(prefers-color-scheme: dark)");
       if (wantsDark.matches) {

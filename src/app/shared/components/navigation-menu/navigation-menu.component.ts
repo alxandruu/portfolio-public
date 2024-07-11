@@ -4,8 +4,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { PortalService } from 'src/app/core/services/portal/portal.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { animate, style, transition, trigger } from '@angular/animations';
 import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.component';
+import { fadeInfadeOutAnimation } from '../../static/animations';
 
 @Component({
   selector: 'component-navigation-menu',
@@ -14,27 +14,7 @@ import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.compone
   templateUrl: './navigation-menu.component.html',
   styleUrls: ['./navigation-menu.component.scss'],
   animations: [
-    trigger(
-      'fadeInOutAnimation',
-      [
-        transition(
-          ':enter',
-          [
-            style({ opacity: 0 }),
-            animate('250ms ease-out',
-              style({ opacity: 1 }))
-          ]
-        ),
-        transition(
-          ':leave',
-          [
-            style({ opacity: 1 }),
-            animate('350ms ease-in',
-              style({ opacity: 0 }))
-          ]
-        )
-      ]
-    )
+    fadeInfadeOutAnimation,
   ]
 })
 export class NavigationMenuComponent implements OnInit {
@@ -42,7 +22,7 @@ export class NavigationMenuComponent implements OnInit {
 
   scrollY: number = 0;
 
-  constructor(protected i18next: I18nService, protected portalSrv: PortalService) {
+  constructor(protected i18s: I18nService, protected portalSrv: PortalService) {
 
   }
   ngOnInit(): void {

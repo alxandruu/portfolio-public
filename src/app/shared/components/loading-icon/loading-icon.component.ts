@@ -15,7 +15,6 @@ export class LoadingIconComponent {
   constructor(private portalSrv: PortalService) {
     this.portalSrv.observeShowLoadingIcon().subscribe(data => {
       this.show = data;
-      console.log(data)
     })
   }
 }

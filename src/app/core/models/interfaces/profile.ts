@@ -7,3 +7,14 @@ export interface Profile {
     about_me: Array<string>;
     social_media: SocialMedia;
 }
+
+export const EMPTY_PROFILE: Profile = {
+    img: '',
+    name: '',
+    about_me: [],
+    ocupation: '',
+    social_media: {
+        header: '',
+        sections: []
+    }
+}

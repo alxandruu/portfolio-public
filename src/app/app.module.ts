@@ -15,12 +15,14 @@ import { NavigationMenuComponent } from './shared/components/navigation-menu/nav
 import { CanvasComponent } from './canvas/canvas.component';
 import { PortalGeneralComponents } from './shared/components/portal-general.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { TimelineHistoryComponent } from './shared/components/timeline-history/timeline-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CanvasComponent,
     FooterComponent,
+    TimelineHistoryComponent,
   ],
   imports: [
     BrowserModule,

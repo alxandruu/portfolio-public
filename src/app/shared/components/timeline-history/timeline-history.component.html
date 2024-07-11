@@ -1,0 +1,16 @@
+<div class="timeline-history text-theme-dark">
+    <h2 class="fw-bold font-size-175 mb-4"> <i [class]="fw_icon + ' me-2 me-lg-4 '" *ngIf="fw_icon"></i> {{title}}</h2>
+    <div class="timeline">
+        <div class="moment  px-3 py-1 ml-3 position-relative" *ngFor="let tl of timeline">
+            <div class="dot"><i class="fas fa-circle"></i></div>
+            <h5 class="headline fw-lighter font-size-100 mb-0">{{tl.headline}}</h5>
+            <h4 class="title fw-bold font-size-125 mb-0">{{tl.title}} </h4>
+            <p class="date mb-0">
+                <span>{{ showDate(tl.date.start, date_format) }}</span>
+                -
+                <span>{{tl.date.end ? showDate(tl.date.start, date_format):i18s.getValue("cv.current")}}</span>
+            </p>
+            <div class="content pl-3 pt-2" [innerHTML]="tl.content"></div>
+        </div>
+    </div>
+</div>

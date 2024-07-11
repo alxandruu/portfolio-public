@@ -21,7 +21,7 @@
 :root {
     --error-color: rgb(249, 0, 0);
     --white: #fff;
-
+    --bs-border-radius: 10px !important;
     @media (prefers-color-scheme: dark) {
         --body-background-color: #1e1c27;
     }
@@ -43,12 +43,12 @@
     --secondary-color: #cc2936;
     --highlighted-color: #ffa100;
 
+    /*Boostrap Override */
 }
 
 [data-theme="dark"] {
     --dark-color: #ecdbba;
     --dark-color-rgb: 236, 219, 186;
-    --middle-light-dark-color: ;
     --light-color: #1e1c23;
     --body-background-color: #1e1c27;
     --nav-background-color-rgba: 30, 28, 35, 0.95;
@@ -58,6 +58,7 @@
     --secondary-color: #aaf683;
     --highlighted-color: #ffe545;
 
+    /*Boostrap Override */
 }
 
 ::selection {
@@ -123,13 +124,6 @@ ap-home {
     }
 }
 
-.unselectable {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-}
-
 body {
     background-color: var(--body-background-color) !important;
     animation: animation 1s ease;
@@ -179,7 +173,66 @@ ul {
     }
 }
 
-
 .cursor-pointer {
     cursor: pointer !important;
+}
+
+.text-theme-dark {
+    color: var(--dark-color);
+}
+
+.text-theme-light {
+    color: var(--light-color);
+}
+
+.bg-theme-dark {
+    background-color: var(--dark-color);
+}
+
+.bg-theme-light {
+    background-color: var(--light-color);
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+img.design-1 {
+    border-radius: 80% 20% 79% 21% / 31% 60% 40% 69% !important;
+    border: none;
+}
+
+img.size-25,
+svg.size-25 {
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.hover-resize-animation {
+    transform: scale(1);
+    transition: all 0.25s ease;
+
+    &:hover,
+    &:active {
+        transform: scale(0.9);
+    }
+}
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+.font-size-100 {
+    font-size: 1rem;
+}
+.font-size-125 {
+    font-size: 1.25rem;
+}
+.font-size-150 {
+    font-size: 1.5rem;
+}
+
+.font-size-175 {
+    font-size: 1.75rem;
 }
