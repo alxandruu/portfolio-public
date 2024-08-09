@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './public/login/login.component';
-import { HomeComponent } from '../views/public/home/home.component';
 import { ProjectsComponent } from './public/projects/projects.component';
-import { CVComponent } from './public/cv/cv.component';
+
 import { ResourcesComponent } from './public/resources/resources.component';
 import { ProjectViewComponent } from './public/projects/project_view/project-view.component';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +16,6 @@ import { ListCardComponent } from '../shared/components/list-card/list-card.comp
   declarations: [
     LoginComponent,
     ProjectsComponent,
-    CVComponent,
     ResourcesComponent,
     ProjectViewComponent
   ],
@@ -34,7 +32,6 @@ import { ListCardComponent } from '../shared/components/list-card/list-card.comp
   exports: [
     LoginComponent,
     ProjectsComponent,
-    CVComponent,
     ResourcesComponent
   ]
 })

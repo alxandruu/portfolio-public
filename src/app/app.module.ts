@@ -22,7 +22,6 @@ import { TimelineHistoryComponent } from './shared/components/timeline-history/t
     AppComponent,
     CanvasComponent,
     FooterComponent,
-    TimelineHistoryComponent,
   ],
   imports: [
     BrowserModule,

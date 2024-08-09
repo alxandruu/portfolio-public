@@ -52,7 +52,7 @@
         <div class="list-viewer pt-4" *ngIf="viewerSelected == 'list'; else cardBlock">
             <ng-container *ngFor="let r of resources | categoryPipe:categoryActive.id ; ">
                 <component-list-card [description]="r.description" [heading]="r.name" [image]="r.img"
-                    [link]="{href: r.url,rel: 'noopener noreferrer',target:'_blank' }"></component-list-card>
+                    [link]="{href: r.url,rel: 'noopener noreferrer',target:'_blank', icon: null, text:null }"></component-list-card>
             </ng-container>
         </div>
 
@@ -62,7 +62,7 @@
                     <ng-container *ngFor="let r of resources | categoryPipe:categoryActive.id ; ">
                         <div class="col-xl-4 pt-4 pb-3 {{r.highlighted?'highlighted':''}}">
                             <component-card [image]="r.img" [heading]="r.name" [description]="r.description"
-                                [link]='{href: r.url,rel: "noopener noreferrer",target:"_blank" }'></component-card>
+                                [link]='{href: r.url,rel: "noopener noreferrer",target:"_blank", icon: null, text:null }'></component-card>
                         </div>
                     </ng-container>
                 </div>

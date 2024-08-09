@@ -1,10 +1,14 @@
-.timeline .moment {
-    border-left: 3px solid var(--dark-color);
-    .dot {
-        position: absolute;
-        top: 24px;
-        left: -10px;
-        color: var(--dark-color);
+.timeline {
+    .moment {
+        border-left: 3px solid var(--dark-color);
+        .dot {
+            position: absolute;
+            top: 24px;
+            left: -10px;
+            color: var(--dark-color);
+        }
     }
-
+    .content ul {
+        list-style: inherit;
+    }
 }

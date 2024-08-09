@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { dateToString } from '../../static/static-methods';
+import { CommonModule } from '@angular/common';
+
 export interface TimelineHistory {
   date: {
     start: Date;
@@ -13,8 +15,12 @@ export interface TimelineHistory {
 
 @Component({
   selector: 'component-timeline-history',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './timeline-history.component.html',
-  styleUrls: ['./timeline-history.component.scss']
+  styleUrls: ['./timeline-history.component.scss'],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class TimelineHistoryComponent {
   showDate = dateToString;
@@ -27,13 +33,9 @@ export class TimelineHistoryComponent {
         start: new Date(),
         end: null
       },
-      title: 'Desarrollador Java',
-      headline: 'Soltel SL',
-      content: `<ul style="list-style: inherit;">
-        <li>Working for DIT - AEAT as technical staff.</li>
-        <li>Participate in the creation of integration tests with JUnit, in order to prevent
-            errors in applications that handle large amounts of data.</li>
-    </ul>`
+      title: 'Titulo',
+      headline: 'Encabezado',
+      content: `<p>Descripción <b>HTML</b></p>`
     },
 
   ];

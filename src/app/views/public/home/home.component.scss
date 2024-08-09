@@ -1,0 +1,9 @@
+@media (min-width: 1400px) {
+    #home-container {
+        width: 50vw;
+    }
+}
+
+.work-timeline::ng-deep .timeline-history .moment {
+    margin-left: 0.8rem;
+}

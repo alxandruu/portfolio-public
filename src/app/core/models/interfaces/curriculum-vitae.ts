@@ -1,3 +1,5 @@
+import { Time } from "@angular/common";
+import { Timestamp } from "firebase/firestore";
 
 export interface CurriculumVitae {
     lang: string;
@@ -15,14 +17,30 @@ export interface CurriculumVitae {
     languages: Array<string>;
 }
 
+export interface CurriculumVitaeV2 {
+    work_experience: Array<WorkRowV2>;
+}
+
 export interface WorkRow {
-    date_start: string;
-    date_end: string;
+    date_start: Timestamp;
+    date_end: Timestamp;
     job_position: string;
     company: string;
     location: string;
-    achievements: Array<string>;
+    description: string;
 }
+
+export interface WorkRowV2 {
+    date: {
+        start: Timestamp,
+        end: Timestamp
+    };
+    position: string;
+    company: string;
+    location: string;
+    description: string;
+}
+
 export interface EducationRow {
     date_start: string;
     date_end: string;

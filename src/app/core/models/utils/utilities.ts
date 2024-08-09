@@ -38,6 +38,7 @@ function sortByDate<T>(arr: Array<T>, prop: keyof T, date_format: string = 'dd.M
     return arr.sort()
 }
 
+
 /**
  * Shows the asynchronous loading icon
  * 

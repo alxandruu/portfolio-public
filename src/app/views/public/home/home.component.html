@@ -2,23 +2,31 @@
     <admin-action-history></admin-action-history>
 </ng-container> -->
 
-<ng-container *ngIf="portfolio">
-    <img [src]="portfolio.img" class="mb-4 mx-auto mx-md-0 d-block design-1" loading="lazy" width="225px"
-        height="225px">
+<div id="home-container">
+    <div *ngIf="profile" class="mb-5">
+        <div class="mb-5 d-flex align-items-lg-center flex-column flex-lg-row"> <img [src]="profile.image"
+                class="mb-4 mx-auto mx-md-0 d-block design-1" loading="lazy" width="225px" height="225px">
 
-    <h1 class="title size-xl text-theme-dark ">{{portfolio.name}}</h1>
-    <h2 class="title size-l text-theme-dark mb-4">{{portfolio.ocupation}}</h2>
+            <div class="ms-lg-5">
+                <h1 class="fw-bold text-theme-dark ">{{profile.name}}</h1>
+                <h2 class="fw-bold  text-theme-dark ">{{profile.ocupation}}</h2>
+            </div>
+        </div>
 
-    <p class="my-3 letter-spacing-2 text-theme-dark" *ngFor="let paragraph of portfolio.about_me">
-        {{paragraph}}
-    </p>
+        <div class="mb-4 letter-spacing-2 text-theme-dark description" [innerHTML]="profile.description_html">
+        </div>
 
-    <div class=" d-flex align-items-center flex-wrap ">
-        <a *ngFor="let sm of portfolio.social_media.sections"
-            class=" font-size-125 text-center cursor-pointer unselectable d-flex align-items-center my-2 social-button text-decoration-none text-theme-light py-1 px-2 bg-theme-dark rounded hover-resize-animation"
-            [href]="sm.url" [target]="sm.target">
-            <i class="{{sm.icon}} me-2  size-25"></i>
-            <span>{{sm.text}}</span>
-        </a>
+        <div class=" d-flex align-items-center flex-wrap">
+            <a *ngFor="let sm of profile.social_media"
+                class=" font-size-125 text-center cursor-pointer unselectable d-flex align-items-center my-2 me-2 social-button text-decoration-none text-theme-light py-1 px-2 bg-theme-dark rounded hover-resize-animation"
+                [href]="sm.href" [target]="sm.target">
+                <i class="{{sm.icon}} me-2  size-25"></i>
+                <span>{{sm.text}}</span>
+            </a>
+        </div>
     </div>
-</ng-container>
+    <div class="work-timeline ">
+        <component-timeline-history [title]="i18s.getValue('cv.work-experience')" fw_icon="fas fa-briefcase"
+            [timeline]="work_experience"></component-timeline-history>
+    </div>
+</div>
