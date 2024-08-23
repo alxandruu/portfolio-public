@@ -1,11 +1,12 @@
 .timeline {
     .moment {
-        border-left: 3px solid var(--dark-color);
+        border-left: 3px solid  rgba(var(--dark-color-rgb), 0.1) ;
         .dot {
             position: absolute;
             top: 24px;
-            left: -10px;
-            color: var(--dark-color);
+            left: -9.5px;
+            color: var(--secondary-color);
+            
         }
     }
     .content ul {

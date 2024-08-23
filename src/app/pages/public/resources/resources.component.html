@@ -4,8 +4,9 @@
 </ng-container>
 
 <div class="mx-auto p-2" id="resources-content">
+    
     <div class="header">
-        <h1 class="title size-xl reactive">{{i18s.getValue("resources.title")}}</h1>
+        <h1 class="fw-bold "><i class="fas fa-folder-open me-4"></i>{{i18s.getValue("resources.title")}}</h1>
         <div class="t-resources">{{(resources | categoryPipe:categoryActive.id)?.length}}
             {{i18s.getValue("resources.resources-found")}}</div>
         <div class="category-filter-mobile py-1 px-2" (click)="showResources()">

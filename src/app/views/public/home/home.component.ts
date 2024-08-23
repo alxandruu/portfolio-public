@@ -25,7 +25,7 @@ export class HomeComponent {
   work_experience!: Array<TimelineHistory>;
 
 
-  constructor(private om: OthersManagerService, private sm: StorageManagerService, protected i18s: I18nService, private userinfoSrv: UserInformationService) {
+  constructor(protected i18s: I18nService, private userinfoSrv: UserInformationService) {
     this.userinfoSrv.requestProfile().then(data => {
       this.profile = data;
     })

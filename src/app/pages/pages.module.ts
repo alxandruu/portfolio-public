@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './public/login/login.component';
+import { LoginComponent } from '../views/public/login/login.component';
 import { ProjectsComponent } from './public/projects/projects.component';
 
 import { ResourcesComponent } from './public/resources/resources.component';

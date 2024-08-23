@@ -41,7 +41,7 @@
     --nav-hamb-color: #f2fbe0;
     --grey-color: #66676b;
     --secondary-color: #cc2936;
-    --highlighted-color: #ffa100;
+    --highlight-color: #d2fa49;
 
     /*Boostrap Override */
 }
@@ -56,7 +56,7 @@
     --nav-hamb-color: #ecdbba;
     --grey-color: #746b67;
     --secondary-color: #aaf683;
-    --highlighted-color: #ffe545;
+    --highlight-color: #ffe545;
 
     /*Boostrap Override */
 }
@@ -187,7 +187,9 @@ p {
 .text-theme-dark {
     color: var(--dark-color);
 }
-
+.text-theme-secondary {
+    color: var(--secondary-color);
+}
 .text-theme-light {
     color: var(--light-color);
 }
