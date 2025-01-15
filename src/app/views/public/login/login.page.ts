@@ -1,5 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PORTFOLIO_IMAGE_URL } from 'src/app/core/models/utils/constants';
 import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
@@ -8,10 +9,12 @@ import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  templateUrl: './login.page.html',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  styleUrls: ['./login.page.scss']
 })
-export class LoginComponent {
+export class LoginPage {
   
 
   protected imagePath: string = "";

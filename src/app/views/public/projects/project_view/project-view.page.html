@@ -1,0 +1,29 @@
+<div *ngIf="project">
+    <h2 class="text-theme-dark fw-bold"><a [routerLink]="['/projects']"
+            class="link-theme-secondary">{{i18s.getValue("projects.header")}}</a> >
+        {{project.name}}</h2>
+    <p class=" mt-4 text-theme-dark">{{project.description}}</p>
+
+    <div *ngIf="project.website && project.website!=''" class="mt-4">
+        <span
+            class="rounded bg-theme-dark text-theme-light fw-bold  px-2 py-1">{{i18s.getValue("projects.view.website")}}</span>
+        <span class="d-block  d-lg-inline my-2 ms-2">
+            <a [href]="project.website" target="_blank" rel="noopener noreferrer" class="link-theme-secondary ">
+                <span>{{project.website}}</span>
+                <i class="fas fa-link mx-2"></i>
+            </a>
+        </span>
+    </div>
+    <div class="mt-4">
+        <span
+            class="rounded bg-theme-dark text-theme-light fw-bold  px-2 py-1">{{i18s.getValue("projects.view.stack")}}</span>
+        <span class="slash-separator text-theme-dark d-block d-lg-inline my-2 ms-2"><span
+                *ngFor="let st of project.stack">{{st}}</span></span>
+    </div>
+
+</div>
+<div>
+    <div *ngFor="let img of project.imgs">
+        <img [src]="img" class="unselectable rounded   w-100 mt-4">
+    </div>
+</div>

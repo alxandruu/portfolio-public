@@ -7,8 +7,7 @@ export interface Project extends ArrayCategoryPipeInterface {
     img: string;
     description: string;
     website: string;
-    platform: string[];
     stack: string[];
     imgs: string[];
-    in_development: boolean;
+    url: string;
 }

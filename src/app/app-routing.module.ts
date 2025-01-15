@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './views/public/home/home.component';
-import { ProjectViewComponent } from './pages/public/projects/project_view/project-view.component';
-import { ProjectsComponent } from './pages/public/projects/projects.component';
+import { HomePage } from './views/public/home/home.page';
 import { ResourcesComponent } from './pages/public/resources/resources.component';
-import { LoginComponent } from './views/public/login/login.component';
+import { LoginPage } from './views/public/login/login.page';
 import { LoginActivate } from './core/services/authguard/login-activate/login-activate.guard';
+import { ProjectViewPage } from './views/public/projects/project_view/project-view.page';
+import { ProjectsPage } from './views/public/projects/projects.page';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
-  { path: 'projects', component: ProjectsComponent, data: { animation: 'ProjectsPage' } },
-  { path: ':page/:id', component: ProjectViewComponent, data: { animation: 'ProjectViewPage' } },
-  { path: 'login', component: LoginComponent, canActivate: [LoginActivate], data: { animation: 'LoginPage' } },
+  { path: '', component: HomePage, data: { animation: 'HomePage' } },
+  { path: 'projects', component: ProjectsPage, data: { animation: 'ProjectsPage' } },
+  { path: ':page/:id', component: ProjectViewPage, data: { animation: 'ProjectViewPage' } },
+  { path: 'login', component: LoginPage, canActivate: [LoginActivate], data: { animation: 'LoginPage' } },
   { path: 'resources', component: ResourcesComponent, data: { animation: 'ResourcesPage' } },
   { path: '**', redirectTo: '' },
 ];

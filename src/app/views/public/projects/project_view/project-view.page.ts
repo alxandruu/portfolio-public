@@ -1,5 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Project } from 'src/app/core/models/interfaces/project';
 import { ProjectsManagerService } from 'src/app/core/services/firebase-manager/projects/projects-manager.service';
 import { StorageManagerService } from 'src/app/core/services/firebase-manager/storage/storage-manager.service';
@@ -8,10 +9,12 @@ import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 
 @Component({
   selector: 'project-view',
-  templateUrl: './project-view.component.html',
-  styleUrls: ['./project-view.component.scss']
+  templateUrl: './project-view.page.html',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  styleUrls: ['./project-view.page.scss']
 })
-export class ProjectViewComponent implements OnInit {
+export class ProjectViewPage implements OnInit {
   project!: Project;
 
   constructor(private ar: ActivatedRoute, private sm: StorageManagerService, private pm: ProjectsManagerService,

@@ -1,5 +1,5 @@
 <div class="card-component">
-    <a *ngIf="link; else cardBody" [href]="link.href" [target]="link.target" [rel]="link.rel">
+    <a *ngIf="link; else cardBody" [href]="link.href" [target]="link.target" [rel]="link.rel ?? ''">
         <ng-container [ngTemplateOutlet]="cardBody"></ng-container>
     </a>
 </div>

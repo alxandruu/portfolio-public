@@ -6,8 +6,8 @@ import { AdminSelectorComponent } from './admin-selector/admin-selector.componen
 import { ActionEditResourceComponent } from './action-edit-resource/action-edit-resource.component';
 import { FormsModule } from '@angular/forms';
 import { ActionNewResourceComponent } from './action-new-resource/action-new-resource.component';
-import { CardComponent } from '../card/card.component';
 import { CoreModule } from 'src/app/core/core.module';
+import { CardComponent } from '../card/card.component';
 
 
 

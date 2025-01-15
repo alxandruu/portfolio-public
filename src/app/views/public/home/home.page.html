@@ -4,11 +4,10 @@
 
 <div id="home-container">
     <div *ngIf="profile" class="mb-5">
-        <div class="mb-5 d-flex align-items-lg-center flex-column flex-lg-row"> <img [src]="profile.image"
-                class="mb-4 mx-auto mx-md-0 d-block design-1" loading="lazy" width="225px" height="225px">
-
+        <div class="mb-4 d-flex align-items-lg-center flex-column flex-lg-row"> <img [src]="profile.image"
+                class="mb-4 mx-auto mx-md-0 d-block design-1" loading="lazy" width="250px" height="250px">
             <div class="ms-lg-5">
-                <h1 class="fw-bold text-theme-secondary ">{{profile.name}}</h1>
+                <h1 class="fw-bold text-theme-dark ">{{profile.name}}</h1>
                 <h3 class="fw-bold  text-theme-dark ">{{profile.ocupation}}</h3>
             </div>
         </div>
@@ -25,8 +24,8 @@
             </a>
         </div>
     </div>
-    <div class="work-timeline ">
+    <!-- <div class="work-timeline ">
         <component-timeline-history [title]="i18s.getValue('cv.work-experience')" fw_icon="fas fa-briefcase"
             [timeline]="work_experience"></component-timeline-history>
-    </div>
+    </div> -->
 </div>
