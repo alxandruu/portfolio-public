@@ -1,0 +1,21 @@
+#filter-mobile {
+    svg {
+        transform: rotate(-90deg);
+        transition: transform 0.5s ease;
+    }
+
+    &.active {
+        svg {
+            transform: rotate(0deg);
+            transition: transform 0.5s ease;
+        }
+    }
+}
+
+
+#select-random-button {
+    svg {
+        transform: rotate(-45deg);
+    }
+}
+

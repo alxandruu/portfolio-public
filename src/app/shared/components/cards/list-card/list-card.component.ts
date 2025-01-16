@@ -17,13 +17,6 @@ import { Link } from 'src/app/core/models/interfaces/link';
 export class ListCardComponent {
 
   /**
-   * An object containing link properties to implement. By default it doesn't have any link
-   * It has to adhere to Link interface
-   * @type {Link} 
-   */
-  @Input() link!: Link;
-
-  /**
    * Image URL to be displayed in the card
    * @type {string} 
    */

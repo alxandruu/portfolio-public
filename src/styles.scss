@@ -147,6 +147,10 @@ ap-home {
     }
 }
 
+p {
+    margin-bottom: 0;
+}
+
 body {
     background-color: var(--body-background-color) !important;
     animation: animation 1s ease;
@@ -204,9 +208,6 @@ ul {
 
 /* General CSS */
 
-p {
-    font-size: 1.05rem;
-}
 
 
 .box-shadow {
@@ -257,6 +258,49 @@ p {
     &-light {
         color: var(--light-color);
     }
+
+    &-grey {
+        color: var(--grey-color);
+    }
+}
+
+.hover {
+    &-animation {
+        &-resize {
+            transform: scale(1);
+            transition: all 0.25s ease;
+
+            &:hover,
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+
+
+    }
+
+    &-underline:hover {
+        text-decoration: underline;
+    }
+
+    &-color {
+        &-dark:hover {
+            color: var(--dark-color);
+        }
+
+        &-secondary:hover {
+            color: var(--secondary-color);
+        }
+
+        &-light:hover {
+            color: var(--light-color);
+        }
+
+        &-grey:hover {
+            transition: color 0.25s;
+            color: var(--grey-color);
+        }
+    }
 }
 
 .bg-theme {
@@ -288,15 +332,7 @@ svg.size-25 {
     height: 25px !important;
 }
 
-.hover-resize-animation {
-    transform: scale(1);
-    transition: all 0.25s ease;
 
-    &:hover,
-    &:active {
-        transform: scale(0.9);
-    }
-}
 
 .unselectable {
     -webkit-user-select: none;
@@ -309,26 +345,47 @@ svg.size-25 {
     /* Standard */
 }
 
-.font-size-95 {
-    font-size: 0.95rem;
+.font {
+    &-size {
+        &-90 {
+            font-size: 0.90rem;
+        }
+
+        &-95 {
+            font-size: 0.95rem;
+        }
+
+        &-125 {
+            font-size: 1.25rem;
+        }
+
+        &-150 {
+            font-size: 1.5rem;
+        }
+
+        &-175 {
+            font-size: 1.75rem;
+        }
+    }
 }
 
-.font-size-125 {
-    font-size: 1.25rem;
-}
-
-.font-size-150 {
-    font-size: 1.5rem;
-}
-
-.font-size-175 {
-    font-size: 1.75rem;
-}
 
 .slash-separator {
     &>*+* {
         &::before {
             content: " / ";
         }
+    }
+}
+
+.hide {
+    &-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.width {
+    &-max-content {
+        width: max-content;
     }
 }

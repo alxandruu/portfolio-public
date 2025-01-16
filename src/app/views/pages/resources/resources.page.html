@@ -1,0 +1,56 @@
+<!-- <ng-container *ngIf="isLogged">
+    <admin-action-new-resource [categories]=categories></admin-action-new-resource>
+    <admin-action-edit-resource [categories]=categories></admin-action-edit-resource>
+</ng-container> -->
+
+<div class="d-flex align-items-center justify-content-between">
+    <h1 class="fw-bold text-theme-dark"><i class="fas fa-folder-open me-4"></i>{{i18s.getValue("resources.title")}}</h1>
+    <!-- <div class="t-resources">{{resources.length}} {{i18s.getValue("resources.resources-found")}}</div> -->
+    <div>
+        <div id="filter-mobile"
+            class="{{showFilterCategory ? 'active': ''}} d-flex align-items-center cursor-pointer bg-theme-dark text-theme-light rounded   py-1 px-2"
+            (click)="showFilterCategory=!showFilterCategory">
+            <span>{{i18s.getValue("resources.filter")}}</span>
+            <i class="fas fa-angle-down ms-2"></i>
+        </div>
+
+
+    </div>
+</div>
+
+<div *ngIf="showFilterCategory" class="d-flex  justify-content-lg-end overflow-x-auto hide-scrollbar my-2">
+    <div class="cursor-pointer hover-animation-resize  text-theme-light rounded bg-theme-dark  text-nowrap me-2 px-2 py-1"
+        *ngFor="let c of categories" (click)="categoryActive = c">
+        {{c.name}}
+    </div>
+</div>
+
+<p class="d-flex align-items-center flex-wrap justify-content-between my-2">
+    <span class="fw-bold text-theme-dark mb-0">{{categoryActive.name}}</span>
+    <span>{{resources.length}} {{i18s.getValue("resources.resources-found")}}</span>
+</p>
+
+<hr />
+
+<div class="d-flex align-items-center justify-content-between ">
+    <div class="d-flex align-items-center hover-animation-resize cursor-pointer " id="select-random-button"
+        (click)="randomResource()">
+        <i class="fas fa-dice"></i>
+        <span class="ms-2">{{i18s.getValue("resources.random-button")}}</span>
+    </div>
+    <component-card-style-selector></component-card-style-selector>
+</div>
+
+<div class="my-4" *ngFor="let r of resources | categoryPipe:categoryActive.id ; ">
+
+    <component-card-viewer
+        [cardProps]="{image: r.img,heading:r.name, description: r.description}"></component-card-viewer>
+
+    <!-- <component-list-card *ngIf="cardViewerStyle == constantsPortalService.CARD_VIEWER_STYLE_LIST; else cardBlock"
+        [description]="r.description" [heading]="r.name" [image]="r.img"
+        [link]="{href: r.url,rel: 'noopener noreferrer',target:'_blank', icon: null, text:null }"></component-list-card>
+    <ng-template #cardBlock>
+        <component-card [image]="r.img" [heading]="r.name" [description]="r.description"
+            [link]='{href: r.url,rel: "noopener noreferrer",target:"_blank", icon: null, text:null }'></component-card> -->
+    <!-- </ng-template> -->
+</div>

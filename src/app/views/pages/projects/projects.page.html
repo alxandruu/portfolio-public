@@ -1,0 +1,14 @@
+<h1 class="fw-bold text-theme-dark "><i class="fas fa-code me-3"></i>{{i18s.getValue("projects.header")}}</h1>
+
+<hr />
+
+<div class="d-flex align-items-center justify-content-end ">
+    <component-card-style-selector></component-card-style-selector>
+</div>
+
+<div class="my-4 hover-animation-resize" *ngFor="let p of projects | async">
+    <a [routerLink]="['/projects', p.id]" class="text-decoration-none ">
+        <component-card-viewer
+            [cardProps]="{image: p.img,heading: p.name, description: p.description}"></component-card-viewer>
+    </a>
+</div>

@@ -1,8 +1,0 @@
-<h1 class="fw-bold text-theme-dark "><i class="fas fa-code me-3"></i>{{i18s.getValue("projects.header")}}</h1>
-
-<div class="row px-2 px-lg-0">
-    <div *ngFor="let p of projects | async" class="col-lg-4 my-3">
-        <component-card [image]="p.img" [heading]="p.name" [description]="p.description"
-            [link]="{href: p.url,target: '_self', rel: 'noopener noreferrer', icon: null, text: null}"></component-card>
-    </div>
-</div>

@@ -17,15 +17,15 @@
 
         <div class=" d-flex align-items-center flex-wrap">
             <a *ngFor="let sm of profile.social_media"
-                class=" font-size-125 text-center cursor-pointer unselectable d-flex align-items-center my-2 me-2 social-button text-decoration-none text-theme-light py-1 px-2 bg-theme-dark rounded hover-resize-animation"
+                class=" font-size-125 text-center cursor-pointer unselectable d-flex align-items-center my-2 me-2 social-button text-decoration-none text-theme-light py-1 px-2 bg-theme-dark rounded hover-animation-resize"
                 [href]="sm.href" [target]="sm.target">
                 <i class="{{sm.icon}} me-2  size-25"></i>
                 <span>{{sm.text}}</span>
             </a>
         </div>
     </div>
-    <!-- <div class="work-timeline ">
+     <div class="work-timeline ">
         <component-timeline-history [title]="i18s.getValue('cv.work-experience')" fw_icon="fas fa-briefcase"
             [timeline]="work_experience"></component-timeline-history>
-    </div> -->
+    </div>
 </div>

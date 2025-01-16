@@ -7,7 +7,7 @@ import { ActionEditResourceComponent } from './action-edit-resource/action-edit-
 import { FormsModule } from '@angular/forms';
 import { ActionNewResourceComponent } from './action-new-resource/action-new-resource.component';
 import { CoreModule } from 'src/app/core/core.module';
-import { CardComponent } from '../card/card.component';
+import { CardComponent } from '../cards/card/card.component';
 
 
 

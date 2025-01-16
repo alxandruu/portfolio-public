@@ -8,12 +8,12 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore, } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { NavigationMenuComponent } from './shared/components/navigation-menu/navigation-menu.component';
 import { PortalGeneralComponents } from './shared/components/portal-general.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +23,6 @@ import { FooterComponent } from './shared/components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule,
     CoreModule,
     HttpClientModule,
     NavigationMenuComponent,

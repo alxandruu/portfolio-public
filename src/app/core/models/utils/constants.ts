@@ -13,7 +13,7 @@ export const REGISTER_TYPES = {
     danger: "danger",
 }
 
-export const RESOURCES_VIEWER_COOKIE: string = "resources-viewer"
+export const CARD_STYLE_VIEWER_COOKIE: string = "card-style-viewer"
 export const RESOURCES_DEFAULT_CATEGORY = {
     id: 'c0',
     name: 'All Categories'

@@ -9,5 +9,4 @@ export interface Project extends ArrayCategoryPipeInterface {
     website: string;
     stack: string[];
     imgs: string[];
-    url: string;
 }

@@ -5,8 +5,8 @@
     <p class=" mt-4 text-theme-dark">{{project.description}}</p>
 
     <div *ngIf="project.website && project.website!=''" class="mt-4">
-        <span
-            class="rounded bg-theme-dark text-theme-light fw-bold  px-2 py-1">{{i18s.getValue("projects.view.website")}}</span>
+        <h4
+            class="rounded bg-theme-dark text-theme-light fw-bold  px-2 py-1">{{i18s.getValue("projects.view.website")}}</h4>
         <span class="d-block  d-lg-inline my-2 ms-2">
             <a [href]="project.website" target="_blank" rel="noopener noreferrer" class="link-theme-secondary ">
                 <span>{{project.website}}</span>
@@ -15,8 +15,8 @@
         </span>
     </div>
     <div class="mt-4">
-        <span
-            class="rounded bg-theme-dark text-theme-light fw-bold  px-2 py-1">{{i18s.getValue("projects.view.stack")}}</span>
+        <h4
+            class="rounded bg-theme-dark text-theme-light fw-bold  px-2 py-1">{{i18s.getValue("projects.view.stack")}}</h4>
         <span class="slash-separator text-theme-dark d-block d-lg-inline my-2 ms-2"><span
                 *ngFor="let st of project.stack">{{st}}</span></span>
     </div>

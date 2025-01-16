@@ -1,9 +1,9 @@
 <div class="footer my-5 container-fluid container-md">
     <div class="text-center language-selection d-none d-md-flex align-items-center justify-content-center ">
-      <div *ngFor="let lng of i18s.languages" class="lang-selector px-3" (click)="i18s.changeLanguage(lng.id)">
+      <div *ngFor="let lng of i18s.languages" class="lang-selector px-3 text-theme-dark cursor-pointer hover-color-grey hover-underline" (click)="i18s.changeLanguage(lng.id)">
         {{lng.description}}</div>
     </div>
-    <div class="text-md-center mt-3">2025 © Gabriel Alexandru Botas </div>
+    <div class="text-md-center mt-3 text-theme-grey">2025 © Gabriel Alexandru Botas </div>
   </div>
 
   
