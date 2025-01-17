@@ -11,8 +11,22 @@ import { Link } from 'src/app/core/models/interfaces/link';
   selector: 'component-list-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './list-card.component.html',
-  styleUrls: ['./list-card.component.scss']
+  template: `
+    <div class="list-card-component">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="d-flex align-items-center">
+                  <img [src]="image" class="unselectable me-3 rounded object-fit-cover" loading="lazy" width="125px"
+                      height="75px">
+                  <h4 class=" fw-bold text-theme-dark">{{heading}}</h4>
+              </div>
+          </div>
+          <div class="col-md-8">
+              <p class="mt-3 mx-1 text-theme-dark text-lg-end mt-lg-0">{{description}}</p>
+          </div>
+      </div>
+    </div>
+  `,
 })
 export class ListCardComponent {
 

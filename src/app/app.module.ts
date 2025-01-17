@@ -12,13 +12,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { NavigationMenuComponent } from './shared/components/navigation-menu/navigation-menu.component';
 import { PortalGeneralComponents } from './shared/components/portal-general.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
+import { ButtonScrollTopComponent } from './shared/components/buttons/button-scroll-top/button-scroll-top.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +25,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     CoreModule,
     HttpClientModule,
     NavigationMenuComponent,
+    ButtonScrollTopComponent,
     PortalGeneralComponents,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),

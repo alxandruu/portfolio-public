@@ -18,30 +18,12 @@ import { fadeInfadeOutAnimation } from 'src/app/shared/static/animations';
 })
 export class HomePage {
   profile!: HomeProfile;
-  work_experience!: Array<TimelineHistory>;
 
 
   constructor(protected i18s: I18nService, private userinfoSrv: UserInformationService) {
     this.userinfoSrv.requestProfile().then(data => {
       this.profile = data;
     })
-    this.userinfoSrv.requestCurriculumVitae().then(data => {
-      this.work_experience = data.work_experience
-        .sort((a, b) => (a.date.start < b.date.start) ? 1 : -1)
-        .map(v => {
-          return {
-            title: v.position,
-            content: v.description,
-            headline: v.company + " - " + v.location,
-            date: {
-              end: v.date.end ? v.date.end.toDate() : null,
-              start: v.date.start.toDate()
-            }
-          } as TimelineHistory
-        })
-
-    })
-
   }
 
 }

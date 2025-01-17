@@ -3,60 +3,8 @@
     box-shadow:
         rgba(var(--dark-color-rgb), 0.05) 0px 6px 24px 0px,
         rgba(var(--dark-color-rgb), 0.08) 0px 0px 0px 1px;
-    z-index: 99;
-    * {
-        color: var(--dark-color);
-    }
+    z-index: 9;
 
-    .website-logo {
-        font-weight: bold;
-        transform: rotate(0deg);
-        transition: transform 0.5s ease;
-        svg {
-            width: 25px;
-            height: 25px;
-        }
-       
-        &:hover {
-            transform: rotateX(-180deg);
-            transition: transform 0.6s ease;
-        }
-        @media screen and (min-width: 576px ) {
-            font-size: 1.25rem;
-            svg {
-                width: 35px;
-                height: 35px;
-            }
-        }
-    }
-
-    .menu-links {
-        * {
-            color: var(--dark-color);
-        }
-        li {
-            & > * {
-                font-size: 2.25rem;
-            }
-            a,
-            span {
-                cursor: pointer;
-            }
-        }
-        .link {
-            position: relative;
-            padding-bottom: 1px;
-            &:hover,
-            &:active {
-                text-decoration: underline;
-            }
-        }
-        @media screen and (min-width: 768px) {
-            li > * {
-                font-size: 1.25rem;
-            }
-        }
-    }
     .hamburguer-menu {
         button.hamburguer {
             transform: scale(0.8);
@@ -98,20 +46,7 @@
             }
         }
     }
-    .language-selection .lang-selector {
-        cursor: pointer;
-    }
+ 
 }
 
-// Scroll Top Button
-.scroll-top-button {
-    border-radius: 10px;
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    border: 2px var(--light-color) solid;
-    z-index: 9;
-    font-size: 1.25rem;
-    padding: 0.5rem 0.75rem;
-    box-shadow: rgba(var(--dark-color-rgb), 0.2) 0px 7px 29px 0px;
-    cursor: pointer;
-}
+

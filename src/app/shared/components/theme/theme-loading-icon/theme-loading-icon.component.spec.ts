@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoadingIconComponent } from './loading-icon.component';
+import { ThemeLoadingIconComponent } from './theme-loading-icon.component';
 
 describe('LoadingIconComponent', () => {
-  let component: LoadingIconComponent;
-  let fixture: ComponentFixture<LoadingIconComponent>;
+  let component: ThemeLoadingIconComponent;
+  let fixture: ComponentFixture<ThemeLoadingIconComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoadingIconComponent ]
+      declarations: [ ThemeLoadingIconComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LoadingIconComponent);
+    fixture = TestBed.createComponent(ThemeLoadingIconComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

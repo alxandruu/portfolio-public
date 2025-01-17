@@ -1,11 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { LoadingIconComponent } from "./loading-icon/loading-icon.component";
+import { ThemeLoadingIconComponent } from "./theme/theme-loading-icon/theme-loading-icon.component";
 
 @Component({
     selector: 'portal-general-components',
     standalone: true,
-    imports: [CommonModule, LoadingIconComponent],
+    imports: [CommonModule, ThemeLoadingIconComponent],
     template: `
         <component-loading-icon></component-loading-icon>
     `

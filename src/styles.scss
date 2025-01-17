@@ -26,6 +26,9 @@
     --white: #fff;
     --bs-border-radius: 10px !important;
     --bs-body-font-size: 1.05rem;
+    --bs-body-color: var(--dark-color);
+    --bs-link-color-rgb: var(--dark-color-rgb);
+    --bs-link-hover-color-rgb: var(--dark-color-rgb);
 
     @media (prefers-color-scheme: dark) {
         --body-background-color: #1e1c27;
@@ -40,6 +43,7 @@
     --dark-color: #2a2d34;
     --dark-color-rgb: 42, 45, 52;
     --light-color: #f2fbe0;
+    --light-color-rgb: 242, 251, 224;
     --body-background-color: #f2fbe0;
     --nav-background-color-rgba: 242, 251, 224, 0.95;
     --nav-hamb-background-color: #2a2d34;
@@ -55,6 +59,7 @@
     --dark-color: #ecdbba;
     --dark-color-rgb: 236, 219, 186;
     --light-color: #1e1c23;
+    --light-color-rgb: 30, 28, 35;
     --body-background-color: #1e1c27;
     --nav-background-color-rgba: 30, 28, 35, 0.95;
     --nav-hamb-background-color: #1e1c23;
@@ -147,10 +152,6 @@ ap-home {
     }
 }
 
-p {
-    margin-bottom: 0;
-}
-
 body {
     background-color: var(--body-background-color) !important;
     animation: animation 1s ease;
@@ -215,6 +216,7 @@ ul {
         box-shadow: rgba(var(--light-color), .35) 0px 7px 29px 0px;
     }
 
+
     &-dark {
         box-shadow: rgba(var(--dark-color-rgb), .35) 0px 7px 29px 0px;
     }
@@ -264,6 +266,30 @@ ul {
     }
 }
 
+.svg {
+    &-path {
+        &-dark {
+            path {
+                fill: var(--dark-color);
+
+            }
+
+        }
+
+        &-light {
+            path {
+                fill: var(--light-color);
+            }
+        }
+    }
+}
+
+svg {
+    path {
+        fill: var(--dark-color);
+    }
+}
+
 .hover {
     &-animation {
         &-resize {
@@ -276,12 +302,46 @@ ul {
             }
         }
 
+        &-rotate {
+            &-reverse {
+                &-180 {
+                    transform: rotate(0deg);
+                    transition: transform 0.5s ease;
 
+                    &:hover {
+                        transform: rotateX(-180deg);
+                    }
+                }
+            }
+        }
+
+        &-underline {
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: var(--dark-color);
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform .25s ease;
+            }
+
+            &:hover {
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
     }
 
-    &-underline:hover {
-        text-decoration: underline;
-    }
+
+
+
 
     &-color {
         &-dark:hover {
@@ -366,6 +426,10 @@ svg.size-25 {
         &-175 {
             font-size: 1.75rem;
         }
+
+        &-225 {
+            font-size: 2.25rem;
+        }
     }
 }
 
@@ -387,5 +451,18 @@ svg.size-25 {
 .width {
     &-max-content {
         width: max-content;
+    }
+}
+
+.button {
+    &-unstyled {
+        outline: none;
+        border: none;
+        box-shadow: none;
+        background: none;
+
+        &:focus {
+            outline: none;
+        }
     }
 }
