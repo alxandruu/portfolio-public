@@ -8,7 +8,7 @@ import { I18nService } from 'src/app/core/services/i18n/i18n.service';
   template: `
     <div class="unselectable d-flex flex-wrap justify-content-center">
         <div *ngFor="let lng of i18s.languages"
-            class="me-4 mb-4 hover-animation-underline cursor-pointer"
+            class="me-4 hover-animation-underline cursor-pointer"
             (click)="i18s.changeLanguage(lng.id)">{{lng.description}}</div>
     </div>
   `,

@@ -181,6 +181,15 @@ ul {
     border-width: 4px !important;
 }
 
+.container {
+    &-resize {
+        &-full-page {
+            width: 100vw;
+            height: 100dvh;
+        }
+    }
+}
+
 .color-light {
     color: #f2fbe0 !important;
 }

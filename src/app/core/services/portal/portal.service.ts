@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { WebNavigationConfig } from '../../models/interfaces/web-navigation-config';
+import { I18nService } from '../i18n/i18n.service';
 
 function getWindow(): Window {
   return window;
@@ -18,8 +20,27 @@ export class PortalService {
   private scrollY: BehaviorSubject<number> = new BehaviorSubject<number>(window.scrollY);
   private showLoadingIcon: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private cardViewerStyle: BehaviorSubject<string>;
+  private pages: BehaviorSubject<WebNavigationConfig> = new BehaviorSubject<WebNavigationConfig>({
+    pages: [
+      {
+        href: '/projects',
+        innerHTML: this.i18s.getValue("navbar.projects"),
+        navEffects: true
+      }, {
+        href: '/resources',
+        innerHTML: this.i18s.getValue("navbar.resources"),
+        navEffects: true
+      },
+      {
+        href: 'https://github.com/alxandruu',
+        target: "_blank",
+        rel: "noopener noreferrer",
+        innerHTML: '<i class="fab fa-github me-3"></i><span>Github</span>',
+      }
+    ]
+  });
 
-  constructor() {
+  constructor(private i18s: I18nService) {
     let lstheme = localStorage.getItem("themeScheme");
     if (!lstheme) {
       const wantsDark = window.matchMedia("(prefers-color-scheme: dark)");
@@ -72,6 +93,11 @@ export class PortalService {
   public getThemeScheme(): Observable<string> {
     return this.themeScheme.asObservable();
   }
+
+  public getPages(): Observable<WebNavigationConfig> {
+    return this.pages.asObservable();
+  }
+
 
   public getScrollY(): Observable<number> {
     return this.scrollY.asObservable();

@@ -4,49 +4,6 @@
         rgba(var(--dark-color-rgb), 0.05) 0px 6px 24px 0px,
         rgba(var(--dark-color-rgb), 0.08) 0px 0px 0px 1px;
     z-index: 9;
-
-    .hamburguer-menu {
-        button.hamburguer {
-            transform: scale(0.8);
-            background-color: transparent;
-
-            .line {
-                display: block;
-                width: 45px;
-                height: 5px;
-                background-color: var(--dark-color);
-                border-radius: 4px;
-                transition: transform 0.5s;
-                opacity: 0.25s;
-            }
-            .line + .line {
-                margin-top: 10px;
-            }
-        }
-
-        .hamburguer-links {
-            background-color: var(--light-color);
-            z-index: 99;
-            width: 100vw;
-            height: 100dvh;
-        }
-
-        &.active {
-            button.hamburguer {
-                .line:nth-child(1) {
-                    transform: translateY(15px) rotate(45deg);
-                }
-                .line:nth-child(2) {
-                    opacity: 0;
-                }
-                .line:nth-child(3) {
-                    transform: translateY(-15px) rotate(-45deg);
-                }
-                z-index: 100;
-            }
-        }
-    }
- 
 }
 
 
