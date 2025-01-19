@@ -3,7 +3,23 @@
   </ng-template>
 </div>
 
-<component-navigation-menu></component-navigation-menu>
+<header class="position-sticky start-0 top-0 py-4 ">
+  <div class="container-fluid container-lg  d-flex align-items-center justify-content-between">
+    <a class="hover-animation-rotate-reverse-180 unselectable text-decoration-none fw-bold " routerLink="">
+      <icon-bed></icon-bed>
+      <span class="ms-2">Gabriel Alexandru Botas</span>
+    </a>
+    <navigation-hamburger class="d-md-none" [pages]="wnc.pages"></navigation-hamburger>
+    <ul class="d-md-flex align-items-center p-0 m-0  menu-links d-none font-size-125">
+      <li class="me-4" *ngFor="let page of wnc.pages">
+        <a [routerLink]="page.href"  class="text-decoration-none"
+          [ngClass]="{'hover-animation-underline': page.navEffects}" [attr.target]="page.target" [attr.rel]="page.rel"
+          [innerHTML]="page.innerHTML"></a>
+      </li>
+      <component-theme-switcher></component-theme-switcher>
+    </ul>
+  </div>
+</header>
 
 <div class="pt-4 container-fluid container-md overflow-hidden" style="min-height: 70dvh;">
   <router-outlet></router-outlet>

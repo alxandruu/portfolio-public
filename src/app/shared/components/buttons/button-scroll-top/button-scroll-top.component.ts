@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PortalService } from 'src/app/core/services/portal/portal.service';
-import { fadeInfadeOutAnimation } from 'src/app/shared/static/animations';
+import { fadeInOutAnimation } from 'src/app/shared/static/animations';
 
 @Component({
   selector: 'button-scroll-top',
@@ -18,7 +18,7 @@ import { fadeInfadeOutAnimation } from 'src/app/shared/static/animations';
   imports: [CommonModule],
   styleUrls: [],
   animations: [
-    fadeInfadeOutAnimation
+    fadeInOutAnimation
   ]
 })
 export class ButtonScrollTopComponent implements OnInit {

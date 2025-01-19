@@ -1,16 +1,16 @@
-<button class="button-hamburger position-relative z-2 button-unstyled" [ngClass]="{'active': showMenu}"
+<button class="button-hamburger position-relative z-3 button-unstyled" [ngClass]="{'active': showMenu}"
     (click)="showMenu = !showMenu">
     <span class="line"></span>
     <span class="line"></span>
     <span class="line"></span>
 </button>
 
-<div class="position-absolute top-0 end-0 p-4 d-flex flex-column justify-content-between z-1 container-resize-full-page bg-theme-light"
+<div class="position-absolute top-0 end-0 p-4 d-flex flex-column justify-content-between z-2 container-resize-full-page bg-theme-light"
     *ngIf="showMenu" @fadeInOutAnimation>
-    <ul class="overflow-y-auto p-0 mb-3 menu-links font-size-225">
+    <ul class="overflow-y-auto p-0 mb-3 font-size-225">
         <li class="my-5" *ngFor="let page of pages">
             <a [href]="page.href" class="text-decoration-none"
-                [ngClass]="{'hover-animation-underline': page.navEffects}" [target]="page.target" [rel]="page.rel"
+                [ngClass]="{'hover-animation-underline': page.navEffects}" [attr.target]="page.target" [attr.rel]="page.rel"
                 [innerHTML]="page.innerHTML"></a>
         </li>
     </ul>

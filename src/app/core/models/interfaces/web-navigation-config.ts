@@ -8,5 +8,6 @@ export interface WNCRouterLink {
     target?: string;
     rel?: string;
     navEffects?: boolean;
-    childPages?: Array<WNCRouterLink>
+    ngRouter: boolean;
+    childPages?: Array<WNCRouterLink>;
 }

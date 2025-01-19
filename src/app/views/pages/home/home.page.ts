@@ -6,14 +6,14 @@ import { UserInformationService } from 'src/app/core/services/firebase-manager/u
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { AdministrationComponentsModule } from 'src/app/shared/components/administration/administration-components.module';
 import { TimelineHistory, TimelineHistoryComponent } from 'src/app/shared/components/timeline-history/timeline-history.component';
-import { fadeInfadeOutAnimation } from 'src/app/shared/static/animations';
+import { fadeInOutAnimation } from 'src/app/shared/static/animations';
 @Component({
   templateUrl: './home.page.html',
   standalone: true,
   imports: [CommonModule, AdministrationComponentsModule, RouterModule, TimelineHistoryComponent],
   styleUrls: ['./home.page.scss'],
   animations: [
-    fadeInfadeOutAnimation,
+    fadeInOutAnimation,
   ]
 })
 export class HomePage {

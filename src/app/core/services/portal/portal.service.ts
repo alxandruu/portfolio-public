@@ -25,17 +25,21 @@ export class PortalService {
       {
         href: '/projects',
         innerHTML: this.i18s.getValue("navbar.projects"),
+        ngRouter: true,
         navEffects: true
       }, {
         href: '/resources',
         innerHTML: this.i18s.getValue("navbar.resources"),
-        navEffects: true
+        navEffects: true,
+        ngRouter: true
       },
       {
         href: 'https://github.com/alxandruu',
+        ngRouter: false,
         target: "_blank",
         rel: "noopener noreferrer",
         innerHTML: '<i class="fab fa-github me-3"></i><span>Github</span>',
+
       }
     ]
   });
