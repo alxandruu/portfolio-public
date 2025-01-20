@@ -1,11 +1,7 @@
 export interface SocialMedia {
-    header: string;
-    sections: Array<SocialMediaSection>;
-}
-
-export interface SocialMediaSection {
-    icon: string;
-    text: string;
-    url: string;
-    target: string;
+    svg_icon: string | null,
+    text: string | null,
+    href: string,
+    target: string,
+    rel: string | null
 }

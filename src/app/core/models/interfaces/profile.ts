@@ -14,16 +14,5 @@ export interface HomeProfile {
     image: string;
     ocupation: string;
     description_html: string;
-    social_media: Array<Link>;
-}
-
-export const EMPTY_PROFILE: Profile = {
-    img: '',
-    name: '',
-    about_me: [],
-    ocupation: '',
-    social_media: {
-        header: '',
-        sections: []
-    }
+    social_media: Array<SocialMedia>;
 }

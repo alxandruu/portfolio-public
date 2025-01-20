@@ -5,12 +5,13 @@ import { HomeProfile } from 'src/app/core/models/interfaces/profile';
 import { UserInformationService } from 'src/app/core/services/firebase-manager/user-information/user-information.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { AdministrationComponentsModule } from 'src/app/shared/components/administration/administration-components.module';
-import { TimelineHistory, TimelineHistoryComponent } from 'src/app/shared/components/timeline-history/timeline-history.component';
 import { fadeInOutAnimation } from 'src/app/shared/static/animations';
+import { IconsModule } from "../../../shared/components/icons/icons.module";
+
 @Component({
   templateUrl: './home.page.html',
+  imports: [CommonModule, AdministrationComponentsModule, RouterModule, IconsModule],
   standalone: true,
-  imports: [CommonModule, AdministrationComponentsModule, RouterModule, TimelineHistoryComponent],
   styleUrls: ['./home.page.scss'],
   animations: [
     fadeInOutAnimation,
