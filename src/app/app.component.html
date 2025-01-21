@@ -3,7 +3,7 @@
   </ng-template>
 </div>
 
-<header class="position-sticky z-1 start-0 top-0 py-4 ">
+<header class="position-sticky z-2 start-0 top-0 py-4 ">
   <div class="container-fluid container-lg  d-flex align-items-center justify-content-between">
     <a class="hover-animation-rotate-reverse-180 unselectable text-decoration-none fw-bold " routerLink="">
       <icon-bed></icon-bed>
@@ -21,14 +21,15 @@
   </div>
 </header>
 
-<div class="pt-4 container-fluid container-md overflow-hidden" style="min-height: 70dvh;">
+<div class="pt-4 container-lg overflow-hidden" style="min-height: 70dvh;">
   <router-outlet></router-outlet>
 
-  <footer class=" my-4">
+  <footer class="d-flex align-items-center justify-content-between my-4">
     <div class="text-theme-grey">© 2025 Gabriel Alexandru Botas. Derechos reservados</div>
+    <selector-language class="d-none d-md-block"></selector-language>
   </footer>
 </div>
 
-<button-scroll-top></button-scroll-top>
+<button-scroll-top [width]="20" [height]="20"></button-scroll-top>
 
 <portal-general-components></portal-general-components>

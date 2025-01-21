@@ -1,0 +1,32 @@
+<!-- <ng-container  *ngIf="isLogged">
+    <admin-action-history></admin-action-history>
+</ng-container> -->
+
+<div id="home-container">
+    <div *ngIf="profile" class="mb-5">
+        <section class="mt-lg-5">
+            <h1 class="fw-bold text-theme-dark ">{{profile.name}}</h1>
+            <h2 class=" text-theme-dark ">{{profile.ocupation}}</h2>
+        </section>
+        <section class="d-flex align-items-center flex-wrap my-4">
+            <a class=" text-center cursor-pointer d-flex align-items-center my-2 me-2 text-theme-light text-decoration-none py-2 px-4 bg-theme-dark rounded hover-animation-resize"
+                href="mailto:bgabrielalexandru@gmail.com" target="_blank" rel="">
+                <icon-mail class="d-flex svg-path-light" [width]="20" [height]="20"></icon-mail>
+                <span class="ms-3">Contact me</span>
+
+            </a>
+
+            <a class="  text-center cursor-pointer d-flex align-items-center my-2 me-2 text-decoration-none text-theme-light py-2 px-4 bg-theme-dark rounded hover-animation-resize"
+                href="https://www.linkedin.com/in/gabriel-alexandru-botas-795103204/" target="_blank" rel="">
+                <icon-linkedin class="d-flex svg-path-light" [width]="20" [height]="20"></icon-linkedin>
+                <span class="ms-3">Linkedin</span>
+            </a>
+        </section>
+        <section class="my-5 mt-3 letter-spacing-2 description" [innerHTML]="profile.description_html">
+        </section>
+
+        <section class=" ms-2">
+            <component-timeline-history [timeline]="work_experience"></component-timeline-history>
+        </section>
+    </div>
+</div>

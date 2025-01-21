@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePage } from './views/pages/home/home.page';
 import { ResourcesComponent } from './views/pages/resources/resources.page';
-import { LoginPage } from './views/pages/login/login.page';
+import { LoginPage } from './views/pages/private/login/login.page';
 import { LoginActivate } from './core/services/authguard/login-activate/login-activate.guard';
 import { ProjectViewPage } from './views/pages/projects/project_view/project-view.page';
 import { ProjectsPage } from './views/pages/projects/projects.page';
+import { HomePage } from './views/pages/public/home/home.page';
 
 
 const routes: Routes = [

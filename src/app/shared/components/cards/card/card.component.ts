@@ -13,7 +13,7 @@ import { Link } from 'src/app/core/models/interfaces/link';
   imports: [CommonModule],
   template: `
     <div class="card-component">
-      <img [src]="image" class="unselectable rounded object-fit-cover box-shadow-dark" loading="lazy" width="100%" height="200px">
+      <img [src]="image" class="unselectable rounded object-fit-cover" loading="lazy" width="100%" height="200px">
       <div class="mt-3 mx-1">
           <h3 class="fw-bold text-theme-dark">{{heading}} </h3>
           <p class="text-theme-dark">{{description}}</p>

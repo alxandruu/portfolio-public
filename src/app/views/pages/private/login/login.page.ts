@@ -6,12 +6,13 @@ import { PORTFOLIO_IMAGE_URL } from 'src/app/core/models/utils/constants';
 import { AuthenticationService } from 'src/app/core/services/firebase-manager/authentication/authentication.service';
 import { StorageManagerService } from 'src/app/core/services/firebase-manager/storage/storage-manager.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
+import { IconsModule } from 'src/app/shared/components/icons/icons.module';
 import { environment } from 'src/environments/environment';
 
 @Component({
   templateUrl: './login.page.html',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, IconsModule],
   styleUrls: ['./login.page.scss']
 })
 export class LoginPage {

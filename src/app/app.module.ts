@@ -15,6 +15,7 @@ import { ButtonScrollTopComponent } from './shared/components/buttons/button-scr
 import { IconsModule } from './shared/components/icons/icons.module';
 import { HamburgerNavigationComponent } from './shared/components/navigation/navigation-hamburger/navigation-hamburger.component';
 import { ThemeSwitcherComponent } from './shared/components/theme/theme-switcher/theme-switcher.component';
+import { SelectorLanguageComponent } from './shared/components/i18n/selector-language/selector-language.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ThemeSwitcherComponent } from './shared/components/theme/theme-switcher
     IconsModule,
     ThemeSwitcherComponent,
     HamburgerNavigationComponent,
+    SelectorLanguageComponent,
     HttpClientModule,
     ButtonScrollTopComponent,
     PortalGeneralComponents,

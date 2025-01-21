@@ -24,8 +24,6 @@ export interface TimelineHistory {
 })
 export class TimelineHistoryComponent {
   showDate = dateToString;
-  @Input() fw_icon: string | null = null;
-  @Input() title: string = "Title Timeline History";
   @Input() date_format: string = "DD/MM/YYYY";
   @Input() timeline: Array<TimelineHistory> = [
     {
