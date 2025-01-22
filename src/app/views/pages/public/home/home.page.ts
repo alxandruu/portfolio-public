@@ -4,14 +4,14 @@ import { RouterModule } from '@angular/router';
 import { HomeProfile } from 'src/app/core/models/interfaces/profile';
 import { UserInformationService } from 'src/app/core/services/firebase-manager/user-information/user-information.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
-import { AdministrationComponentsModule } from 'src/app/shared/components/administration/administration-components.module';
 import { IconsModule } from 'src/app/shared/components/icons/icons.module';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 import { TimelineHistory, TimelineHistoryComponent } from 'src/app/shared/components/timeline-history/timeline-history.component';
 import { fadeInOutAnimation } from 'src/app/shared/static/animations';
 
 @Component({
   templateUrl: './home.page.html',
-  imports: [CommonModule, AdministrationComponentsModule, RouterModule, IconsModule, TimelineHistoryComponent],
+  imports: [CommonModule,  RouterModule, IconsModule, TimelineHistoryComponent, ModalComponent],
   standalone: true,
   styleUrls: ['./home.page.scss'],
   animations: [

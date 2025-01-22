@@ -7,8 +7,8 @@
 </div>
 
 
-<div class="mt-4 mb-5">
-    <div class="row mt-4 mb-5" *ngIf="cardViewerStyle == constantsPortalService.CARD_VIEWER_STYLE_CARD">
+<div class="mt-4">
+    <div class="row" *ngIf="cardViewerStyle == constantsPortalService.CARD_VIEWER_STYLE_CARD">
         <div *ngFor="let p of projects | async" class="col-lg-4 col-md-6 mb-4  hover-animation-resize">
             <a [routerLink]="['/projects', p.id]" class="text-decoration-none">
                 <component-card [image]="p.img" [heading]="p.name" [description]="p.description"></component-card>

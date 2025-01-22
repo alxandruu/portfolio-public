@@ -8,18 +8,15 @@ import { CategoryPipe } from 'src/app/core/pipes/category.pipe';
 import { ResourcesManagerService } from 'src/app/core/services/firebase-manager/resources/resources-manager.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { PortalService } from 'src/app/core/services/portal/portal.service';
-import { CardViewerStyleSelectorComponent } from 'src/app/shared/components/cards/card-viewer-style-selector.component';
-import { CardViewerComponent } from 'src/app/shared/components/cards/card-viewer.component';
-import { CardComponent } from 'src/app/shared/components/cards/card/card.component';
-import { ListCardComponent } from 'src/app/shared/components/cards/list-card/list-card.component';
+import { CardsModule } from 'src/app/shared/components/cards/cards.module';
+import { IconsModule } from 'src/app/shared/components/icons/icons.module';
 import { sortHighlighted } from 'src/app/shared/static/static-methods';
 
 
 @Component({
   templateUrl: './resources.page.html',
   standalone: true,
-  imports: [CommonModule, CardViewerComponent, CoreModule, RouterModule, CardViewerStyleSelectorComponent],
-  styleUrls: ['./resources.page.scss']
+  imports: [CommonModule, CoreModule, RouterModule, CardsModule, IconsModule],
 })
 
 export class ResourcesComponent {

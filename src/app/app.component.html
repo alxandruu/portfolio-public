@@ -12,11 +12,9 @@
     <navigation-hamburger class="d-md-none" [pages]="wnc.pages"></navigation-hamburger>
     <ul class="d-md-flex align-items-center p-0 m-0  menu-links d-none font-size-125">
       <li class="me-4" *ngFor="let page of wnc.pages">
-        <a [routerLink]="page.href"  class="text-decoration-none"
-          [ngClass]="{'hover-animation-underline': page.navEffects}" [attr.target]="page.target" [attr.rel]="page.rel"
-          [innerHTML]="page.innerHTML"></a>
+        <navigation-portal-link [page]="page" ></navigation-portal-link>
       </li>
-      <component-theme-switcher></component-theme-switcher>
+      <button-theme-scheme></button-theme-scheme>
     </ul>
   </div>
 </header>
@@ -24,7 +22,7 @@
 <div class="pt-4 container-lg overflow-hidden" style="min-height: 70dvh;">
   <router-outlet></router-outlet>
 
-  <footer class="d-flex align-items-center justify-content-between my-4">
+  <footer class="d-flex align-items-center justify-content-between my-5">
     <div class="text-theme-grey">© 2025 Gabriel Alexandru Botas. Derechos reservados</div>
     <selector-language class="d-none d-md-block"></selector-language>
   </footer>

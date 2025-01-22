@@ -3,7 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { PortalService } from 'src/app/core/services/portal/portal.service';
 
 @Component({
-  selector: 'component-theme-switcher',
+  selector: 'button-theme-scheme',
   standalone: true,
   imports: [CommonModule],
   template: `
@@ -18,7 +18,7 @@ import { PortalService } from 'src/app/core/services/portal/portal.service';
   `,
   encapsulation: ViewEncapsulation.None
 })
-export class ThemeSwitcherComponent {
+export class ButtonThemeSchemeComponent {
   constantsPortal = PortalService
   scheme!: string;
 

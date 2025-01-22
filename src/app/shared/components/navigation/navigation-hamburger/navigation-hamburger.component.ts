@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { ThemeSwitcherComponent } from '../../theme/theme-switcher/theme-switcher.component';
-import { SelectorLanguageComponent } from '../../i18n/selector-language/selector-language.component';
-import { fadeInOutAnimation } from 'src/app/shared/static/animations';
-import { I18nService } from 'src/app/core/services/i18n/i18n.service';
-import { WebNavigationConfig, WNCRouterLink } from '../../../../core/models/interfaces/web-navigation-config';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { I18nService } from 'src/app/core/services/i18n/i18n.service';
+import { fadeInOutAnimation } from 'src/app/shared/static/animations';
+import { WNCHrefType, WNCRouterLink } from '../../../../core/models/interfaces/web-navigation-config';
+import { ButtonThemeSchemeComponent } from '../../buttons/button-theme-scheme/button-theme-scheme.component';
+import { SelectorLanguageComponent } from '../../i18n/selector-language/selector-language.component';
+import { NavigationPortalLinkComponent } from '../navigation-portal-link/navigation-portal-link.component';
 
 
 @Component({
@@ -14,12 +15,13 @@ import { BrowserModule } from '@angular/platform-browser';
   templateUrl: './navigation-hamburger.component.html',
   styleUrls: ['./navigation-hamburger.component.scss'],
   standalone: true,
-  imports: [CommonModule, ThemeSwitcherComponent, SelectorLanguageComponent, BrowserAnimationsModule],
+  imports: [CommonModule, ButtonThemeSchemeComponent, SelectorLanguageComponent, BrowserAnimationsModule, RouterModule, NavigationPortalLinkComponent],
   animations: [fadeInOutAnimation],
   encapsulation: ViewEncapsulation.None
 })
 export class HamburgerNavigationComponent {
   showMenu: boolean;
+  hrefTypes = WNCHrefType
 
   @Input() pages: Array<WNCRouterLink> = []
 
@@ -27,4 +29,8 @@ export class HamburgerNavigationComponent {
     this.showMenu = false;
   }
 
+
+  hideMenu() {
+    this.showMenu = false
+  }
 }

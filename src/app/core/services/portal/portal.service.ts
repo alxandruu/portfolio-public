@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { WebNavigationConfig } from '../../models/interfaces/web-navigation-config';
+import { WebNavigationConfig, WNCHrefType } from '../../models/interfaces/web-navigation-config';
 import { I18nService } from '../i18n/i18n.service';
 
 function getWindow(): Window {
@@ -23,18 +23,27 @@ export class PortalService {
   private pages: BehaviorSubject<WebNavigationConfig> = new BehaviorSubject<WebNavigationConfig>({
     pages: [
       {
-        href: '/projects',
+        href: {
+          url: ['/projects'],
+          type: WNCHrefType.ROUTER_LINK
+        },
         innerHTML: this.i18s.getValue("navbar.projects"),
         ngRouter: true,
         navEffects: true
       }, {
-        href: '/resources',
+        href: {
+          url: ['/resources'],
+          type: WNCHrefType.ROUTER_LINK
+        },
         innerHTML: this.i18s.getValue("navbar.resources"),
         navEffects: true,
         ngRouter: true
       },
       {
-        href: 'https://github.com/alxandruu',
+        href: {
+          url: 'https://github.com/alxandruu',
+          type: WNCHrefType.DEFAULT
+        },
         ngRouter: false,
         target: "_blank",
         rel: "noopener noreferrer",

@@ -3,19 +3,19 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 // Components
-import { AppComponent } from './app.component';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideFirestore, getFirestore, } from '@angular/fire/firestore';
-import { getAuth, provideAuth } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore, } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { PortalGeneralComponents } from './shared/components/portal-general.component';
-import { ButtonScrollTopComponent } from './shared/components/buttons/button-scroll-top/button-scroll-top.component';
+import { ButtonsModule } from './shared/components/buttons/buttons.module';
+import { SelectorLanguageComponent } from './shared/components/i18n/selector-language/selector-language.component';
 import { IconsModule } from './shared/components/icons/icons.module';
 import { HamburgerNavigationComponent } from './shared/components/navigation/navigation-hamburger/navigation-hamburger.component';
-import { ThemeSwitcherComponent } from './shared/components/theme/theme-switcher/theme-switcher.component';
-import { SelectorLanguageComponent } from './shared/components/i18n/selector-language/selector-language.component';
+import { PortalGeneralComponents } from './shared/components/portal-general.component';
+import { NavigationPortalLinkComponent } from './shared/components/navigation/navigation-portal-link/navigation-portal-link.component';
 
 
 @NgModule({
@@ -27,11 +27,11 @@ import { SelectorLanguageComponent } from './shared/components/i18n/selector-lan
     AppRoutingModule,
     CoreModule,
     IconsModule,
-    ThemeSwitcherComponent,
     HamburgerNavigationComponent,
     SelectorLanguageComponent,
     HttpClientModule,
-    ButtonScrollTopComponent,
+    ButtonsModule,
+    NavigationPortalLinkComponent,
     PortalGeneralComponents,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
