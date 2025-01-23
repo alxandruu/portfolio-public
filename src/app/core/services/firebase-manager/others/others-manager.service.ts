@@ -21,7 +21,7 @@ export class OthersManagerService {
     return docSnap.data() as Profile;
   }
 
-  public getActionHistory(): Observable<History[]> {
+  public getAccountActionHistory(): Observable<History[]> {
     let actionHistoryRef = collection(this.firestore, `action-history`);
     let q = query(actionHistoryRef, orderBy("timestamp", "desc"));
 

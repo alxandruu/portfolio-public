@@ -14,8 +14,8 @@ import { ButtonsModule } from './shared/components/buttons/buttons.module';
 import { SelectorLanguageComponent } from './shared/components/i18n/selector-language/selector-language.component';
 import { IconsModule } from './shared/components/icons/icons.module';
 import { HamburgerNavigationComponent } from './shared/components/navigation/navigation-hamburger/navigation-hamburger.component';
-import { PortalGeneralComponents } from './shared/components/portal-general.component';
 import { NavigationPortalLinkComponent } from './shared/components/navigation/navigation-portal-link/navigation-portal-link.component';
+import { PortalGeneralComponents } from './shared/components/portal-general.component';
 
 
 @NgModule({

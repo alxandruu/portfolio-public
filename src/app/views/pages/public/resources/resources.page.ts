@@ -19,7 +19,7 @@ import { sortHighlighted } from 'src/app/shared/static/static-methods';
   imports: [CommonModule, CoreModule, RouterModule, CardsModule, IconsModule],
 })
 
-export class ResourcesComponent {
+export class ResourcesPage {
   constantsPortalService = PortalService;
   showFilterCategory: boolean = false;
   cardViewerStyle: string = "";

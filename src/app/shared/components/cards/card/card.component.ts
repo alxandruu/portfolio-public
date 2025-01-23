@@ -16,7 +16,7 @@ import { Link } from 'src/app/core/models/interfaces/link';
       <img [src]="image" class="unselectable rounded object-fit-cover" loading="lazy" width="100%" height="200px">
       <div class="mt-3 mx-1">
           <h3 class="fw-bold text-theme-dark">{{heading}} </h3>
-          <p class="text-theme-dark">{{description}}</p>
+          <p class="text-theme-dark font-size-90">{{description}}</p>
       </div>
     </div>
   `,

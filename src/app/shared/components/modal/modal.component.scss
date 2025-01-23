@@ -1,4 +1,16 @@
 .modal-container {
     width: 100vw;
     height: 100dvh;
+    transition: all var(--default-transition-all-duration) ease;
+
+    @media screen and (min-width: 992px) {
+        .modal-body {
+            position: absolute !important;
+            width: 80vw;
+            height: 80dvh !important;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
 }

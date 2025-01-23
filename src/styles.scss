@@ -29,6 +29,7 @@
     --bs-body-color: var(--dark-color);
     --bs-link-color-rgb: var(--dark-color-rgb);
     --bs-link-hover-color-rgb: var(--dark-color-rgb);
+    --default-transition-all-duration: .5ms;
 
     @media (prefers-color-scheme: dark) {
         --body-background-color: #1e1c27;
@@ -51,6 +52,7 @@
     --grey-color: #66676b;
     --secondary-color: #cc2936;
     --highlight-color: #d2fa49;
+    
 
     /*Boostrap Override */
 }
@@ -380,7 +382,9 @@ svg {
 
     &-light {
         background-color: var(--light-color);
-
+    }
+    &-secondary {
+        background-color: var(--secondary-color);
     }
 }
 
@@ -436,8 +440,27 @@ svg.size-25 {
             font-size: 1.75rem;
         }
 
+        &-200 {
+            font-size: 2rem;
+        }
+
         &-225 {
             font-size: 2.25rem;
+        }
+
+        &-lg {
+            @media screen and (min-width: 992px) {
+                &-125 {
+                    font-size: 1.25rem;
+                }
+                &-400 {
+                    font-size: 4rem;
+                }
+
+                &-200 {
+                    font-size: 2rem;
+                }
+            }
         }
     }
 }
