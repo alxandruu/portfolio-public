@@ -9,13 +9,13 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore, } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
+import { ScrollTopButtonComponent } from './core/components/scroll-top-button/scroll-top-button.component';
+import { ThemeButtonComponent } from './core/components/theme-button/theme-button.component';
 import { CoreModule } from './core/core.module';
-import { ButtonsModule } from './shared/components/buttons/buttons.module';
 import { SelectorLanguageComponent } from './shared/components/i18n/selector-language/selector-language.component';
 import { IconsModule } from './shared/components/icons/icons.module';
 import { HamburgerNavigationComponent } from './shared/components/navigation/navigation-hamburger/navigation-hamburger.component';
 import { NavigationPortalLinkComponent } from './shared/components/navigation/navigation-portal-link/navigation-portal-link.component';
-import { PortalGeneralComponents } from './shared/components/portal-general.component';
 
 
 @NgModule({
@@ -30,9 +30,9 @@ import { PortalGeneralComponents } from './shared/components/portal-general.comp
     HamburgerNavigationComponent,
     SelectorLanguageComponent,
     HttpClientModule,
-    ButtonsModule,
+    ScrollTopButtonComponent,
+    ThemeButtonComponent,
     NavigationPortalLinkComponent,
-    PortalGeneralComponents,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => {

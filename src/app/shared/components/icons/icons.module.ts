@@ -28,6 +28,7 @@ import { IconSignInComponent } from "./icon-sign-in/icon-sign-in.component";
     ],
     declarations: [
 
+
     ],
 })
 export class IconsModule { }

@@ -1,0 +1,9 @@
+<button class="button-unstyled" *ngIf="themeManagerService.theme() == Theme.DARK"
+    (click)="themeManagerService.setTheme(Theme.LIGHT)">
+    <i class="fas fa-sun cursor-pointer"></i>
+</button>
+
+<button class="button-unstyled" *ngIf="themeManagerService.theme() == Theme.LIGHT"
+    (click)="themeManagerService.setTheme(Theme.DARK)">
+    <i class="fas fa-moon cursor-pointer"></i>
+</button>

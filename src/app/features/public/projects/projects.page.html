@@ -1,0 +1,26 @@
+<h1 class="fw-bold text-theme-dark "><i class="fas fa-code me-3"></i>{{i18s.getValue("projects.header")}}</h1>
+
+<hr />
+
+<div class="d-flex align-items-center justify-content-end ">
+    <component-card-style-selector></component-card-style-selector>
+</div>
+
+
+<div class="mt-4">
+    <div class="row" *ngIf="cardViewerStyle == CardViewerStyle.CARD">
+        <div *ngFor="let p of projects | async" class="col-lg-4 col-md-6 mb-4  hover-animation-resize">
+            <a [routerLink]="['/projects', p.id]" class="text-decoration-none">
+                <component-card [image]="p.img" [heading]="p.name" [description]="p.description"></component-card>
+            </a>
+        </div>
+    </div>
+    <div *ngIf="cardViewerStyle == CardViewerStyle.LIST">
+        <div class="mb-4 " *ngFor="let p of projects | async">
+            <a [routerLink]="['/projects', p.id]" class="text-decoration-none ">
+                <component-list-card [description]="p.description" [heading]="p.name"
+                    [image]="p.img"></component-list-card>
+            </a>
+        </div>
+    </div>
+</div>

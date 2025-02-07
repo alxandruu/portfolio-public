@@ -5,16 +5,17 @@
 
 <header class="position-sticky z-2 start-0 top-0 py-4 ">
   <div class="container-fluid container-lg  d-flex align-items-center justify-content-between">
-    <a class="hover-animation-rotate-reverse-180 unselectable text-decoration-none fw-bold d-flex align-items-center " routerLink="">
+    <a class="hover-animation-rotate-reverse-180 unselectable text-decoration-none fw-bold d-flex align-items-center "
+      routerLink="">
       <icon-bed [width]="30" [height]="30"></icon-bed>
       <span class="ms-2 font-size-lg-125">Gabriel Alexandru Botas</span>
     </a>
     <navigation-hamburger class="d-md-none" [pages]="wnc.pages"></navigation-hamburger>
     <ul class="d-md-flex align-items-center p-0 m-0  menu-links d-none font-size-125">
       <li class="me-4" *ngFor="let page of wnc.pages">
-        <navigation-portal-link [page]="page" ></navigation-portal-link>
+        <navigation-portal-link [page]="page"></navigation-portal-link>
       </li>
-      <button-theme-scheme></button-theme-scheme>
+      <theme-button></theme-button>
     </ul>
   </div>
 </header>
@@ -28,6 +29,4 @@
   </footer>
 </div>
 
-<button-scroll-top [width]="20" [height]="20"></button-scroll-top>
-
-<portal-general-components></portal-general-components>
+<scroll-top-button></scroll-top-button>

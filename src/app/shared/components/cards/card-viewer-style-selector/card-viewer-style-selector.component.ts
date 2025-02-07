@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { CardViewerStyle } from 'src/app/core/enums/card-viewer-style.enum';
 import { Link } from 'src/app/core/models/interfaces/link';
 import { PortalService } from 'src/app/core/services/portal/portal.service';
 
@@ -14,10 +15,10 @@ import { PortalService } from 'src/app/core/services/portal/portal.service';
     imports: [CommonModule],
     template: `
       <div class="d-flex align-items-center font-size-125">
-        <div class="cursor-pointer  me-3 hover-color-secondary text-theme-dark" (click)="changeCardViewerStyle(portalServiceConstants.CARD_VIEWER_STYLE_LIST)">
+        <div class="cursor-pointer  me-3 hover-color-secondary text-theme-dark" (click)="changeCardViewerStyle(CardViewerStyle.LIST)">
             <i class="fas fa-list"></i>
         </div>
-        <div class="cursor-pointer hover-color-secondary text-theme-dark" (click)="changeCardViewerStyle(portalServiceConstants.CARD_VIEWER_STYLE_CARD)">
+        <div class="cursor-pointer hover-color-secondary text-theme-dark" (click)="changeCardViewerStyle(CardViewerStyle.CARD)">
             <i class="fas fa-square"></i>
         </div>
     </div>
@@ -25,7 +26,7 @@ import { PortalService } from 'src/app/core/services/portal/portal.service';
     styles: ['']
 })
 export class CardViewerStyleSelectorComponent {
-    portalServiceConstants = PortalService;
+    CardViewerStyle = CardViewerStyle;
     cardViewerStyle!: string;
 
     constructor(private portalSrv: PortalService) {

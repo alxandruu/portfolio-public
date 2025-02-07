@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { fadeInOutAnimation } from 'src/app/shared/static/animations';
 import { WNCHrefType, WNCRouterLink } from '../../../../core/models/interfaces/web-navigation-config';
-import { ButtonThemeSchemeComponent } from '../../buttons/button-theme-scheme/button-theme-scheme.component';
+import { ThemeButtonComponent } from '../../../../core/components/theme-button/theme-button.component';
 import { SelectorLanguageComponent } from '../../i18n/selector-language/selector-language.component';
 import { NavigationPortalLinkComponent } from '../navigation-portal-link/navigation-portal-link.component';
 
@@ -15,7 +15,7 @@ import { NavigationPortalLinkComponent } from '../navigation-portal-link/navigat
   templateUrl: './navigation-hamburger.component.html',
   styleUrls: ['./navigation-hamburger.component.scss'],
   standalone: true,
-  imports: [CommonModule, ButtonThemeSchemeComponent, SelectorLanguageComponent, BrowserAnimationsModule, RouterModule, NavigationPortalLinkComponent],
+  imports: [CommonModule, ThemeButtonComponent, SelectorLanguageComponent, BrowserAnimationsModule, RouterModule, NavigationPortalLinkComponent],
   animations: [fadeInOutAnimation],
   encapsulation: ViewEncapsulation.None
 })
