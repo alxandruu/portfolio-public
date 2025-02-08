@@ -9,13 +9,14 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore, } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
+import { HamburgerMenuComponent } from './core/components/hamburger-menu/hamburger-menu.component';
+import { HeaderComponent } from "./core/components/header/header.component";
 import { IconBedComponent } from './core/components/icons/icon-bed/icon-bed.component';
+import { LanguageSelectorComponent } from './core/components/language-selector/language-selector.component';
+import { PortalLinkComponent } from './core/components/portal-link/portal-link.component';
 import { ScrollTopButtonComponent } from './core/components/scroll-top-button/scroll-top-button.component';
 import { ThemeButtonComponent } from './core/components/theme-button/theme-button.component';
-import { CoreModule } from './core/core.module';
-import { SelectorLanguageComponent } from './shared/components/i18n/selector-language/selector-language.component';
-import { NavigationPortalLinkComponent } from './shared/components/navigation/navigation-portal-link/navigation-portal-link.component';
-import { HamburgerMenuComponent } from './core/components/hamburger-menu/hamburger-menu.component';
+import { FooterComponent } from "./core/components/footer/footer.component";
 
 
 @NgModule({
@@ -26,20 +27,21 @@ import { HamburgerMenuComponent } from './core/components/hamburger-menu/hamburg
     BrowserModule,
     AppRoutingModule,
     IconBedComponent,
-    CoreModule,
     HamburgerMenuComponent,
-    SelectorLanguageComponent,
+    LanguageSelectorComponent,
     HttpClientModule,
     ScrollTopButtonComponent,
     ThemeButtonComponent,
-    NavigationPortalLinkComponent,
+    PortalLinkComponent,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => {
-      const auth = getAuth();
-      return auth;
+        const auth = getAuth();
+        return auth;
     }),
-  ],
+    HeaderComponent,
+    FooterComponent
+],
   providers: [Title],
   bootstrap: [AppComponent],
 })

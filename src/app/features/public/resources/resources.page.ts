@@ -4,24 +4,23 @@ import { RouterModule } from '@angular/router';
 import { IconAngleComponent } from 'src/app/core/components/icons/icon-angle/icon-angle.component';
 import { IconDiceComponent } from 'src/app/core/components/icons/icon-dice/icon-dice.component';
 import { CoreModule } from 'src/app/core/core.module';
-import { CardViewerStyle } from 'src/app/core/enums/card-viewer-style.enum';
+import { Card } from 'src/app/core/enums/card-scheme.enum';
 import { CategoryPipe } from 'src/app/core/pipes/category.pipe';
 import { ResourcesManagerService } from 'src/app/core/services/firebase-manager/resources/resources-manager.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { PortalService } from 'src/app/core/services/portal/portal.service';
 import { Category } from 'src/app/core/types/category.interface';
 import { Resource } from 'src/app/core/types/resource.interface';
-import { CardsModule } from 'src/app/shared/components/cards/cards.module';
 
 
 @Component({
   templateUrl: './resources.page.html',
   standalone: true,
-  imports: [CommonModule, CoreModule, RouterModule, CardsModule, IconDiceComponent, IconAngleComponent],
+  imports: [CommonModule, CoreModule, RouterModule, IconDiceComponent, IconAngleComponent],
 })
 
 export class ResourcesPage {
-  CardViewerStyle = CardViewerStyle;
+  CardViewerStyle = Card;
   showFilterCategory: boolean = false;
   cardViewerStyle: string = "";
   protected categoryActive!: Category

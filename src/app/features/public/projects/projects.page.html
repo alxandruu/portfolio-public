@@ -3,7 +3,7 @@
 <hr />
 
 <div class="d-flex align-items-center justify-content-end ">
-    <component-card-style-selector></component-card-style-selector>
+    <card-style-button></card-style-button>
 </div>
 
 
@@ -11,15 +11,15 @@
     <div class="row" *ngIf="cardViewerStyle == CardViewerStyle.CARD">
         <div *ngFor="let p of projects | async" class="col-lg-4 col-md-6 mb-4  hover-animation-resize">
             <a [routerLink]="['/projects', p.id]" class="text-decoration-none">
-                <component-card [image]="p.img" [heading]="p.name" [description]="p.description"></component-card>
+                <default-card [image]="p.img" [heading]="p.name" [description]="p.description"></default-card>
             </a>
         </div>
     </div>
     <div *ngIf="cardViewerStyle == CardViewerStyle.LIST">
         <div class="mb-4 " *ngFor="let p of projects | async">
             <a [routerLink]="['/projects', p.id]" class="text-decoration-none ">
-                <component-list-card [description]="p.description" [heading]="p.name"
-                    [image]="p.img"></component-list-card>
+                <list-card [description]="p.description" [heading]="p.name"
+                    [image]="p.img"></list-card>
             </a>
         </div>
     </div>

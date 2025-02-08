@@ -4,9 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { fadeInOutAnimation } from 'src/app/core/animations/fade-in-out.animation';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
-import { SelectorLanguageComponent } from 'src/app/shared/components/i18n/selector-language/selector-language.component';
-import { NavigationPortalLinkComponent } from 'src/app/shared/components/navigation/navigation-portal-link/navigation-portal-link.component';
-import { WNCRouterLink } from '../../types/web-navigation-config.interface';
+import { LanguageSelectorComponent } from 'src/app/core/components/language-selector/language-selector.component';
+import { PortalLinkComponent } from 'src/app/core/components/portal-link/portal-link.component';
+import { Page } from '../../types/page.interface';
 import { ThemeButtonComponent } from '../theme-button/theme-button.component';
 
 
@@ -15,13 +15,13 @@ import { ThemeButtonComponent } from '../theme-button/theme-button.component';
   templateUrl: './hamburger-menu.component.html',
   styleUrls: ['./hamburger-menu.component.scss'],
   standalone: true,
-  imports: [CommonModule, ThemeButtonComponent, SelectorLanguageComponent, BrowserAnimationsModule, RouterModule, NavigationPortalLinkComponent],
+  imports: [CommonModule, ThemeButtonComponent, LanguageSelectorComponent, BrowserAnimationsModule, RouterModule, PortalLinkComponent],
   animations: [fadeInOutAnimation],
   encapsulation: ViewEncapsulation.None
 })
 export class HamburgerMenuComponent {
   showMenu: boolean = false;
-  @Input() pages: Array<WNCRouterLink> = []
+  @Input() pages: Array<Page> = []
 
   constructor(protected i18s: I18nService) {
   }

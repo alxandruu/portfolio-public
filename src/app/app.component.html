@@ -1,32 +1,8 @@
-<div class="uxia-container">
-  <ng-template #uxiaContainer>
-  </ng-template>
-</div>
-
-<header class="position-sticky z-2 start-0 top-0 py-4 ">
-  <div class="container-fluid container-lg  d-flex align-items-center justify-content-between">
-    <a class="hover-animation-rotate-reverse-180 unselectable text-decoration-none fw-bold d-flex align-items-center "
-      routerLink="">
-      <icon-bed [width]="30" [height]="30"></icon-bed>
-      <span class="ms-2 font-size-lg-125">Gabriel Alexandru Botas</span>
-    </a>
-    <hamburger-menu class="d-md-none" [pages]="pages"></hamburger-menu>
-    <ul class="d-md-flex align-items-center p-0 m-0  menu-links d-none font-size-125">
-      <li class="me-4" *ngFor="let page of pages">
-        <navigation-portal-link [page]="page"></navigation-portal-link>
-      </li>
-      <theme-button></theme-button>
-    </ul>
-  </div>
-</header>
+<app-header></app-header>
 
 <div class="pt-4 container-lg overflow-hidden" style="min-height: 70dvh;">
   <router-outlet></router-outlet>
-
-  <footer class="d-flex align-items-center justify-content-between my-5">
-    <div class="text-theme-grey">© 2025 Gabriel Alexandru Botas. Derechos reservados</div>
-    <selector-language class="d-none d-md-block"></selector-language>
-  </footer>
+  <app-footer></app-footer>
 </div>
 
 <scroll-top-button></scroll-top-button>

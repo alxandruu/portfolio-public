@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Firestore } from '@angular/fire/firestore';
 import { doc, getDoc } from 'firebase/firestore';
-import { I18nService } from '../../i18n/i18n.service';
-import { CurriculumVitae, CurriculumVitaeV2 } from 'src/app/core/types/curriculum-vitae.interface';
-import { sortByDate } from 'src/app/core/models/utils/utilities';
+import { CurriculumVitaeV2 } from 'src/app/core/types/curriculum-vitae.interface';
 import { HomeProfile } from 'src/app/core/types/profile.interface';
+import { I18nService } from '../../i18n/i18n.service';
 
 @Injectable({
   providedIn: 'root'

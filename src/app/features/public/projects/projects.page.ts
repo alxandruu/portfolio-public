@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Observable, map } from 'rxjs';
-import { CardViewerStyle } from 'src/app/core/enums/card-viewer-style.enum';
+import { Card } from 'src/app/core/enums/card-scheme.enum';
 import { Project } from 'src/app/core/types/project.interface';
 import { ProjectsManagerService } from 'src/app/core/services/firebase-manager/projects/projects-manager.service';
 import { StorageManagerService } from 'src/app/core/services/firebase-manager/storage/storage-manager.service';
@@ -19,7 +19,7 @@ import { CardsModule } from 'src/app/shared/components/cards/cards.module';
 })
 export class ProjectsPage {
   projects: Observable<Project[]>;
-  CardViewerStyle = CardViewerStyle;
+  CardViewerStyle = Card;
   cardViewerStyle: string = "";
 
 

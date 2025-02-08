@@ -9,11 +9,11 @@
     *ngIf="showMenu" @fadeInOutAnimation>
     <ul class="overflow-y-auto p-0 mb-3 font-size-225">
         <li class="my-5" *ngFor="let page of pages">
-            <navigation-portal-link [page]="page" (click)="hideMenu()"></navigation-portal-link>
+            <portal-link [page]="page" (click)="hideMenu()"></portal-link>
         </li>
     </ul>
     <div class="d-flex justify-content-between align-items-center flex-wrap ">
-        <selector-language></selector-language>
+        <language-selector></language-selector>
         <theme-button></theme-button>
     </div>
 </div>

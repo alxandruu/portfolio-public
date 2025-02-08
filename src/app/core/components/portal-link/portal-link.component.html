@@ -1,0 +1,7 @@
+<a *ngIf="page && page.href.type == PageHrefType.DEFAULT" [href]="page.href.url" class="text-decoration-none"
+    [ngClass]="{'hover-animation-underline': page.navEffects}" [attr.target]="page.target" [attr.rel]="page.rel"
+    [innerHTML]="page.innerHTML"></a>
+
+<a *ngIf="page && page.href.type == PageHrefType.ROUTER_LINK" [routerLink]="page.href.url" class="text-decoration-none"
+    [ngClass]="{'hover-animation-underline': page.navEffects}" [attr.target]="page.target" [attr.rel]="page.rel"
+    [innerHTML]="page.innerHTML"></a>

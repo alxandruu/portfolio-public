@@ -40,7 +40,7 @@
         <icon-dice [style.transform]="'rotate(-45deg)'"></icon-dice>
         <span class="ms-2">{{i18s.getValue("resources.random-button")}}</span>
     </div>
-    <component-card-style-selector></component-card-style-selector>
+    <card-style-button></card-style-button>
 </div>
 
 <div class="my-4">
@@ -50,15 +50,15 @@
             <div *ngFor="let r of resources | categoryPipe:categoryActive.id ; "
                 class="col-lg-4 col-md-6 mb-4  hover-animation-resize">
                 <a [routerLink]="['/projects', r.id]" class="text-decoration-none">
-                    <component-card [image]="r.img" [heading]="r.name" [description]="r.description"></component-card>
+                    <default-card [image]="r.img" [heading]="r.name" [description]="r.description"></default-card>
                 </a>
             </div>
         </div>
         <div *ngIf="cardViewerStyle == CardViewerStyle.LIST">
             <div class="mb-4 " *ngFor="let r of resources | categoryPipe:categoryActive.id ; ">
                 <a [routerLink]="['/projects', r.id]" class="text-decoration-none ">
-                    <component-list-card [description]="r.description" [heading]="r.name"
-                        [image]="r.img"></component-list-card>
+                    <list-card [description]="r.description" [heading]="r.name"
+                        [image]="r.img"></list-card>
                 </a>
             </div>
         </div>
