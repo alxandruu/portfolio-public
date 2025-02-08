@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CardViewerStyle } from 'src/app/core/enums/card-viewer-style.enum';
-import { Link } from 'src/app/core/models/interfaces/link';
+import { Link } from 'src/app/core/types/link.interface';
 import { PortalService } from 'src/app/core/services/portal/portal.service';
 
 /**

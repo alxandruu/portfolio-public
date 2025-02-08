@@ -1,13 +1,8 @@
 import moment from "moment";
 
 export {
-    propertyDefault,
-    sortByDate,
-    showLoading,
-    hideLoading,
-    setCookie,
-    getCookie
-}
+    getCookie, propertyDefault, setCookie, sortByDate
+};
 
 /**
  * Finds a value inside an array of values. If not found, it returns the default value
@@ -38,26 +33,6 @@ function sortByDate<T>(arr: Array<T>, prop: keyof T, date_format: string = 'dd.M
     return arr.sort()
 }
 
-
-/**
- * Shows the asynchronous loading icon
- * 
- */
-function showLoading(): void {
-    //TODO improve the managing of the loading icon, by removing dom managing and implementing angular
-    document.querySelector('.loading-icon')?.classList.add('active')
-    document.body.style.overflow = "hidden"
-}
-
-/**
- * Hides the asynchronous loading icon
- * 
- */
-function hideLoading(): void {
-    //TODO improve the managing of the loading icon, by removing dom managing and implementing angular
-    document.querySelector('.loading-icon')?.classList.remove('active')
-    document.body.style.overflow = "inherit"
-}
 
 /**
  * Creates a cookie in the portal

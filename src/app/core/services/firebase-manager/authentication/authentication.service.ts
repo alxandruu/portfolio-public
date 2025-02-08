@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { onAuthStateChanged, signInWithEmailAndPassword, User } from 'firebase/auth';
 import { Auth } from '@angular/fire/auth';
-import { firstValueFrom, Observable } from 'rxjs';
-import { OthersManagerService } from '../others/others-manager.service';
+import { onAuthStateChanged, signInWithEmailAndPassword, User } from 'firebase/auth';
 import { Timestamp } from 'firebase/firestore';
-import { RegisterRow } from 'src/app/core/models/interfaces/register';
-import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/core/models/utils/constants';
+import { firstValueFrom, Observable } from 'rxjs';
+import { REGISTER_ACTIONS } from 'src/app/core/enums/register-actions.enum';
+import { REGISTER_TYPES } from 'src/app/core/enums/register-types.enum';
+import { RegisterRow } from 'src/app/core/types/register.interface';
+import { OthersManagerService } from '../others/others-manager.service';
 
 @Injectable({
   providedIn: 'root'
@@ -39,8 +40,8 @@ export class AuthenticationService {
       let register: RegisterRow = {
         timestamp: Timestamp.now(),
         user: this.userEmail,
-        type: REGISTER_TYPES.success,
-        action: REGISTER_ACTIONS.login,
+        type: REGISTER_TYPES.SUCCESS,
+        action: REGISTER_ACTIONS.LOGIN,
         referenceAfter: null,
         referenceBefore: null
       }

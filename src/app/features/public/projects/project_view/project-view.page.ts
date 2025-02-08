@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { Project } from 'src/app/core/models/interfaces/project';
+import { Project } from 'src/app/core/types/project.interface';
 import { ProjectsManagerService } from 'src/app/core/services/firebase-manager/projects/projects-manager.service';
 import { StorageManagerService } from 'src/app/core/services/firebase-manager/storage/storage-manager.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';

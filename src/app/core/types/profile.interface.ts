@@ -1,5 +1,5 @@
-import { Link } from "./link";
-import { SocialMedia } from "./social-media";
+import { Link } from "./link.interface";
+import { SocialMedia } from "./social-media.interface";
 
 export interface Profile {
     name: string;

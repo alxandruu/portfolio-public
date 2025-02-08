@@ -1,13 +1,14 @@
 import { Injectable, inject } from '@angular/core';
 import i18next from 'i18next';
-import lngSpanish from 'src/assets/i18n/es.json';
 import lngEnglish from 'src/assets/i18n/en.json';
+import lngSpanish from 'src/assets/i18n/es.json';
 import lngRomanian from 'src/assets/i18n/ro.json';
 
 import { DOCUMENT } from '@angular/common';
-import { Language } from '../../models/interfaces/language';
-import { LANGUAGE_COOKIE } from '../../models/utils/constants';
 import { getCookie, setCookie } from '../../models/utils/utilities';
+import { Language } from '../../types/language.interface';
+
+const LANGUAGE_COOKIE: string = "language"
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class I18nService {
     description: 'Română',
     ref: lngRomanian
   }];
-  
+
   private doc: Document = inject(DOCUMENT);
 
   constructor() {

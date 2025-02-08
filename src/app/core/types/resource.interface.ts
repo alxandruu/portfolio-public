@@ -1,5 +1,5 @@
 import { ArrayCategoryPipeInterface } from "src/app/core/pipes/category.pipe";
-import { Category } from "./category";
+import { Category } from "./category.interface";
 
 export interface Resource extends ArrayCategoryPipeInterface {
     id: string;

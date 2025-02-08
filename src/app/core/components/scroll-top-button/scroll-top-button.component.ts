@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
-import { fadeInOutAnimation } from 'src/app/shared/static/animations';
+import { fadeInOutAnimation } from '../../animations/fade-in-out.animation';
 import { WINDOW } from '../../providers/window';
 
 @Component({

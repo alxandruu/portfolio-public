@@ -10,9 +10,9 @@
       <icon-bed [width]="30" [height]="30"></icon-bed>
       <span class="ms-2 font-size-lg-125">Gabriel Alexandru Botas</span>
     </a>
-    <navigation-hamburger class="d-md-none" [pages]="wnc.pages"></navigation-hamburger>
+    <hamburger-menu class="d-md-none" [pages]="pages"></hamburger-menu>
     <ul class="d-md-flex align-items-center p-0 m-0  menu-links d-none font-size-125">
-      <li class="me-4" *ngFor="let page of wnc.pages">
+      <li class="me-4" *ngFor="let page of pages">
         <navigation-portal-link [page]="page"></navigation-portal-link>
       </li>
       <theme-button></theme-button>

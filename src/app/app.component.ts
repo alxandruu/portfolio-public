@@ -1,8 +1,7 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { WebNavigationConfig } from './core/models/interfaces/web-navigation-config';
 import { AuthenticationService } from './core/services/firebase-manager/authentication/authentication.service';
 import { PortalService } from './core/services/portal/portal.service';
-import { NotificationCardComponent } from './shared/components/notification-card/notification-card.component';
+import { WNCRouterLink } from './core/types/web-navigation-config.interface';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +11,11 @@ import { NotificationCardComponent } from './shared/components/notification-card
 
 export class AppComponent {
   @ViewChild('uxiaContainer', { read: ViewContainerRef }) uxiaContainer!: ViewContainerRef;
-  wnc!: WebNavigationConfig;
+  pages: Array<WNCRouterLink> = [];
 
   constructor(private authf: AuthenticationService, private portalService: PortalService) {
-    this.portalService.getPages().subscribe(config => {
-      this.wnc = config
+    this.portalService.getPages().subscribe(pages => {
+      this.pages = pages
     })
   }
 
@@ -24,12 +23,12 @@ export class AppComponent {
   }
 
   public addUxia(title: string, message: string, type?: string) {
-    let component = this.uxiaContainer.createComponent(NotificationCardComponent);
-    component.setInput('title', title);
-    component.setInput('message', message);
-    if (type) {
-      component.setInput('type', type);
-    }
+    // let component = this.uxiaContainer.createComponent(NotificationCardComponent);
+    // component.setInput('title', title);
+    // component.setInput('message', message);
+    // if (type) {
+    //   component.setInput('type', type);
+    // }
   }
 
 

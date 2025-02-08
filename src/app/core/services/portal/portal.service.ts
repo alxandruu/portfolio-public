@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { CardViewerStyle } from '../../enums/card-viewer-style.enum';
-import { WebNavigationConfig, WNCHrefType } from '../../models/interfaces/web-navigation-config';
+import { WNCHrefType, WNCRouterLink } from '../../types/web-navigation-config.interface';
 import { I18nService } from '../i18n/i18n.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortalService {
-  private scrollY: BehaviorSubject<number> = new BehaviorSubject<number>(window.scrollY);
-  private showLoadingIcon: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private cardViewerStyle: BehaviorSubject<string>;
-  private pages: BehaviorSubject<WebNavigationConfig> = new BehaviorSubject<WebNavigationConfig>({
-    pages: [
+  private pages: BehaviorSubject<Array<WNCRouterLink>> = new BehaviorSubject<Array<WNCRouterLink>>(
+    [
       {
         href: {
           url: ['/projects'],
@@ -42,7 +40,7 @@ export class PortalService {
 
       }
     ]
-  });
+  );
 
   constructor(private i18s: I18nService) {
 
@@ -65,25 +63,13 @@ export class PortalService {
     this.cardViewerStyle.next(value);
   }
 
-  public toogShowLoadingIcon() {
-    this.showLoadingIcon.next(!this.showLoadingIcon.getValue());
-  }
 
-  public getPages(): Observable<WebNavigationConfig> {
+  public getPages(): Observable<Array<WNCRouterLink>> {
     return this.pages.asObservable();
-  }
-
-  public getScrollY(): Observable<number> {
-    return this.scrollY.asObservable();
   }
 
   public getCardViewerStyle(): Observable<string> {
     return this.cardViewerStyle.asObservable();
   }
-
-  public observeShowLoadingIcon(): Observable<boolean> {
-    return this.showLoadingIcon.asObservable();
-  }
-
 }
 

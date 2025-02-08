@@ -9,13 +9,13 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore, } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
+import { IconBedComponent } from './core/components/icons/icon-bed/icon-bed.component';
 import { ScrollTopButtonComponent } from './core/components/scroll-top-button/scroll-top-button.component';
 import { ThemeButtonComponent } from './core/components/theme-button/theme-button.component';
 import { CoreModule } from './core/core.module';
 import { SelectorLanguageComponent } from './shared/components/i18n/selector-language/selector-language.component';
-import { IconsModule } from './shared/components/icons/icons.module';
-import { HamburgerNavigationComponent } from './shared/components/navigation/navigation-hamburger/navigation-hamburger.component';
 import { NavigationPortalLinkComponent } from './shared/components/navigation/navigation-portal-link/navigation-portal-link.component';
+import { HamburgerMenuComponent } from './core/components/hamburger-menu/hamburger-menu.component';
 
 
 @NgModule({
@@ -25,9 +25,9 @@ import { NavigationPortalLinkComponent } from './shared/components/navigation/na
   imports: [
     BrowserModule,
     AppRoutingModule,
+    IconBedComponent,
     CoreModule,
-    IconsModule,
-    HamburgerNavigationComponent,
+    HamburgerMenuComponent,
     SelectorLanguageComponent,
     HttpClientModule,
     ScrollTopButtonComponent,

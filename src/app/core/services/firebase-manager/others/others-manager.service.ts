@@ -4,9 +4,9 @@ import { collection } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { I18nService } from '../../i18n/i18n.service';
-import { Profile } from 'src/app/core/models/interfaces/profile';
-import { RegisterRow } from 'src/app/core/models/interfaces/register';
-import { History } from 'src/app/core/models/interfaces/history';
+import { Profile } from 'src/app/core/types/profile.interface';
+import { RegisterRow } from 'src/app/core/types/register.interface';
+import { History } from 'src/app/core/types/history.interface';
 
 @Injectable({
   providedIn: 'root'

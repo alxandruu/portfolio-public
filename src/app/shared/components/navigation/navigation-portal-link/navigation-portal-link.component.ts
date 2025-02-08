@@ -3,8 +3,8 @@ import { Component, Input, Output, ViewEncapsulation } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
-import { fadeInOutAnimation } from 'src/app/shared/static/animations';
-import { WNCHrefType, WNCRouterLink } from '../../../../core/models/interfaces/web-navigation-config';
+import { WNCHrefType, WNCRouterLink } from '../../../../core/types/web-navigation-config.interface';
+import { fadeInOutAnimation } from 'src/app/core/animations/fade-in-out.animation';
 
 
 @Component({

@@ -3,7 +3,7 @@ import { collectionData, Firestore } from '@angular/fire/firestore';
 import { collection, doc, getDoc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { I18nService } from '../../i18n/i18n.service';
-import { Project } from 'src/app/core/models/interfaces/project';
+import { Project } from 'src/app/core/types/project.interface';
 
 @Injectable({
   providedIn: 'root'

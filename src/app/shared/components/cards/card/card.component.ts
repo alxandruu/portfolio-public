@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Link } from 'src/app/core/models/interfaces/link';
+import { Link } from 'src/app/core/types/link.interface';
 
 /**
  * Component used to show information in the portal in a card format. 

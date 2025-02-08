@@ -1,23 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { IconAngleComponent } from 'src/app/core/components/icons/icon-angle/icon-angle.component';
+import { IconDiceComponent } from 'src/app/core/components/icons/icon-dice/icon-dice.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { CardViewerStyle } from 'src/app/core/enums/card-viewer-style.enum';
-import { Category } from 'src/app/core/models/interfaces/category';
-import { Resource } from 'src/app/core/models/interfaces/resource';
 import { CategoryPipe } from 'src/app/core/pipes/category.pipe';
 import { ResourcesManagerService } from 'src/app/core/services/firebase-manager/resources/resources-manager.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { PortalService } from 'src/app/core/services/portal/portal.service';
+import { Category } from 'src/app/core/types/category.interface';
+import { Resource } from 'src/app/core/types/resource.interface';
 import { CardsModule } from 'src/app/shared/components/cards/cards.module';
-import { IconsModule } from 'src/app/shared/components/icons/icons.module';
-import { sortHighlighted } from 'src/app/shared/static/static-methods';
 
 
 @Component({
   templateUrl: './resources.page.html',
   standalone: true,
-  imports: [CommonModule, CoreModule, RouterModule, CardsModule, IconsModule],
+  imports: [CommonModule, CoreModule, RouterModule, CardsModule, IconDiceComponent, IconAngleComponent],
 })
 
 export class ResourcesPage {
@@ -35,7 +35,14 @@ export class ResourcesPage {
     })
 
     this.rms.getResources().subscribe(data => {
-      this.resources = data.sort(sortHighlighted);
+      this.resources = data.sort((obj1: Resource, obj2: Resource): number => {
+        if (obj1.highlighted && !obj2.highlighted)
+          return -1;
+        else if (!obj1.highlighted && obj2.highlighted)
+          return 1;
+        else
+          return 0;
+      });
     });
 
 

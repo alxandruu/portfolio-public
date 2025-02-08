@@ -5,11 +5,12 @@ import { Observable } from 'rxjs';
 import { I18nService } from '../../i18n/i18n.service';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { OthersManagerService } from '../others/others-manager.service';
-import { ActionStatus } from 'src/app/core/models/interfaces/action-status';
-import { Category } from 'src/app/core/models/interfaces/category';
-import { RegisterRow } from 'src/app/core/models/interfaces/register';
-import { REGISTER_ACTIONS, REGISTER_TYPES } from 'src/app/core/models/utils/constants';
-import { Resource } from 'src/app/core/models/interfaces/resource';
+import { ActionStatus } from 'src/app/core/types/action-status.interface';
+import { Category } from 'src/app/core/types/category.interface';
+import { RegisterRow } from 'src/app/core/types/register.interface';
+import { Resource } from 'src/app/core/types/resource.interface';
+import { REGISTER_TYPES } from 'src/app/core/enums/register-types.enum';
+import { REGISTER_ACTIONS } from 'src/app/core/enums/register-actions.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -48,8 +49,8 @@ export class ResourcesManagerService {
       let register: RegisterRow = {
         timestamp: Timestamp.now(),
         user: this.authf.userEmail,
-        type: REGISTER_TYPES.warning,
-        action: (data.id) ? REGISTER_ACTIONS.modify : REGISTER_ACTIONS.create,
+        type: REGISTER_TYPES.WARNING,
+        action: (data.id) ? REGISTER_ACTIONS.MODIFY : REGISTER_ACTIONS.CREATE,
         referenceBefore: (docSnap.data()) ? docSnap.data() as Object : null,
         referenceAfter: data,
       }
@@ -95,8 +96,8 @@ export class ResourcesManagerService {
         let register: RegisterRow = {
           timestamp: Timestamp.now(),
           user: this.authf.userEmail,
-          type: REGISTER_TYPES.danger,
-          action: REGISTER_ACTIONS.delete,
+          type: REGISTER_TYPES.DANGER,
+          action: REGISTER_ACTIONS.DELETE,
           referenceBefore: value,
           referenceAfter: null
         }
@@ -126,8 +127,8 @@ export class ResourcesManagerService {
         let register: RegisterRow = {
           timestamp: Timestamp.now(),
           user: this.authf.userEmail,
-          type: REGISTER_TYPES.danger,
-          action: REGISTER_ACTIONS.delete,
+          type: REGISTER_TYPES.DANGER,
+          action: REGISTER_ACTIONS.DELETE,
           referenceBefore: value,
           referenceAfter: null
         }

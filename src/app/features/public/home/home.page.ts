@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { fadeInOutAnimation } from 'src/app/core/animations/fade-in-out.animation';
+import { IconLinkedinComponent } from 'src/app/core/components/icons/icon-linkedin/icon-linkedin.component';
+import { IconMailComponent } from 'src/app/core/components/icons/icon-mail/icon-mail.component';
 import { TimelineHistoryComponent } from 'src/app/core/components/timeline-history/timeline-history.component';
 import { TimelineHistory } from 'src/app/core/components/timeline-history/types/timeline-history.interface';
-import { HomeProfile } from 'src/app/core/models/interfaces/profile';
 import { UserInformationService } from 'src/app/core/services/firebase-manager/user-information/user-information.service';
 import { I18nService } from 'src/app/core/services/i18n/i18n.service';
-import { IconsModule } from 'src/app/shared/components/icons/icons.module';
-import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
-import { fadeInOutAnimation } from 'src/app/shared/static/animations';
+import { HomeProfile } from 'src/app/core/types/profile.interface';
 
 @Component({
   templateUrl: './home.page.html',
-  imports: [CommonModule,  RouterModule, IconsModule, TimelineHistoryComponent, ModalComponent],
+  imports: [CommonModule, RouterModule, TimelineHistoryComponent, IconLinkedinComponent, IconMailComponent],
   standalone: true,
   styleUrls: ['./home.page.scss'],
   animations: [
