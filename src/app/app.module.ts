@@ -3,7 +3,7 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 // Components
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore, } from '@angular/fire/firestore';
@@ -18,29 +18,22 @@ import { NavigationPortalLinkComponent } from './shared/components/navigation/na
 import { HamburgerMenuComponent } from './core/components/hamburger-menu/hamburger-menu.component';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    IconBedComponent,
-    CoreModule,
-    HamburgerMenuComponent,
-    SelectorLanguageComponent,
-    HttpClientModule,
-    ScrollTopButtonComponent,
-    ThemeButtonComponent,
-    NavigationPortalLinkComponent,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    provideAuth(() => {
-      const auth = getAuth();
-      return auth;
-    }),
-  ],
-  providers: [Title],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        IconBedComponent,
+        CoreModule,
+        HamburgerMenuComponent,
+        SelectorLanguageComponent,
+        ScrollTopButtonComponent,
+        ThemeButtonComponent,
+        NavigationPortalLinkComponent,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
+        provideAuth(() => {
+            const auth = getAuth();
+            return auth;
+        })], providers: [Title, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
