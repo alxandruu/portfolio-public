@@ -13,6 +13,6 @@ export interface HomeProfile {
     name: string;
     image: string;
     ocupation: string;
-    description_html: string;
+    html_description: string;
     social_media: Array<SocialMedia>;
 }

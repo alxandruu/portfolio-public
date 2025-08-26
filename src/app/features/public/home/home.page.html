@@ -1,28 +1,27 @@
-<div id="home-container">
-    <div *ngIf="profile" class="mb-5">
-        <section class="mt-lg-5">
-            <h1 class="fw-bold text-theme-dark font-size-200 font-size-lg-400">{{profile.name}}</h1>
-            <h2 class=" text-theme-dark font-size-150 font-size-lg-200 ">{{profile.ocupation}}</h2>
-        </section>
-        <section class="d-flex align-items-center flex-wrap my-4">
-            <a class=" text-center cursor-pointer d-flex align-items-center my-2 me-2 text-theme-light text-decoration-none py-2 px-4 bg-theme-dark rounded hover-animation-resize"
-                href="mailto:bgabrielalexandru@gmail.com" target="_blank" rel="">
-                <icon-mail class="d-flex svg-path-light" [width]="20" [height]="20"></icon-mail>
-                <span class="ms-3">Contact me</span>
+<div *ngIf="profile() as p">
+    <section class="mt-lg-5">
+        <h1 class="fw-bold text-theme-dark font-size-200 font-size-lg-400">{{p.name}}</h1>
+        <h2 class="text-theme-dark font-size-150 font-size-lg-200 ">{{p.ocupation}}</h2>
+    </section>
+    
+    <section class="d-flex align-items-center flex-wrap my-4">
+        <a class=" text-center cursor-pointer d-flex align-items-center my-2 me-2 text-theme-light text-decoration-none py-2 px-4 bg-theme-dark rounded hover-animation-resize"
+            href="mailto:bgabrielalexandru@gmail.com" target="_blank" rel="">
+            <icon-mail class="d-flex svg-path-light" [width]="20" [height]="20"></icon-mail>
+            <span class="ms-3">Contact me</span>
 
-            </a>
+        </a>
 
-            <a class="  text-center cursor-pointer d-flex align-items-center my-2 me-2 text-decoration-none text-theme-light py-2 px-4 bg-theme-dark rounded hover-animation-resize"
-                href="https://www.linkedin.com/in/gabriel-alexandru-botas-795103204/" target="_blank" rel="">
-                <icon-linkedin class="d-flex svg-path-light" [width]="20" [height]="20"></icon-linkedin>
-                <span class="ms-3">Linkedin</span>
-            </a>
-        </section>
-        <section class="my-5 mt-3 letter-spacing-2 description" [innerHTML]="profile.description_html">
-        </section>
+        <a class="  text-center cursor-pointer d-flex align-items-center my-2 me-2 text-decoration-none text-theme-light py-2 px-4 bg-theme-dark rounded hover-animation-resize"
+            href="https://www.linkedin.com/in/gabriel-alexandru-botas-795103204/" target="_blank" rel="">
+            <icon-linkedin class="d-flex svg-path-light" [width]="20" [height]="20"></icon-linkedin>
+            <span class="ms-3">Linkedin</span>
+        </a>
+    </section>
+    <section class="my-5 mt-3 letter-spacing-2 description" [innerHTML]="p.html_description">
+    </section>
 
-        <section class=" ms-2">
-            <timeline-history [timeline]="work_experience"></timeline-history>
-        </section>
-    </div>
+    <section class=" ms-2">
+        <timeline-history *ngIf="work_experience() as we" [timeline]="we"></timeline-history>
+    </section>
 </div>
