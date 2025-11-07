@@ -8,10 +8,9 @@ import { Link } from 'src/app/core/types/link.interface';
  * 
  */
 @Component({
-  selector: 'component-card',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'component-card',
+    imports: [CommonModule],
+    template: `
     <div class="card-component">
       <img [src]="image" class="unselectable rounded object-fit-cover" loading="lazy" width="100%" height="200px">
       <div class="mt-3 mx-1">
@@ -19,7 +18,7 @@ import { Link } from 'src/app/core/types/link.interface';
           <p class="text-theme-dark font-size-90">{{description}}</p>
       </div>
     </div>
-  `,
+  `
 })
 export class CardComponent {
   /**

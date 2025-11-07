@@ -15,9 +15,8 @@ import { CardsModule } from 'src/app/shared/components/cards/cards.module';
 
 
 @Component({
-  templateUrl: './resources.page.html',
-  standalone: true,
-  imports: [CommonModule, CoreModule, RouterModule, CardsModule, IconDiceComponent, IconAngleComponent],
+    templateUrl: './resources.page.html',
+    imports: [CommonModule, CoreModule, RouterModule, CardsModule, IconDiceComponent, IconAngleComponent]
 })
 
 export class ResourcesPage {

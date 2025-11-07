@@ -11,10 +11,9 @@ import { environment } from 'src/environments/environment';
 const PORTFOLIO_IMAGE_URL: string = "portfolio.jpg"
 
 @Component({
-  templateUrl: './login.page.html',
-  standalone: true,
-  imports: [CommonModule, FormsModule, IconSignInComponent],
-  styleUrls: ['./login.page.scss']
+    templateUrl: './login.page.html',
+    imports: [CommonModule, FormsModule, IconSignInComponent],
+    styleUrls: ['./login.page.scss']
 })
 export class LoginPage {
 

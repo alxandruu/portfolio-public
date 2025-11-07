@@ -4,9 +4,10 @@ import { PortalService } from './core/services/portal/portal.service';
 import { WNCRouterLink } from './core/types/web-navigation-config.interface';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 
 export class AppComponent {

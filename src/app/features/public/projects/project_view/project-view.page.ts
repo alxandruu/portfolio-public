@@ -8,11 +8,10 @@ import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 
 
 @Component({
-  selector: 'project-view',
-  templateUrl: './project-view.page.html',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  styleUrls: ['./project-view.page.scss']
+    selector: 'project-view',
+    templateUrl: './project-view.page.html',
+    imports: [CommonModule, RouterModule],
+    styleUrls: ['./project-view.page.scss']
 })
 export class ProjectViewPage implements OnInit {
   project!: Project;

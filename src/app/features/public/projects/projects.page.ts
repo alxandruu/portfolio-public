@@ -12,10 +12,9 @@ import { CardsModule } from 'src/app/shared/components/cards/cards.module';
 
 
 @Component({
-  templateUrl: './projects.page.html',
-  standalone: true,
-  imports: [CommonModule, RouterModule, CardsModule],
-  styleUrls: ['./projects.page.scss']
+    templateUrl: './projects.page.html',
+    imports: [CommonModule, RouterModule, CardsModule],
+    styleUrls: ['./projects.page.scss']
 })
 export class ProjectsPage {
   projects: Observable<Project[]>;

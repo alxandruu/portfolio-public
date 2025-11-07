@@ -4,13 +4,12 @@ import { fadeInOutAnimation } from '../../animations/fade-in-out.animation';
 import { WINDOW } from '../../providers/window';
 
 @Component({
-  selector: 'scroll-top-button',
-  templateUrl: 'scroll-top-button.component.html',
-  standalone: true,
-  imports: [CommonModule],
-  animations: [
-    fadeInOutAnimation
-  ]
+    selector: 'scroll-top-button',
+    templateUrl: 'scroll-top-button.component.html',
+    imports: [CommonModule],
+    animations: [
+        fadeInOutAnimation
+    ]
 })
 export class ScrollTopButtonComponent {
   protected readonly window: Window | null = inject(WINDOW);

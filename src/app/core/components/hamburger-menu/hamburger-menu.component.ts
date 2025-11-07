@@ -11,13 +11,12 @@ import { ThemeButtonComponent } from '../theme-button/theme-button.component';
 
 
 @Component({
-  selector: 'hamburger-menu',
-  templateUrl: './hamburger-menu.component.html',
-  styleUrls: ['./hamburger-menu.component.scss'],
-  standalone: true,
-  imports: [CommonModule, ThemeButtonComponent, SelectorLanguageComponent, BrowserAnimationsModule, RouterModule, NavigationPortalLinkComponent],
-  animations: [fadeInOutAnimation],
-  encapsulation: ViewEncapsulation.None
+    selector: 'hamburger-menu',
+    templateUrl: './hamburger-menu.component.html',
+    styleUrls: ['./hamburger-menu.component.scss'],
+    imports: [CommonModule, ThemeButtonComponent, SelectorLanguageComponent, BrowserAnimationsModule, RouterModule, NavigationPortalLinkComponent],
+    animations: [fadeInOutAnimation],
+    encapsulation: ViewEncapsulation.None
 })
 export class HamburgerMenuComponent {
   showMenu: boolean = false;

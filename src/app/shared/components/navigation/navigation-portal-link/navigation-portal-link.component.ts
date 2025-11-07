@@ -18,7 +18,6 @@ import { fadeInOutAnimation } from 'src/app/core/animations/fade-in-out.animatio
                 [ngClass]="{'hover-animation-underline': page.navEffects}" [attr.target]="page.target"
                 [attr.rel]="page.rel" [innerHTML]="page.innerHTML"  ></a>
     `,
-    standalone: true,
     imports: [CommonModule, BrowserAnimationsModule, RouterModule],
     animations: [fadeInOutAnimation],
     encapsulation: ViewEncapsulation.None

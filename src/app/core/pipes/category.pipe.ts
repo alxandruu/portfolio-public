@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'categoryPipe'
+    name: 'categoryPipe',
+    standalone: false
 })
 export class CategoryPipe implements PipeTransform {
   public static DEFAULT_CATEGORY: string = 'c0';

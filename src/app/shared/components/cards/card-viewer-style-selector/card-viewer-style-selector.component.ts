@@ -11,7 +11,6 @@ import { PortalService } from 'src/app/core/services/portal/portal.service';
  */
 @Component({
     selector: 'component-card-style-selector',
-    standalone: true,
     imports: [CommonModule],
     template: `
       <div class="d-flex align-items-center font-size-125">

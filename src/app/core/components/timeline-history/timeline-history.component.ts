@@ -4,12 +4,11 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { TimelineHistory } from './types/timeline-history.interface';
 
 @Component({
-  selector: 'timeline-history',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './timeline-history.component.html',
-  styleUrls: ['./timeline-history.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'timeline-history',
+    imports: [CommonModule],
+    templateUrl: './timeline-history.component.html',
+    styleUrls: ['./timeline-history.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class TimelineHistoryComponent {
   datePipe: DatePipe = new DatePipe("en-US") // TODO change using localiztion

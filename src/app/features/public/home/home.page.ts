@@ -11,13 +11,12 @@ import { I18nService } from 'src/app/core/services/i18n/i18n.service';
 import { HomeProfile } from 'src/app/core/types/profile.interface';
 
 @Component({
-  templateUrl: './home.page.html',
-  imports: [CommonModule, RouterModule, TimelineHistoryComponent, IconLinkedinComponent, IconMailComponent],
-  standalone: true,
-  styleUrls: ['./home.page.scss'],
-  animations: [
-    fadeInOutAnimation,
-  ]
+    templateUrl: './home.page.html',
+    imports: [CommonModule, RouterModule, TimelineHistoryComponent, IconLinkedinComponent, IconMailComponent],
+    styleUrls: ['./home.page.scss'],
+    animations: [
+        fadeInOutAnimation,
+    ]
 })
 export class HomePage implements OnInit {
   private userinfoSrv = inject(UserInformationService)

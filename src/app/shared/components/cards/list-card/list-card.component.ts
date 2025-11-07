@@ -8,10 +8,9 @@ import { Link } from 'src/app/core/types/link.interface';
  * 
  */
 @Component({
-  selector: 'component-list-card',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'component-list-card',
+    imports: [CommonModule],
+    template: `
     <div class="list-card-component">
       <div class="row">
           <div class="col-md-4">
@@ -26,7 +25,7 @@ import { Link } from 'src/app/core/types/link.interface';
           </div>
       </div>
     </div>
-  `,
+  `
 })
 export class ListCardComponent {
 

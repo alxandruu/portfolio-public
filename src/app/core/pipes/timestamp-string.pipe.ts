@@ -3,7 +3,8 @@ import { Timestamp } from "firebase/firestore";
 import moment from "moment";
 
 @Pipe({
-    name: 'timestampStringPipe'
+    name: 'timestampStringPipe',
+    standalone: false
 })
 export class TimestampStringPipe implements PipeTransform {
     transform(stamp: Timestamp): string {
